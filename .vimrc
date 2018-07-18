@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,6 +83,3 @@ set undofile
 
 " global clipboard
 set clipboard=unnamedplus
-
-" *** NON-VUNDLE PLUGINS  ***
-set runtimepath^=~/.vim/bundle/ctrlp.vim
