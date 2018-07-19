@@ -12,8 +12,21 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 Plugin 'w0rp/ale'
-Plugin 'vim-airline/vim-airline'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'drewtempelmeyer/palenight.vim'
+    let g:palenight_terminal_italics=1
+    set noshowmode
+    " GUI colours
+    if (has("termguicolors"))
+      set termguicolors
+    endif
+Plugin 'itchyny/lightline.vim'
+    set laststatus=2
+    let g:lightline = {
+      \ 'colorscheme': 'palenight',
+      \ }
+
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -30,7 +43,9 @@ filetype plugin indent on    " required
 
 "	*** VUNDLE SETUP END ***
 
-
+" dark theme
+set background=dark
+colorscheme palenight
 
 " keep 1000 items in the history
 set history=1000
@@ -59,8 +74,8 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" Insert mode absolute line hi numbers
-" Command mode relative linehi  numbers
+" Insert mode absolute line numbers
+" Command mode relative line numbers
 :augroup numbertoggle
 :  autocmd!
 :  autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
@@ -83,3 +98,13 @@ set undofile
 
 " global clipboard
 set clipboard=unnamedplus
+
+" prevent linebreak within word
+set lbr
+
+" automatic smart indent
+set ai
+set si
+
+" map leader
+let mapleader=','
