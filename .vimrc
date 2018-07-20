@@ -25,8 +25,8 @@ Plugin 'itchyny/lightline.vim'
     let g:lightline = {
       \ 'colorscheme': 'palenight',
       \ }
-
-
+Plugin 'Valloric/ycmd'
+Plugin 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -89,8 +89,10 @@ nnoremap <C-left> :tabprevious<CR>
 inoremap <C-right> <Esc>:tabnext<CR>
 inoremap <C-left> <Esc>:tabprevious<CR>
 
-" one location for swap files to avoid spam
-set directory^=$HOME/.vim/swapfiles//
+" specific locations for undo, swap and backup files to avoid spam
+set undodir=~/.vim/undodir//
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swapfiles//
 
 " persistent undo upon file close
 set undodir=~/.vim/undodir
@@ -108,3 +110,17 @@ set si
 
 " map leader
 let mapleader=','
+
+" enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" tabs to spaces
+set expandtab
+
+" netrw NERDtree like setup
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
