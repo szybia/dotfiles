@@ -86,5 +86,10 @@ sbsall() {
 #   List non-hidden directories of current directory sorted by size
 sbs() { du -hsx * | sort -rh; }
 
-
-
+up() {
+    times=$1
+    while [ "$times" -gt "0" ]; do
+        cd ..
+        times=$(($times - 1))
+    done
+}
