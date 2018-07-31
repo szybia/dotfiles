@@ -82,12 +82,16 @@ set smartcase
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
 
-" switch tabs with Ctrl left and right
-nnoremap <C-right> :tabnext<CR>
-nnoremap <C-left> :tabprevious<CR>
+" switch windows with Ctrl + arrow keys
+nnoremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+nnoremap <C-k> <C-W>k
+nnoremap <C-j> <C-W>j
 " and whilst in insert mode
-inoremap <C-right> <Esc>:tabnext<CR>
-inoremap <C-left> <Esc>:tabprevious<CR>
+inoremap <C-l> <ESC><C-W>l
+inoremap <C-h> <ESC><C-W>h
+inoremap <C-k> <ESC><C-W>k
+inoremap <C-j> <ESC><C-W>j
 
 " specific locations for undo, swap and backup files to avoid spam
 set undodir=~/.vim/undodir//
