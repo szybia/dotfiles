@@ -30,16 +30,16 @@ cp ./vim/.vimrc ~/.vimrc_new
 #   Vundle install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-vim +PluginInstall +qall
+vim +PluginInstall +qall &
 
 #   YouCompleteMe and YCMD server setup
-cd ~/.vim/ycmd
+cd ~/.vim/bundle/ycmd
 git submodule update --init --recursive
-python3 build.py --clang-completer --go-completer --java-completer 
+python3 build.py --clang-completer --go-completer --java-completer
 
 cd ~/.vim/bundle/YouCompleteMe
-git sumbodule update --init --recursive
-python3 install.py --clang-completer --go-completer --java-completer 
+git submodule update --init --recursive
+python3 install.py --clang-completer --go-completer --java-completer
 
 #    Setup complete, place .vimrc
 mv ~/.vimrc_old ~/.vimrc
