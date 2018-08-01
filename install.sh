@@ -24,6 +24,8 @@ mkdir -p ~/.vim/undodir
 if [ -f ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc_old
 fi
+#   Copy .vimrc
+cp ./vim/.vimrc ~/.vimrc_new
 
 #   Vundle install
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -39,6 +41,6 @@ cd ~/.vim/bundle/YouCompleteMe
 git sumbodule update --init --recursive
 python3 install.py --clang-completer --go-completer --java-completer 
 
-#   Copy .vimrc
-cp ./vim/.vimrc ~/.vimrc
+#    Setup complete, place .vimrc
+mv ~/.vimrc_old ~/.vimrc
 
