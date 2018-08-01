@@ -22,12 +22,11 @@ cp ./bash/.bashrc ~/.bashrc
 source ~/.bashrc
 
 
-#   Copy over .vim folder
-if [ -d ~/.vim ]; then
-    mv ~/.vim ~/.vim_old
-    mkdir -p ~/.vim
-fi
-cp -r ./vim/.vim/* ~/.vim/
+#   Ensure all .vim folders exist
+mkdir -p ~/.vim/backup
+mkdir -p ~/.vim/bundle
+mkdir -p ~/.vim/swapfiles
+mkdir -p ~/.vim/undodir
 
 
 #   Vundle install
