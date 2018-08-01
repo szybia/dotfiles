@@ -111,6 +111,7 @@ set lbr
 " automatic smart indent
 set ai
 set si
+filetype plugin indent on
 
 " map leader
 let mapleader=','
@@ -121,6 +122,10 @@ set foldlevel=99
 
 " tabs to spaces
 set expandtab
+" tab size 4 spaces
+set tabstop=4
+" shift width 4 spaces
+set shiftwidth=4
 
 " netrw NERDtree like setup
 let g:netrw_banner = 0
