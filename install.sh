@@ -25,14 +25,14 @@ if [ -f ~/.vimrc ]; then
     mv ~/.vimrc ~/.vimrc_old
 fi
 #   Copy .vimrc
-cp ./vim/.vimrc ~/.vimrc_new
+cp ./vim/.vimrc ~/.vimrc
 
 #   Vundle install
 if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
     git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
 
-vim +PluginInstall +qall &
+vim +PluginInstall +qall
 
 #   YouCompleteMe and YCMD server setup
 cd ~/.vim/bundle/ycmd
@@ -42,7 +42,3 @@ python3 build.py --clang-completer --go-completer --java-completer
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 python3 install.py --clang-completer --go-completer --java-completer
-
-#    Setup complete, place .vimrc
-mv ~/.vimrc_old ~/.vimrc
-
