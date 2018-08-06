@@ -6,13 +6,26 @@ if ! hash git 2>/dev/null || ! hash curl 2>/dev/null; then
     exit 127
 fi
 
-#   Copy .bashrc and rerun
-if [ -f ~/.bashrc ]; then
-    mv ~/.bashrc ~/.bashrc_old
+if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
+    echo ".bashrc or .vimrc has been found in your home folder."
+    echo "Your files will be renamed to <filename>_old"
+    read -p "Are you sure you want to proceed? (y/n): " yn
+    case $yn in 
+        [^Yy]) exit 0;;
+    esac
+
+    if [ -f ~/.bashrc ]; then
+        mv ~/.bashrc ~/.bashrc_old
+    fi
+
+    if [ -f ~/.vimrc ]; then
+        mv ~/.vimrc ~/.vimrc_old
+    fi
 fi
+
+#   Copy .bashrc and rerun
 cp ./bash/.bashrc ~/.bashrc
 source ~/.bashrc
-
 
 #   Ensure all .vim folders exist
 mkdir -p ~/.vim/backup
@@ -20,10 +33,6 @@ mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/swapfiles
 mkdir -p ~/.vim/undodir
 
-#   Ensure no .vimrc before Vundle install (themes will cause errors)
-if [ -f ~/.vimrc ]; then
-    mv ~/.vimrc ~/.vimrc_old
-fi
 #   Copy .vimrc
 cp ./vim/.vimrc ~/.vimrc
 
