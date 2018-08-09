@@ -27,6 +27,7 @@ Plugin 'itchyny/lightline.vim'
       \ }
 Plugin 'Valloric/ycmd'
 Plugin 'Valloric/YouCompleteMe'
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -63,7 +64,7 @@ set wildmenu
 :autocmd InsertEnter,InsertLeave * set cul!
 
 " cursor always centered
-set scrolloff=9999
+set scrolloff=10
 
 " set encryption default
 set cm=blowfish2

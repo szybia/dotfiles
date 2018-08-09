@@ -51,3 +51,6 @@ python3 build.py --clang-completer --go-completer --java-completer
 cd ~/.vim/bundle/YouCompleteMe
 git submodule update --init --recursive
 python3 install.py --clang-completer --go-completer --java-completer
+
+#   Copying ycm config file for c++ support
+cp ./vim/.ycm_extra_conf.py ~/.vim/bundle/YouCompleteMe/third_party/ycmd/
