@@ -28,6 +28,10 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'Valloric/ycmd'
 Plugin 'Valloric/YouCompleteMe'
     let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+Plugin 'airblade/vim-gitgutter'
+    " set vim update time to half a second for git tracking
+    set updatetime=500
+    let g:gitgutter_max_signs = 500  " only show 500 changes
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -120,6 +124,7 @@ let mapleader=','
 " enable folding
 set foldmethod=indent
 set foldlevel=99
+nnoremap <space> za
 
 " tabs to spaces
 set expandtab
@@ -137,3 +142,6 @@ let g:netrw_winsize = 25
 
 " always split evenly
 autocmd VimResized * wincmd =
+
+" default encoding
+set encoding=utf-8
