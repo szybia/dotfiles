@@ -145,3 +145,6 @@ autocmd VimResized * wincmd =
 
 " default encoding
 set encoding=utf-8
+
+"   default fileformat
+set fileformat=unix
