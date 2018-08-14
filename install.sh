@@ -54,3 +54,6 @@ python3 install.py --clang-completer --go-completer --java-completer
 
 #   Copying ycm config file for c++ support
 cp ./vim/.ycm_extra_conf.py ~/.vim/bundle/YouCompleteMe/third_party/ycmd/
+
+#   Setup vim-go
+vim +GoInstallBinaries
