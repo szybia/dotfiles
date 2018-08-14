@@ -67,36 +67,40 @@ filetype plugin indent on    " required
 
 "	*** VUNDLE SETUP END ***
 
+
+" ---------- Themes and Aeshetic ----------
+
 " dark theme
 set background=dark
 colorscheme palenight
 
-" keep 1000 items in the history
-set history=1000
 
-" show the cursor position
-set ruler
-
-" show incomplete commands
-set showcmd
-
-" show a menu when using tab completion
-set wildmenu
-
-" show cursorline when in insert mode
-:autocmd InsertEnter,InsertLeave * set cul!
-
-" cursor always centered
-set scrolloff=10
-
-" set encryption default
-set cm=blowfish2
+" ---------- Searching ----------
 
 " incremental, highlighted, case insensitive smart search
 set incsearch
 set hlsearch
 set ignorecase
 set smartcase
+
+" Quick search
+map <space> /
+map <c-space> ?
+
+" Visual mode pressing * or # searches for the current selection
+vnoremap <silent> * :<C-u>call VisualSelection('', '')<CR>/<C-R>=@/<CR><CR>
+vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
+
+" ---------- Cursor and rulers ----------
+
+" show the cursor position
+set ruler
+
+" cursor centered
+set scrolloff=10
+
+" show cursorline when in insert mode
+:autocmd InsertEnter,InsertLeave * set cul!
 
 " Insert mode absolute line numbers
 " Command mode relative line numbers
@@ -105,6 +109,59 @@ set smartcase
 :  autocmd BufEnter,FocusGained,InsertLeave * set number relativenumber
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
+
+
+
+" ---------- Vim defaults ----------
+
+" keep 500 items in the history
+set history=500
+
+" show incomplete commands
+set showcmd
+
+" show a menu when using tab completion
+set wildmenu
+
+" set encryption default
+set cm=blowfish2
+
+" global clipboard
+set clipboard=unnamedplus
+
+" prevent linebreak within word
+set lbr
+
+" map leader
+let mapleader=','
+
+" default encoding
+set encoding=utf-8
+
+" Dont redraw when executing macros
+set lazyredraw
+
+" Regex magic
+set magic
+
+" Read file when it is changed from the outside
+set autoread
+
+" Set 15 lines to the cursor when moving vertically
+set so=15
+
+let $LANG='en'
+set langmenu=en
+
+" Height of bottom command bar
+set cmdheight=2
+
+" Unix standard file type
+set ffs=unix,dos,mac
+
+
+
+" ---------- Windows and buffers ----------
 
 " switch windows with Ctrl + arrow keys
 nnoremap <C-l> <C-W>l
@@ -117,6 +174,28 @@ inoremap <C-h> <ESC><C-W>h
 inoremap <C-k> <ESC><C-W>k
 inoremap <C-j> <ESC><C-W>j
 
+
+
+" ---------- Useful remappings ----------
+
+" Call ESC on Ctrl-C
+inoremap <C-c> <ESC>
+
+" Remap VIM 0 to first non-blank character
+map 0 ^
+
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
+
+
+" ---------- Undo, swap and backup files ----------
+
 " specific locations for undo, swap and backup files to avoid spam
 set undodir=~/.vim/undodir//
 set backupdir=~/.vim/backup//
@@ -126,31 +205,60 @@ set directory=~/.vim/swapfiles//
 set undodir=~/.vim/undodir
 set undofile
 
-" global clipboard
-set clipboard=unnamedplus
 
-" prevent linebreak within word
-set lbr
+" ---------- White-space and indentation ----------
 
 " automatic smart indent
 set ai
 set si
-filetype plugin indent on
-
-" map leader
-let mapleader=','
 
 " enable folding
 set foldmethod=indent
 set foldlevel=99
-nnoremap <space> za
 
 " tabs to spaces
 set expandtab
+" smart tab
+set smarttab
 " tab size 4 spaces
 set tabstop=4
 " shift width 4 spaces
 set shiftwidth=4
+
+
+
+" ---------- Functions ----------
+
+function! VisualSelection(direction, extra_filter) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", "\\/.*'$^~[]")
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'gv'
+        call CmdLine("Ack '" . l:pattern . "' " )
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+
+" Delete trailing white space on save, useful for some file types ;)
+fun! CleanExtraSpaces()
+    let save_cursor = getpos(".")
+    let old_query = getreg('/')
+    silent! %s/\s\+$//e
+    call setpos('.', save_cursor)
+    call setreg('/', old_query)
+endfun
+
+
+
+" ---------- Miscalleanous ----------
 
 " netrw NERDtree like setup
 let g:netrw_banner = 0
@@ -162,8 +270,14 @@ let g:netrw_winsize = 25
 " always split evenly
 autocmd VimResized * wincmd =
 
-" default encoding
-set encoding=utf-8
+" Ignore compiled files
+set wildignore=*.o,*~,*.pyc
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
 
-"   default fileformat
-set fileformat=unix
+" Return to last edit position when opening files
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
