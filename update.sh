@@ -38,3 +38,5 @@ mkdir -p ~/.vim/undodir
 
 vim +PluginInstall +qall
 
+#   Setup vim-go
+vim +GoInstallBinaries
