@@ -25,6 +25,7 @@ Plugin 'itchyny/lightline.vim'
     let g:lightline = {
       \ 'colorscheme': 'palenight',
       \ }
+Plugin 'davidhalter/jedi-vim'
 Plugin 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
