@@ -49,6 +49,8 @@ let g:deoplete#enable_at_startup = 1
 
 Plugin 'zchee/deoplete-go', { 'do': 'make'}
 Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plugin 'artur-shaik/vim-javacomplete2'
+    autocmd FileType java setlocal omnifunc=javacomplete#Complete
 Plugin 'scrooloose/nerdcommenter'
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1

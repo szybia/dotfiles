@@ -53,3 +53,7 @@ vim +PluginInstall +qall
 
 #   Setup vim-go
 vim +GoInstallBinaries
+
+#   Setup java complete
+cd ~/.vim/bundle/vim-javacomplete2/libs/javavi
+mvn compile
