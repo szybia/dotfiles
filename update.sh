@@ -25,11 +25,11 @@ if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     fi
 fi
 
-cp ./bash/.bashrc ~/.bashrc
+ln -sfr bash/.bashrc ~/.bashrc
 # shellcheck source=/dev/null
 source ~/.bashrc
 
-cp ./vim/.vimrc ~/.vimrc
+ln -sfr vim/.vimrc ~/.vimrc
 
 #   Ensure all .vim folders exist
 mkdir -p ~/.vim/backup

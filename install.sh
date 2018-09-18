@@ -24,7 +24,7 @@ if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
 fi
 
 #   Copy .bashrc and rerun
-cp ./bash/.bashrc ~/.bashrc || exit 1
+ln -sfr bash/.bashrc ~/.bashrc
 # shellcheck source=/dev/null
 source ~/.bashrc
 
@@ -35,7 +35,7 @@ mkdir -p ~/.vim/swapfiles
 mkdir -p ~/.vim/undodir
 
 #   Copy .vimrc
-cp ./vim/.vimrc ~/.vimrc
+ln -sfr vim/.vimrc ~/.vimrc
 
 #   Vundle install
 if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
