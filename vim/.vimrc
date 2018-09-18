@@ -25,9 +25,6 @@ Plugin 'itchyny/lightline.vim'
     let g:lightline = {
       \ 'colorscheme': 'palenight',
       \ }
-Plugin 'Valloric/ycmd'
-Plugin 'Valloric/YouCompleteMe'
-    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 Plugin 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
