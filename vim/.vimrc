@@ -1,3 +1,10 @@
+"   Default python version
+if has('python3')
+   set pyx=3
+else
+   set pyx=2
+endif
+
 "	*** VUNDLE SETUP ***
 
 set nocompatible              " be iMproved, required
@@ -30,7 +37,18 @@ Plugin 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
     let g:gitgutter_max_signs = 500  " only show 500 changes
-Plugin 'fatih/vim-go'
+
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plugin 'Shougo/deoplete.nvim'
+  Plugin 'roxma/nvim-yarp'
+  Plugin 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+
+Plugin 'zchee/deoplete-go', { 'do': 'make'}
+Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plugin 'scrooloose/nerdcommenter'
     " Add spaces after comment delimiters by default
     let g:NERDSpaceDelims = 1

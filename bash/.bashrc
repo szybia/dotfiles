@@ -7,6 +7,9 @@ alias plz='sudo $(history -p \!\!)'
 #   Use htop rather than top
 alias top='htop'
 
+#   Add go bin to path
+PATH=$PATH:~/go/bin
+
 
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'

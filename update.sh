@@ -37,7 +37,15 @@ mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/swapfiles
 mkdir -p ~/.vim/undodir
 
+#   deoplete.nvim setup
+pip3 install neovim
+pip3 install greenlet==0.4.10
+
+#   deoplete-go setup
+go get -u github.com/mdempsky/gocode
+
 vim +PluginInstall +qall
+vim +PluginClean +y +qall
 
 #   Setup vim-go
 vim +GoInstallBinaries
