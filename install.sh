@@ -13,20 +13,26 @@ if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     case $yn in 
         [^Yy]) exit 0;;
     esac
-
+    
+    #   Copy .bashrc and rerun
     if [ -f ~/.bashrc ]; then
         mv ~/.bashrc ~/.bashrc_old
     fi
 
+    #   Ensure no .vimrc before Vundle install (themes will cause errors)
     if [ -f ~/.vimrc ]; then
         mv ~/.vimrc ~/.vimrc_old
     fi
 fi
 
+#   -----   BASH    --------------------
+
 #   Copy .bashrc and rerun
 ln -sfr bash/.bashrc ~/.bashrc
 # shellcheck source=/dev/null
 source ~/.bashrc
+
+#   -----   VIM     --------------------
 
 #   Ensure all .vim folders exist
 mkdir -p ~/.vim/backup

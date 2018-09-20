@@ -25,17 +25,23 @@ if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     fi
 fi
 
+#   -----   BASH    --------------------
+
+#   Copy .bashrc and rerun
 ln -sfr bash/.bashrc ~/.bashrc
 # shellcheck source=/dev/null
 source ~/.bashrc
 
-ln -sfr vim/.vimrc ~/.vimrc
+#   -----   VIM     --------------------
 
 #   Ensure all .vim folders exist
 mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/swapfiles
 mkdir -p ~/.vim/undodir
+
+#   Copy .vimrc
+ln -sfr vim/.vimrc ~/.vimrc
 
 #   deoplete.nvim setup
 pip3 install neovim
