@@ -5,10 +5,21 @@ alias plz='sudo $(history -p \!\!)'
 
 
 #   Use htop rather than top
-alias top='htop'
+if hash htop 2>/dev/null;
+then
+    alias top='htop'
+fi
+
+#   Use gpg2 rather than gpg
+if hash gpg2 2>/dev/null;
+then
+    alias gpg='gpg2'
+fi
 
 #   Add go bin to path
 PATH=$PATH:~/go/bin
+
+alias football='cd ~/Dropbox/Computer\ Science/GitHub\ Repos/Football-Predictor'
 
 
 #   Long list of everything
