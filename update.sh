@@ -9,7 +9,7 @@ fi
 if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     echo ".bashrc or .vimrc has been found in your home folder."
     echo "Your files will be renamed to <filename>_old"
-    read -pr "Are you sure you want to proceed? (y/n): " yn
+    read -p "Are you sure you want to proceed? (y/n): " yn
     case $yn in 
         [^Yy]) exit 0;;
     esac
@@ -44,14 +44,14 @@ mkdir -p ~/.vim/undodir
 ln -sfr vim/.vimrc ~/.vimrc
 
 #   deoplete.nvim setup
-pip3 install neovim
-pip3 install greenlet==0.4.10
+pip3 -q install neovim
+pip3 -q install greenlet==0.4.10
 
 #   deoplete-go setup
 go get -u github.com/mdempsky/gocode
 
 vim +PluginInstall +qall
-vim +PluginClean +y +qall
+vim +PluginClean +qall
 
 #   Setup vim-go
 vim +GoInstallBinaries

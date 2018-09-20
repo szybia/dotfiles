@@ -9,7 +9,7 @@ fi
 if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     echo ".bashrc or .vimrc has been found in your home folder."
     echo "Your files will be renamed to <filename>_old"
-    read -pr "Are you sure you want to proceed? (y/n): " yn
+    read -p "Are you sure you want to proceed? (y/n): " yn
     case $yn in 
         [^Yy]) exit 0;;
     esac
