@@ -47,7 +47,7 @@ alias ..='cd ../'
 
 
 #   FUNCTIONS
-mkdircd() {
+mkcd() {
     mkdir -p "$1"
     cd "$1"
  }
@@ -65,7 +65,7 @@ sha256check () {
     sha256sum "$1" | grep --color=auto "$2"
 }
 
-historygrep () {
+hisgrep () {
     history | grep "$1"
 }
 
