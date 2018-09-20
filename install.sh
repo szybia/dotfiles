@@ -49,8 +49,8 @@ if [ ! -f ~/.vim/bundle/Vundle.vim ]; then
 fi
 
 #   deoplete.nvim setup
-pip3 install neovim
-pip3 install greenlet==0.4.10
+sudo pip3 install neovim
+sudo pip3 install greenlet==0.4.10
 
 #   deoplete-go setup
 go get -u github.com/mdempsky/gocode

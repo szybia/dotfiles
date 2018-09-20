@@ -44,8 +44,8 @@ mkdir -p ~/.vim/undodir
 ln -sfr vim/.vimrc ~/.vimrc
 
 #   deoplete.nvim setup
-pip3 -q install neovim
-pip3 -q install greenlet==0.4.10
+sudo pip3 -q install neovim
+sudo pip3 -q install greenlet==0.4.10
 
 #   deoplete-go setup
 go get -u github.com/mdempsky/gocode
