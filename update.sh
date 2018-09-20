@@ -53,3 +53,7 @@ vim +GoInstallBinaries
 #   Setup java complete
 cd ~/.vim/bundle/vim-javacomplete2/libs/javavi
 mvn compile
+
+#   -----   gpg     --------------------
+mkdir -p ~/.gnupg/
+ln -sfr gnupg/gpg.conf ~/.gnupg/
