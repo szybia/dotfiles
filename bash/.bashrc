@@ -1,8 +1,11 @@
+#!/bin/bash
+#   Credit:
+#       github.com/jessfraz/dotfiles
+
 source /usr/share/defaults/etc/profile
 
 #   Repeat previous command with sudo
 alias plz='sudo $(history -p \!\!)'
-
 
 #   Use htop rather than top
 if hash htop 2>/dev/null;
@@ -51,11 +54,35 @@ alias grep="grep --color=auto"
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob
+
+# Append to the Bash history file, rather than overwriting it
+shopt -s histappend
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell
+
 #   History time format
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
+#   Tab case insensitive autocompletion
+bind 'set completion-ignore-case on'
 
+# List all matches in case multiple possible completions are possible
+bind 'set show-all-if-ambiguous on'
 
+# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
+bind 'set match-hidden-files off'
+
+# Show all autocomplete results at once
+bind 'set page-completions off'
+
+# If there are more than 100 possible completions for a word, ask to show them all
+bind 'set completion-query-items 100'
+
+# Show extra file information when completing, like `ls -F` does
+bind 'set visible-stats on'
 
 #   FUNCTIONS
 mkcd() {
