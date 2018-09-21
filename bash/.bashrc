@@ -44,6 +44,7 @@ alias dl="cd ~/Downloads"
 alias g="git"
 alias h="history"
 alias r="ranger"
+alias v='vim'
 
 #   Coloured grep
 alias grep="grep --color=auto"
@@ -144,7 +145,7 @@ up() {
 }
 
 # Make a temporary directory and enter it
-tmpd() {
+tmpcd() {
 	local dir
 	if [ $# -eq 0 ]; then
 		dir=$(mktemp -d)
