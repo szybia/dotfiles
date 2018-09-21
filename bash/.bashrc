@@ -22,9 +22,6 @@ fi
 #   Add go bin to path
 PATH=$PATH:~/go/bin
 
-alias football='cd ~/Dropbox/Computer\ Science/GitHub\ Repos/Football-Predictor'
-
-
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
 #   List hidden
@@ -96,11 +93,11 @@ cdls() {
 }
 
 md5check () {
-    md5sum "$1" | grep --color=auto "$2"
+    md5sum "$1" | grep "$2"
 }
 
 sha256check () {
-    sha256sum "$1" | grep --color=auto "$2"
+    sha256sum "$1" | grep "$2"
 }
 
 hisgrep () {
@@ -144,4 +141,38 @@ up() {
         cd ..
         times=$(($times - 1))
     done
+}
+
+# Make a temporary directory and enter it
+tmpd() {
+	local dir
+	if [ $# -eq 0 ]; then
+		dir=$(mktemp -d)
+	else
+		dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
+	fi
+	cd "$dir" || exit
+}
+
+# Compare original and gzipped file size
+gz() {
+	local origsize
+	origsize=$(wc -c < "$1")
+	local gzipsize
+	gzipsize=$(gzip -c "$1" | wc -c)
+	local ratio
+	ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l)
+	printf "orig: %d bytes\\n" "$origsize"
+	printf "gzip: %d bytes (%2.2f%%)\\n" "$gzipsize" "$ratio"
+}
+
+# check if uri is up
+isup() {
+	local uri=$1
+
+	if curl -s --head  --request GET "$uri" | grep "200 OK" > /dev/null ; then
+		notify-send --urgency=critical "$uri is down"
+	else
+		notify-send --urgency=low "$uri is up"
+	fi
 }
