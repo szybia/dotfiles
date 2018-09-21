@@ -32,18 +32,29 @@ alias l='ls -CF --color=auto'
 #   Search for files
 alias fhere='find . -name '
 
-
 #   List IP
 alias myip="curl http://ipecho.net/plain; echo"
 
+#   Make cd quicker
+alias cd..='cd ../'
+alias ..='cd ../'
+
+#   Popular command shortcuts
+alias dl="cd ~/Downloads"
+alias g="git"
+alias h="history"
+alias r="ranger"
+
+#   Coloured grep
+alias grep="grep --color=auto"
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   History time format
 export HISTTIMEFORMAT="%d/%m/%y %T "
 
 
-#   Make cd quicker
-alias cd..='cd ../'
-alias ..='cd ../'
 
 
 #   FUNCTIONS
