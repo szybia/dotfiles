@@ -177,3 +177,8 @@ isup() {
 		notify-send --urgency=low "$uri is up"
 	fi
 }
+
+# define word
+def() {
+    /usr/bin/firefox --new-tab -search "define $1"
+}
