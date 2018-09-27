@@ -182,3 +182,10 @@ isup() {
 def() {
     /usr/bin/firefox --new-tab -search "define $1"
 }
+
+bg-wall () {
+    DIR="${HOME}/Dropbox/Wallpapers"
+    PIC=$(ls $DIR/* | shuf -n1)
+
+    gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
+}
