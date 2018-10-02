@@ -191,5 +191,5 @@ bg-wall () {
     gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
 }
 
-# Only show 4 directorys in terminal working path
-export PROMPT_DIRTRIM=4
+# Only show n directorys in terminal working path
+export PROMPT_DIRTRIM=2
