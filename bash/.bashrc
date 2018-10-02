@@ -45,6 +45,7 @@ alias g="git"
 alias h="history"
 alias r="ranger"
 alias v='vim'
+alias winhere='nautilus . &'
 
 #   Coloured grep
 alias grep="grep --color=auto"
