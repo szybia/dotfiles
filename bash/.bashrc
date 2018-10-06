@@ -184,6 +184,11 @@ def() {
     /usr/bin/firefox --new-tab -search "define $1"
 }
 
+# word synonym
+syn() {
+    /usr/bin/firefox --new-tab -search "synonym $1"
+}
+
 bg-wall () {
     DIR="${HOME}/Dropbox/Wallpapers"
     PIC=$(ls $DIR/* | shuf -n1)
