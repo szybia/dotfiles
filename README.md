@@ -1,1 +1,5 @@
-##### all my relevant dotfiles
+#### Update
+`make update`
+
+#### Install
+`make install`
