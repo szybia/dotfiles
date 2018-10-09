@@ -37,6 +37,7 @@ Plugin 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
     let g:gitgutter_max_signs = 500  " only show 500 changes
+Plugin 'mdempsky/gocode', {'rtp': 'vim/'}
 
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -177,6 +178,11 @@ set cmdheight=2
 " Unix standard file type
 set ffs=unix,dos,mac
 
+set noerrorbells
+
+" speed up syntax highlighting
+set nocursorcolumn
+set nocursorline
 
 
 " ---------- Windows and buffers ----------
@@ -298,4 +304,3 @@ endif
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
