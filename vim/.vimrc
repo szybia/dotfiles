@@ -67,9 +67,7 @@ Plugin 'scrooloose/nerdcommenter'
     let g:NERDTrimTrailingWhitespace = 1
     " Enable NERDCommenterToggle to check all selected lines is commented or not
     let g:NERDToggleCheckAllLines = 1
-Plugin 'rbgrouleff/bclose.vim'
-Plugin 'jiangmiao/auto-pairs'
-
+Plugin 'Raimondi/delimitMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
