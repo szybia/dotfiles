@@ -68,6 +68,13 @@ Plugin 'scrooloose/nerdcommenter'
     " Enable NERDCommenterToggle to check all selected lines is commented or not
     let g:NERDToggleCheckAllLines = 1
 Plugin 'Raimondi/delimitMate'
+Plugin 'ntpeters/vim-better-whitespace'
+    let g:better_whitespace_enabled=1
+    let g:strip_whitespace_on_save=1
+Plugin 'tpope/vim-endwise'
+Plugin 'Yggdroot/indentLine'
+Plugin 'elzr/vim-json'
+Plugin 'tpope/vim-sensible'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
