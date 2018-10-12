@@ -52,7 +52,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioNext exec playerctl next
 
 ### Other ###
-bindsym Print exec scrot -q 100
+bindsym Print exec "scrot '%Y-%m-%d_$wx$h_scrot.png' -q 100 -e 'mv $f ~/Pictures/Screenshots'"
 
 ### Sound ###
 # Raise Volume
