@@ -34,6 +34,8 @@ font pango:Clear Sans 10
 ########## Autolaunch ##########
 exec --no-startup-id nm-applet
 exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id feh --bg-scale `echo $(ls "${HOME}/Dropbox/Wallpapers"/* | shuf -n1)`
+exec --no-startup-id dropbox start
 
 ########## Keybindings ##########
 bindsym $mod+Shift+s exec $lockcmd -ec 111111
