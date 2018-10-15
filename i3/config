@@ -264,3 +264,6 @@ bindsym $mod+y border pixel 2
 bindsym $mod+u border none
 
 for_window [class=".*"] border pixel 2
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
