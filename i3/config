@@ -40,7 +40,7 @@ exec --no-startup-id dropbox start
 exec --no-startup-id gnome-session-i3
 
 ########## Keybindings ##########
-bindsym $mod+Shift+s exec $lockcmd -ec 111111
+bindsym $mod+Shift+s exec $lockcmd -uec 111111
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
