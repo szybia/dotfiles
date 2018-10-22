@@ -53,6 +53,11 @@ alias grep="grep --color=auto"
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
+alias gstat='git status'
+alias glog='git log'
+
+alias dcom='docker-compose'
+
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
