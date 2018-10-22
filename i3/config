@@ -116,6 +116,13 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+
+# split in horizontal orientation
+bindsym $mod+bar split h
+
+# split in vertical orientation
+bindsym $mod+minus split v
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
