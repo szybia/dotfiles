@@ -310,3 +310,9 @@ endif
 
 " Return to last edit position when opening files
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" shortcut to delete in the black hole register
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+" shortcut to paste but keeping the current register
+vnoremap <leader>p "_dP
