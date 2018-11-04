@@ -22,6 +22,10 @@ fi
 #   Add go bin to path
 PATH=$PATH:~/go/bin
 
+
+#   ALIASES
+
+
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
 #   List hidden
@@ -56,7 +60,13 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 alias gstat='git status'
 alias glog='git log'
 
+# Docker aliases
 alias dcom='docker-compose'
+
+# curl API | pretty
+alias pretty='python -m json.tool'
+
+
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
