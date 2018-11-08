@@ -61,7 +61,7 @@ bindsym XF86AudioNext exec playerctl next
 # Full screenshot
 bindsym F11 exec "scrot '%Y-%m-%d_$wx$h_scrot.png' -q 100 -e 'mv $f ~/Pictures/Screenshots'"
 # Select screenshot
-bindsym $mod+F11 exec "sleep 0.4; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'
+bindsym $mod+F11 exec "sleep 0.4; scrot -q 100 -s ${HOME}'/Pictures/Screenshots/%Y-%m-%d-%H-%M-%S_$wx$h.png'"
 
 ### Sound ###
 # Raise Volume
