@@ -33,15 +33,37 @@ alias la='ls -A --color=auto'
 #   Classify and list by column
 alias l='ls -CF --color=auto'
 
+#   df default
+alias df="df -Th --total"
+
+#   free default
+alias free="free -mt"
+
+#   ps default
+alias ps="ps auxf"
+
+#   mkdir default create parents
+alias mkdir="mkdir -p"
+
+#   wget continue downloading in case of problem
+alias wget="wget -c"
+
 #   Search for files
 alias fhere='find . -name '
 
 #   List IP
 alias myip="curl http://ipecho.net/plain; echo"
 
+#   listen to processes on network
+alias listen="lsof -P -i -n"
+
+#   hilarious
+alias busy="cat /dev/urandom | hexdump -C | grep 'ca fe'"
+
 #   Make cd quicker
 alias cd..='cd ../'
 alias ..='cd ../'
+alias ...='cd ../..'
 
 #   Popular command shortcuts
 alias dl="cd ~/Downloads"
