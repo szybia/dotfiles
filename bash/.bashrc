@@ -142,7 +142,7 @@ sha256check () {
     sha256sum "$1" | grep "$2"
 }
 
-hisgrep () {
+histg () {
     history | grep "$1"
 }
 
