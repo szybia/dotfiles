@@ -236,5 +236,8 @@ bg-wall () {
     gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
 }
 
+#   Create backup file
+backup() { cp "$1"{,.bak};}
+
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=2
