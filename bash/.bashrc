@@ -79,6 +79,9 @@ alias grep="grep --color=auto"
 # Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
+#   git aliases
+alias g="git"
+alias gc="git commit -v"
 alias gstat='git status'
 alias glog='git log'
 
