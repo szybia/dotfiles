@@ -91,6 +91,10 @@ alias dcom='docker-compose'
 # curl API | pretty
 alias pretty='python -m json.tool'
 
+#   easier clipboard
+alias cbcopy='xclip -selection clipboard'
+alias cbpaste='xclip -selection clipboard -o'
+
 
 
 # Case-insensitive globbing (used in pathname expansion)
