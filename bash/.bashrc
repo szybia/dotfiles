@@ -25,6 +25,7 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
+export GPG_TTY=$(tty)
 
 #   Tab case insensitive autocompletion
 bind 'set completion-ignore-case on'
