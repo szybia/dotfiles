@@ -1,0 +1,83 @@
+#   Repeat previous command with sudo
+alias plz='sudo $(history -p \!\!)'
+
+#   Use htop rather than top
+if hash htop 2>/dev/null;
+then
+    alias top='htop'
+fi
+
+#   Use gpg2 rather than gpg
+if hash gpg2 2>/dev/null;
+then
+    alias gpg='gpg2'
+fi
+
+#   Long list of everything
+alias ll='ls -AlhF --color=auto'
+#   List hidden
+alias la='ls -A --color=auto'
+#   Classify and list by column
+alias l='ls -CF --color=auto'
+
+#   df default
+alias df="df -Th --total"
+
+#   free default
+alias free="free -mt"
+
+#   ps default
+alias ps="ps auxf"
+
+#   mkdir default create parents
+alias mkdir="mkdir -p"
+
+#   wget continue downloading in case of problem
+alias wget="wget -c"
+
+#   Search for files
+alias fhere='find . -name '
+
+#   List IP
+alias myip="curl http://ipecho.net/plain; echo"
+
+#   listen to processes on network
+alias listen="lsof -P -i -n"
+
+#   hilarious
+alias busy="cat /dev/urandom | hexdump -C | grep 'ca fe'"
+
+#   Make cd quicker
+alias cd..='cd ../'
+alias ..='cd ../'
+alias ...='cd ../..'
+
+#   Popular command shortcuts
+alias dl="cd ~/Downloads"
+alias g="git"
+alias h="history"
+alias r="ranger"
+alias v='vim'
+alias winhere='nohup nautilus . >/dev/null 2>&1 &'
+
+#   Coloured grep
+alias grep="grep --color=auto"
+
+# Stopwatch
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+
+#   git aliases
+alias g="git"
+alias gc="git commit -v"
+alias gstat='git status'
+alias glog='git log'
+
+# Docker aliases
+alias dcom='docker-compose'
+
+# curl API | pretty
+alias pretty='python -m json.tool'
+
+#   easier clipboard
+alias cbcopy='xclip -selection clipboard'
+alias cbpaste='xclip -selection clipboard -o'
