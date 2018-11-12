@@ -130,6 +130,12 @@ bind 'set completion-query-items 100'
 # Show extra file information when completing, like `ls -F` does
 bind 'set visible-stats on'
 
+# Allows cycling through options
+bind 'TAB':menu-complete
+
+# Partial completion of first tab, cycling on second onwards
+bind "set menu-complete-display-prefix on"
+
 #   FUNCTIONS
 mkcd() {
     mkdir -p "$1"
