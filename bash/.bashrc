@@ -17,6 +17,9 @@ shopt -s histappend
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
+# Allow bash recursive globbbing
+shopt -s globstar
+
 #   History time format
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTSIZE=1000000
