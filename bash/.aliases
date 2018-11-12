@@ -68,9 +68,21 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 #   git aliases
 alias g="git"
+
+alias ga="git add"
+
 alias gc="git commit -v"
-alias gstat='git status'
-alias glog='git log'
+alias gcm="git commit -v -m"
+alias gcSm="git commit -v -S -m"
+
+alias gd="git diff"
+
+alias gl='git log'
+
+alias gp="git push"
+alias gpom="git push origin master"
+
+alias gs='git status'
 
 # Docker aliases
 alias dcom='docker-compose'
