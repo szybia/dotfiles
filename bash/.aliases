@@ -54,7 +54,6 @@ alias ...='cd ../..'
 
 #   Popular command shortcuts
 alias dl="cd ~/Downloads"
-alias g="git"
 alias h="history"
 alias r="ranger"
 alias v='vim'
