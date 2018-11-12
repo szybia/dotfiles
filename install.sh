@@ -29,6 +29,7 @@ fi
 
 #   Copy .bashrc and rerun
 ln -sfr bash/.bashrc ~/.bashrc
+ln -sfr bash/.aliases ~/.aliases
 # shellcheck source=/dev/null
 source ~/.bashrc
 
