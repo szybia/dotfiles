@@ -10,10 +10,10 @@ if [ -f ~/.bashrc ] || [ -f ~/.vimrc  ]; then
     echo ".bashrc or .vimrc has been found in your home folder."
     echo "Your files will be renamed to <filename>_old"
     read -p "Are you sure you want to proceed? (y/n): " yn
-    case $yn in 
+    case $yn in
         [^Yy]) exit 0;;
     esac
-    
+
     #   Copy .bashrc and rerun
     if [ -f ~/.bashrc ]; then
         mv ~/.bashrc ~/.bashrc_old
