@@ -3,6 +3,7 @@
 #       github.com/jessfraz/dotfiles
 
 source /usr/share/defaults/etc/profile
+source ~/.aliases
 
 #   Add go bin to path
 PATH=$PATH:~/go/bin
