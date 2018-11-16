@@ -73,6 +73,7 @@ alias ga="git add"
 alias gc="git commit -v"
 alias gcm="git commit -v -m"
 alias gcSm="git commit -v -S -m"
+alias gcsm="git commit -v -S -m"
 
 alias gd="git diff"
 
@@ -80,6 +81,9 @@ alias gl='git log'
 
 alias gp="git push"
 alias gpom="git push origin master"
+
+alias grm="git rm"
+alias grmc="git rm --cached"
 
 alias gs='git status'
 
