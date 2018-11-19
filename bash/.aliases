@@ -57,7 +57,7 @@ alias dl="cd ~/Downloads"
 alias h="history"
 alias r="ranger"
 alias v='vim'
-alias winhere='nohup nautilus . >/dev/null 2>&1 &'
+alias winhere='nohup nautilus . &>/dev/null &'
 
 #   Coloured grep
 alias grep="grep --color=auto"
