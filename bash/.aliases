@@ -58,6 +58,7 @@ alias h="history"
 alias r="ranger"
 alias v='vim'
 alias winhere='nohup nautilus . &>/dev/null &'
+alias winexit='nohup nautilus . &>/dev/null & exit'
 
 #   Coloured grep
 alias grep="grep --color=auto"
