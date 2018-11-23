@@ -81,6 +81,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 # start firefox
 bindsym $mod+Shift+F exec firefox
 
+# start VirtualBox
 bindsym $mod+Shift+V exec VirtualBox
 
 # kill focused window
