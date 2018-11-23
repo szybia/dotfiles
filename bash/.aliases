@@ -77,6 +77,7 @@ alias gc="git commit -v"
 alias gcm="git commit -v -m"
 alias gcSm="git commit -v -S -m"
 alias gcsm="git commit -v -S -m"
+alias gscm="git commit -v -S -m"
 
 alias gd="git diff"
 
