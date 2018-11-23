@@ -84,6 +84,9 @@ bindsym $mod+Shift+F exec firefox
 # start VirtualBox
 bindsym $mod+Shift+V exec VirtualBox
 
+# start GitKraken
+bindsym $mod+Shift+G exec gitkraken
+
 # kill focused window
 bindsym $mod+q kill
 
