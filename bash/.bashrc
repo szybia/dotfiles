@@ -158,7 +158,7 @@ syn() {
 }
 
 #   Create backup file
-backup() { cp "$1"{,.bak};}
+bak() { cp "$1"{,.bak};}
 
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=2
