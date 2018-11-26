@@ -157,13 +157,6 @@ syn() {
     /usr/bin/firefox --new-tab -search "synonym $1"
 }
 
-bg-wall () {
-    DIR="${HOME}/Dropbox/Wallpapers"
-    PIC=$(ls $DIR/* | shuf -n1)
-
-    gsettings set org.gnome.desktop.background picture-uri "file://$PIC"
-}
-
 #   Create backup file
 backup() { cp "$1"{,.bak};}
 
