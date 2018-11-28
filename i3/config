@@ -239,6 +239,7 @@ set $white #FFFFFF
 # finds out, if available)
 bar {
     status_command $barcmd --config ~/.config/i3/status.conf
+
     position top
     height 20
     separator_symbol "    "
