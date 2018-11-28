@@ -277,9 +277,4 @@ smart_gaps on
 gaps inner 10
 gaps outer 0
 
-# use no window title and a thick border
-bindsym $mod+y border pixel 2
-# use neither window title nor border
-bindsym $mod+u border none
-
 for_window [class=".*"] border pixel 2
