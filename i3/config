@@ -238,6 +238,8 @@ set $urgent-bg-color     #E53935
 bar {
         status_command $barcmd --config ~/.config/i3/status.conf
         position top
+        height 20
+        separator_symbol "    "
 
         colors {
             background #222222
