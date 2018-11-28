@@ -244,11 +244,6 @@ bar {
     colors {
         background #1E272E
 
-        # focused_workspace #3685e2 #3685e2 #fafafa
-        # active_workspace #5294e2 #5294e2 #fafafa
-        # inactive_workspace #404552 #404552 #fafafa
-        # urgent_workspace #ff5757 #ff5757 #fafafa
-
         #                  border             background         text
         focused_workspace  $bg-color          $bg-color          $text-color
         inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
