@@ -242,7 +242,7 @@ bar {
         separator_symbol "    "
 
         colors {
-            background #222222
+            background #1E272E
 
             # focused_workspace #3685e2 #3685e2 #fafafa
             # active_workspace #5294e2 #5294e2 #fafafa
