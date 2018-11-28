@@ -223,11 +223,8 @@ mode "resize" {
         bindsym Right       resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
 bindsym $mod+r mode "resize"
 
 set $bg-color 	         #2f343f
