@@ -1,1 +1,96 @@
 !   urxvt config
+!   Credit:
+!       https://www.askapache.com/s/u.askapache.com/2013/07/Xresources.txt
+!       https://github.com/jessfraz/dotfiles
+
+
+! Specifies the terminal type name to be set in the TERM environment variable
+URxvt*termName:                         rxvt
+
+! No scrollbar
+URxvt*scrollBar:     false
+
+! scroll to bottom when a non-special key pressed
+URxvt*scrollTtyKeypress:                true
+
+! scroll to bottom when tty receives output
+URxvt*scrollTtyOutput:                  false
+
+! scroll with scrollback buffer when tty recieves new lines (and scrollTtyOutput is False)
+URxvt*scrollWithBuffer:                 true
+
+! When receiving lots of lines, urxvt will only scroll once a whole screen height of lines has been read,
+! resulting in fewer updates while still displaying every received line
+URxvt*jumpScroll:                       true
+
+! When receiving lots of lines, urxvt will only scroll once in a while (around 60x/sec)
+URxvt*skipScroll:                       true
+
+! pseudo-transparency by using the root pixmap as background
+URxvt*transparent:                    false
+
+! Fonts
+URxvt*font:                             xft:Fira Code:pixelsize=15:hinting=full:antialias=true
+URxvt*italicFont:                       xft:Fira Code:italic:autohint=true:pixelsize=15:antialias=true
+URxvt*boldItalicFont:                   xft:Fira Code:bold:italic:autohint=true:pixelsize=15:antialias=true
+! Letter spacing adjustment (weird but makes Fira Code look more normal)
+URxvt*letterSpace:                    -1
+
+! Fade terminal text when not in focus
+URxvt*fading:        25
+
+! Underline over block cursor
+URxvt*cursorUnderline: true
+
+! utf8
+URxvt*utf8:         true
+
+!-- Xft settings -- !
+Xft.rgba:       rgb
+Xft.autohint:   0
+Xft.lcdfilter:  lcddefault
+Xft.hintstyle:  hintfull
+Xft.hinting:    1
+Xft.antialias:  1
+
+! Colours
+URxvt*background:   #1a1a1a
+URxvt*foreground:   White
+!
+! URxvt*color0:  #000000 // black
+! URxvt*color1:  #B40000 // red
+! URxvt*color2:  #00AA00 // green
+! URxvt*color3:  #AAAA00 // yellow
+! URxvt*color4:  #5555AA // blue
+! URxvt*color5:  #AA00AA // magenta
+! URxvt*color6:  #00AAAA // pink
+! URxvt*color7:  #AAAAAA // white
+! URxvt*color8:  #555555 // black (now and below: bright)
+! URxvt*color9:  #FF0000 // red
+! URxvt*color10: #00FF00 // green
+! URxvt*color11: #FFFF00 // yellow
+! URxvt*color12: #6464FF // blue
+! URxvt*color13: #FF00FF // magenta
+! URxvt*color14: #00FFFF // cyan
+! URxvt*color15: #FFFFFF // white
+
+
+! clickable urls
+URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,clipboard
+URxvt.url-launcher:         /usr/bin/firefox
+URxvt.matcher.button:       1
+URxvt.url-select.underline: true
+
+! copy paste
+URxvt.clipboard.autocopy:   true
+URxvt.clipboard.copycmd:    xclip -i -selection clipboard
+URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
+
+! disable default bindings for Control-Shift
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! Control-Shift-C for copy
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.Control-v: perl:clipboard:paste
