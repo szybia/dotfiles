@@ -8,7 +8,7 @@
 URxvt*termName:                         rxvt
 
 ! No scrollbar
-URxvt*scrollBar:     false
+URxvt*scrollBar:                        false
 
 ! scroll to bottom when a non-special key pressed
 URxvt*scrollTtyKeypress:                true
@@ -27,23 +27,23 @@ URxvt*jumpScroll:                       true
 URxvt*skipScroll:                       true
 
 ! pseudo-transparency by using the root pixmap as background
-URxvt*transparent:                    false
+URxvt*transparent:                      false
 
 ! Fonts
 URxvt*font:                             xft:Fira Code:pixelsize=15:hinting=full:antialias=true
 URxvt*italicFont:                       xft:Fira Code:italic:autohint=true:pixelsize=15:antialias=true
 URxvt*boldItalicFont:                   xft:Fira Code:bold:italic:autohint=true:pixelsize=15:antialias=true
 ! Letter spacing adjustment (weird but makes Fira Code look more normal)
-URxvt*letterSpace:                    -1
+URxvt*letterSpace:      -1
 
 ! Fade terminal text when not in focus
-URxvt*fading:        25
+URxvt*fading:           25
 
 ! Underline over block cursor
-URxvt*cursorUnderline: true
+URxvt*cursorUnderline:  true
 
 ! utf8
-URxvt*utf8:         true
+URxvt*utf8: true
 
 !-- Xft settings -- !
 Xft.rgba:       rgb
@@ -69,10 +69,10 @@ URxvt.clipboard.copycmd:    xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
 
 ! disable default bindings for Control-Shift
-URxvt.iso14755: false
-URxvt.iso14755_52: false
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
 
 ! Control-Shift-C for copy
-URxvt.keysym.C-C: perl:clipboard:copy
-URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.C-C:       perl:clipboard:copy
+URxvt.keysym.C-V:       perl:clipboard:paste
 URxvt.keysym.Control-v: perl:clipboard:paste
