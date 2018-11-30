@@ -23,10 +23,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'drewtempelmeyer/palenight.vim'
     let g:palenight_terminal_italics=1
     set noshowmode
-    " GUI colours
-    if (has("termguicolors"))
-      set termguicolors
-    endif
 Plugin 'itchyny/lightline.vim'
     set laststatus=2
     let g:lightline = {
