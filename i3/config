@@ -28,6 +28,7 @@ set $right l
 set $lockcmd i3lock
 set $barcmd i3status
 set $font Fira Code
+set $terminal urxvt
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -82,7 +83,7 @@ bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mu
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $terminal
 
 # start firefox
 bindsym $mod+Shift+F exec firefox
