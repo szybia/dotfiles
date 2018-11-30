@@ -160,5 +160,8 @@ syn() {
 #   Create backup file
 bak() { cp "$1"{,.bak};}
 
+# miniconda
+export PATH=~/miniconda3/bin:$PATH
+
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=2
