@@ -1,6 +1,8 @@
 #   dircolors config file
 #   Credit:
 #       https://github.com/seebi/dircolors-solarized
+#       https://securitronlinux.com/bejiitaswrath/linux-mint-ubuntu-dircolors-command/
+
 
 #   specify termtypes which are colorizable
 TERM Eterm
@@ -72,3 +74,23 @@ TERM xterm-88color
 TERM xterm-color
 TERM xterm-debian
 TERM xterm-termite
+
+#   File colors
+NORMAL 00;38;5;15           # global default
+DIR    01;38;5;33           # directories
+LINK   01;38;5;37           # symbolic link
+RESET  00;38;5;15           # symbolic link arrows, exe star, dir foreslash
+MULTIHARDLINK 00;38;5;15    # file with more than one link
+EXEC   01;38;5;119          # executable
+FIFO   01;38;5;215          # pipe
+SOCK   01;38;5;164          # socket
+DOOR   01;38;5;141          # door
+CHR    01;38;5;11           # character device driver
+
+ORPHAN 01;38;5;160          # symlink to nonexistent file, or non-stat'able file
+SETUID 01;48;5;196;38;5;230 # file that is setuid (u+s) */ */
+SETGID 00;48;5;136;38;5;230 # file that is setgid (g+s)
+CAPABILITY 30;41            # file with capability
+STICKY_OTHER_WRITABLE 48;5;64;38;5;230  # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 48;5;235;38;5;33         # dir that is other-writable (o+w) and not sticky
+STICKY 48;5;33;38;5;230                 # dir with the sticky bit set (+t) and not other-writable
