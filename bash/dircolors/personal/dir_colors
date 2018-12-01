@@ -81,7 +81,7 @@ DIR    01;38;5;33           # directories
 LINK   01;38;5;6           # symbolic link
 RESET  00;38;5;15           # symbolic link arrows, exe star, dir foreslash
 MULTIHARDLINK 00;38;5;15    # file with more than one link
-EXEC   01;38;5;119          # executable
+EXEC   01;38;5;10           # executable
 FIFO   01;38;5;215          # pipe
 SOCK   01;38;5;164          # socket
 DOOR   01;38;5;141          # door
