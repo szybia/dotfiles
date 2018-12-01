@@ -221,3 +221,24 @@ STICKY 48;5;33;38;5;230                 # dir with the sticky bit set (+t) and n
 .class      00;38;5;241
 .cache      00;38;5;241
 
+
+# audio formats
+.aac    00;38;5;178
+.au     00;38;5;178
+.flac   00;38;5;178
+.mid    00;38;5;178
+.midi   00;38;5;178
+.mka    00;38;5;178
+.mp3    00;38;5;178
+.mpc    00;38;5;178
+.ogg    00;38;5;178
+.opus   00;38;5;178
+.ra     00;38;5;178
+.wav    00;38;5;178
+.m4a    00;38;5;178
+# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+.axa    00;38;5;178
+.oga    00;38;5;178
+.spx    00;38;5;178
+.xspf   00;38;5;178
+
