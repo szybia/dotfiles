@@ -273,4 +273,4 @@ STICKY 48;5;33;38;5;230                 # dir with the sticky bit set (+t) and n
 .axv    01;38;5;178
 .anx    01;38;5;178
 .ogv    01;38;5;178
-.ogx    00;38;5;178
+.ogx    01;38;5;178
