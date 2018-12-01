@@ -5,6 +5,8 @@
 source /usr/share/defaults/etc/profile
 source ~/.aliases
 
+eval $(dircolors ~/.dir_colors)
+
 #   Add go bin to path
 PATH=$PATH:~/go/bin
 
