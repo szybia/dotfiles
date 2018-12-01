@@ -94,3 +94,36 @@ CAPABILITY 30;41            # file with capability
 STICKY_OTHER_WRITABLE 48;5;64;38;5;230  # dir that is sticky and other-writable (+t,o+w)
 OTHER_WRITABLE 48;5;235;38;5;33         # dir that is other-writable (o+w) and not sticky
 STICKY 48;5;33;38;5;230                 # dir with the sticky bit set (+t) and not other-writable
+
+# archives or compressed
+.tar    01;38;5;62
+.tgz    01;38;5;62
+.arj    01;38;5;62
+.taz    01;38;5;62
+.lzh    01;38;5;62
+.lzma   01;38;5;62
+.tlz    01;38;5;62
+.txz    01;38;5;62
+.zip    01;38;5;62
+.z      01;38;5;62
+.Z      01;38;5;62
+.dz     01;38;5;62
+.gz     01;38;5;62
+.lz     01;38;5;62
+.xz     01;38;5;62
+.bz2    01;38;5;62
+.bz     01;38;5;62
+.tbz    01;38;5;62
+.tbz2   01;38;5;62
+.tz     01;38;5;62
+.deb    01;38;5;62
+.rpm    01;38;5;62
+.jar    01;38;5;62
+.rar    01;38;5;62
+.ace    01;38;5;62
+.zoo    01;38;5;62
+.cpio   01;38;5;62
+.7z     01;38;5;62
+.rz     01;38;5;62
+.apk    01;38;5;62
+.gem    01;38;5;62
