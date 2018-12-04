@@ -4,6 +4,7 @@
 
 source /usr/share/defaults/etc/profile
 source ~/.aliases
+source ~/.functions
 
 eval $(dircolors ~/.dir_colors)
 
