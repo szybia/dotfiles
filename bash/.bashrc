@@ -24,6 +24,9 @@ shopt -s cdspell
 # Allow bash recursive globbbing
 shopt -s globstar
 
+# Check window size after each command
+shopt -s checkwinsize
+
 #   Tab case insensitive autocompletion
 bind 'set completion-ignore-case on'
 
