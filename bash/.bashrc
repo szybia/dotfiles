@@ -3,9 +3,6 @@
 #       github.com/jessfraz/dotfiles
 
 source /usr/share/defaults/etc/profile
-source ~/.aliases
-source ~/.functions
-source ~/.exports
 
 eval $(dircolors ~/.dir_colors)
 
@@ -50,3 +47,10 @@ bind 'TAB':menu-complete
 
 # Partial completion of first tab, cycling on second onwards
 bind "set menu-complete-display-prefix on"
+
+for file in ~/.{aliases,functions,exports}; do
+    if [[ -r "$file" ]]; then
+        source "$file"
+    fi
+done
+unset file
