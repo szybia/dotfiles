@@ -5,6 +5,7 @@
 source /usr/share/defaults/etc/profile
 source ~/.aliases
 source ~/.functions
+source ~/.exports
 
 eval $(dircolors ~/.dir_colors)
 
@@ -22,13 +23,6 @@ shopt -s cdspell
 
 # Allow bash recursive globbbing
 shopt -s globstar
-
-#   History time format
-export HISTTIMEFORMAT="%d/%m/%y %T "
-export HISTSIZE=1000000
-export HISTFILESIZE=$HISTSIZE;
-export HISTCONTROL=ignoredups;
-export GPG_TTY=$(tty)
 
 #   Tab case insensitive autocompletion
 bind 'set completion-ignore-case on'
@@ -53,9 +47,3 @@ bind 'TAB':menu-complete
 
 # Partial completion of first tab, cycling on second onwards
 bind "set menu-complete-display-prefix on"
-
-# miniconda
-export PATH=~/miniconda3/bin:$PATH
-
-# Only show n directorys in terminal working path
-export PROMPT_DIRTRIM=2

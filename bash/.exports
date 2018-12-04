@@ -1,0 +1,12 @@
+#   History time format
+export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTSIZE=1000000
+export HISTFILESIZE=$HISTSIZE;
+export HISTCONTROL=ignoredups;
+export GPG_TTY=$(tty)
+
+# miniconda
+export PATH=~/miniconda3/bin:$PATH
+
+# Only show n directorys in terminal working path
+export PROMPT_DIRTRIM=2

@@ -31,6 +31,7 @@ fi
 ln -sfr bash/.bashrc ~/.bashrc
 ln -sfr bash/.aliases ~/.aliases
 ln -sfr bash/.functions ~/.functions
+ln -sfr bash/.exports ~/.exports
 # shellcheck source=/dev/null
 source ~/.bashrc
 
