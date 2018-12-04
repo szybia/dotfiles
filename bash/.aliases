@@ -79,9 +79,13 @@ alias gcSm="git commit -v -S -m"
 alias gcsm="git commit -v -S -m"
 alias gscm="git commit -v -S -m"
 
+alias gcl='git clone --recursive'
+
 alias gd="git diff"
 
 alias gl='git log'
+
+alias gmv='git mv'
 
 alias gp="git push"
 alias gpom="git push origin master"
@@ -90,6 +94,8 @@ alias grm="git rm"
 alias grmc="git rm --cached"
 
 alias gs='git status'
+
+alias gsh='git show'
 
 # Docker aliases
 alias dcom='docker-compose'
