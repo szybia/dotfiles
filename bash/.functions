@@ -105,3 +105,16 @@ syn() {
 
 #   Create backup file
 bak() { cp "$1"{,.bak};}
+
+#   Crypto
+shred_current_directory() {
+    echo "You will IRREVERSIBLY shred the following files:"
+    find . ! -path .
+    read -p "Are you sure? (y/n): " -r
+    if [[ $REPLY =~ ^[Yy]$ ]]
+    then
+        echo "shredding..."
+        find . -type f -exec shred {} -n 1 -z \;
+        echo "completed shredding."
+    fi
+}
