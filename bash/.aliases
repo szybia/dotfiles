@@ -65,7 +65,7 @@ alias wx='nohup nautilus . &>/dev/null & exit'
 #   Coloured grep
 alias grep="grep --color=auto"
 
-# Stopwatch
+#   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   git aliases
@@ -97,10 +97,10 @@ alias gs='git status'
 
 alias gsh='git show'
 
-# Docker aliases
+#   Docker aliases
 alias dcom='docker-compose'
 
-# curl API | pretty
+#   curl API | pretty
 alias pretty='python -m json.tool'
 
 #   easier clipboard
