@@ -20,4 +20,12 @@ install: # Install dotfiles
 	@#	urxvt
 	@ln -sfn $(CURDIR)/urxvt/.Xdefaults $(HOME)/.Xdefaults
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
+	@#	vim
+	@ln -sfn $(CURDIR)/vim/.vimrc $(HOME)/.vimrc
+	@mkdir -p ~/.vim/backup
+	@mkdir -p ~/.vim/bundle
+	@mkdir -p ~/.vim/swapfiles
+	@mkdir -p ~/.vim/undodir
+	@git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	@#	cleanup
 	@unset file;
