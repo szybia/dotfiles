@@ -6,11 +6,13 @@ install: # Install dotfiles
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
 	@#	gpg
+	@mkdir -p $(HOME)/.gnupg
 	@for file in $(shell find "$(CURDIR)/gnupg" -name "*.conf"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.gnupg/$$f; \
 	done; \
 	@#	i3
+	@mkdir -p $(HOME)/.config/i3/
 	@for file in $(shell find "$(CURDIR)/i3" -name "*conf*"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/i3/$$f; \
