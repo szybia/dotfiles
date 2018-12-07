@@ -15,3 +15,6 @@ install: # Install dotfiles
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/i3/$$f; \
 	done;
+	@#	urxvt
+	@ln -sfn $(CURDIR)/urxvt/.Xdefaults $(HOME)/.Xdefaults
+	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
