@@ -33,3 +33,11 @@ install: # Install dotfiles
 	fi;
 	@#	cleanup
 	@unset file;
+
+.PHONY: shellcheck
+shellcheck:
+	docker run --rm -i \
+		--name dotfiles_shellcheck \
+		-v $(CURDIR):/usr/src:ro \
+		--workdir /usr/src \
+		bialkowskisz/shellcheck ./test.sh
