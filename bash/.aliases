@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 #   Repeat previous command with sudo
 alias plz='sudo $(history -p \!\!)'
 
