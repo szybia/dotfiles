@@ -1,3 +1,5 @@
+SHELL = /bin/sh
+
 .PHONY: install
 install: # Install dotfiles
 	@#	bash
