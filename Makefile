@@ -1,5 +1,7 @@
 SHELL = /bin/sh
 
+.DEFAULT_GOAL := test
+
 .PHONY: install
 install: # Install dotfiles
 	@#	bash
