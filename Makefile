@@ -5,6 +5,7 @@ install: # Install dotfiles
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
+	@source ~/.bashrc
 	@#	gpg
 	@mkdir -p $(HOME)/.gnupg
 	@for file in $(shell find "$(CURDIR)/gnupg" -name "*.conf"); do \
