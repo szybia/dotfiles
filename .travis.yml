@@ -1,0 +1,6 @@
+notifications:
+    email: true
+services:
+    - docker
+  script:
+    - make test
