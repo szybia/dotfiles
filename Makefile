@@ -26,6 +26,8 @@ install: # Install dotfiles
 	@mkdir -p $(HOME)/.vim/bundle
 	@mkdir -p $(HOME)/.vim/swapfiles
 	@mkdir -p $(HOME)/.vim/undodir
-	@git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim
+	@if [ ! -d $(HOME)/.vim/bundle/Vundle.vim ]; then \
+		git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim; \
+	fi;
 	@#	cleanup
 	@unset file;
