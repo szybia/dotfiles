@@ -1,4 +1,6 @@
 #!/bin/bash
+#   Credit:
+#       https://github.com/jessfraz/dotfiles/blob/master/test.sh
 set -e
 set -o pipefail
 
