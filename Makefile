@@ -33,6 +33,9 @@ install: # Install dotfiles
 	@if [ ! -d $(HOME)/.vim/bundle/Vundle.vim ]; then \
 		git clone https://github.com/VundleVim/Vundle.vim.git $(HOME)/.vim/bundle/Vundle.vim; \
 	fi;
+	@sudo pip install neovim
+	@sudo pip install greenlet==0.4.10
+	@go get -u github.com/mdempsky/gocode
 	@#	cleanup
 	@unset file;
 
