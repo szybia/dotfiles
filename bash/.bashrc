@@ -4,11 +4,12 @@
 
 profile_file='/usr/share/defaults/etc/profile'
 if [[ -r "$profile_file" ]]; then
+    # shellcheck disable=SC1090
     source "$profile_file";
 fi
 unset profile_file
 
-eval $(dircolors ~/.dir_colors)
+eval "$(dircolors ~/.dir_colors)"
 
 #   Add go bin to path
 PATH=$PATH:~/go/bin
@@ -54,6 +55,7 @@ bind "set menu-complete-display-prefix on"
 
 for file in ~/.{aliases,functions,exports}; do
     if [[ -r "$file" ]]; then
+        # shellcheck disable=SC1090
         source "$file"
     fi
 done

@@ -6,7 +6,9 @@ export HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
-export GPG_TTY=$(tty)
+CURRENT_TTY=$(tty)
+export GPG_TTY=$CURRENT_TTY
+unset CURRENT_TTY
 
 # miniconda
 export PATH=~/miniconda3/bin:$PATH
