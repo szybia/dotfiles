@@ -2,7 +2,11 @@
 #   Credit:
 #       github.com/jessfraz/dotfiles
 
-source /usr/share/defaults/etc/profile
+profile_file='/usr/share/defaults/etc/profile'
+if [[ -r "$profile_file" ]]; then
+    source "$profile_file";
+fi
+unset profile_file
 
 eval $(dircolors ~/.dir_colors)
 
