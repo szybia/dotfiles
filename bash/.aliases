@@ -53,7 +53,8 @@ alias busy="cat /dev/urandom | hexdump -C | grep 'ca fe'"
 #   Make cd quicker
 alias cd..='cd ../'
 alias ..='cd ../'
-alias ...='cd ../..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
 
 #   Popular command shortcuts
 alias dl="cd ~/Downloads"
