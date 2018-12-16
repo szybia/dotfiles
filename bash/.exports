@@ -15,3 +15,20 @@ export PATH=~/miniconda3/bin:$PATH
 
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=2
+
+# PS1 Appearance
+brackets="\[\033[38;5;015m\]"
+username="\[\033[38;5;039m\]"
+at="\[\033[38;5;015m\]"
+hostname="\[\033[38;5;049m\]"
+endchar="\[\033[38;5;209m\]"
+path="\[\033[38;5;045m\]"
+
+export PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${endchar}\\$ \[$(tput sgr0)\]"
+
+unset brackets
+unset username
+unset at
+unset hostname
+unset endchar
+unset path
