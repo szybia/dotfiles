@@ -1,0 +1,2 @@
+unclutter &
+exec i3
