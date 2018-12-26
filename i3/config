@@ -74,10 +74,11 @@ bindsym $mod+Shift+F11 exec "sleep 0.4; scrot -q 100 -s -e 'xclip -selection cli
 
 ### Sound ###
 # Raise Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
 # Lower Volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- && paplay /usr/share/sounds/freedesktop/stereo/audio-volume-change.oga
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle-mute # Toggle muting
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
+# Mute
+bindsym XF86AudioMute exec --no-startup-id amixer -q sset Master toggle-mute
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
