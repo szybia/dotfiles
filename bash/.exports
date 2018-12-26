@@ -24,7 +24,8 @@ hostname="\[\033[38;5;049m\]"
 endchar="\[\033[38;5;209m\]"
 path="\[\033[38;5;045m\]"
 
-export PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${endchar}\\$ \[$(tput sgr0)\]"
+final_PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${endchar}\\$ \[$(tput sgr0)\]"
+export PS1="$final_PS1"
 
 unset brackets
 unset username
@@ -32,3 +33,4 @@ unset at
 unset hostname
 unset endchar
 unset path
+unset final_PS1
