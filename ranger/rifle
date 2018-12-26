@@ -1,0 +1,2 @@
+ext jpg = gpicview "$@"
+ext png = gpicview "$@"
