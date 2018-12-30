@@ -10,9 +10,6 @@ CURRENT_TTY=$(tty)
 export GPG_TTY=$CURRENT_TTY
 unset CURRENT_TTY
 
-# miniconda
-export PATH=~/miniconda3/bin:$PATH
-
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=2
 
