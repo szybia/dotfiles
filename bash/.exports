@@ -25,11 +25,13 @@ exit_colour="\[\033[38;5;001m\]"
 
 __exitstatus()
 {
+    # shellcheck disable=SC2181
     if [[ $? != 0 ]]; then
         echo ':( '
     fi
 }
-
+# shellcheck disable=SC2016
+# not supposed to be expanded since the latest exit code is dynamic
 exit_status='$(__exitstatus)'
 final_PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${exit_colour}${exit_status}${endchar}\\$ \[$(tput sgr0)\]"
 export PS1="$final_PS1"
