@@ -20,8 +20,17 @@ at="\[\033[38;5;015m\]"
 hostname="\[\033[38;5;049m\]"
 endchar="\[\033[38;5;209m\]"
 path="\[\033[38;5;045m\]"
+exit_colour="\[\033[38;5;001m\]"
 
-final_PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${endchar}\\$ \[$(tput sgr0)\]"
+__exitstatus()
+{
+    if [[ $? != 0 ]]; then
+        echo ':( '
+    fi
+}
+
+exit_status='$(__exitstatus)'
+final_PS1="${brackets}[${username}\u${at}@${hostname}\h${brackets}] ${path}\w ${exit_colour}${exit_status}${endchar}\\$ \[$(tput sgr0)\]"
 export PS1="$final_PS1"
 
 unset brackets
@@ -30,4 +39,6 @@ unset at
 unset hostname
 unset endchar
 unset path
+unset exit_status
+unset exit_colour
 unset final_PS1
