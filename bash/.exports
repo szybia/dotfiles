@@ -11,7 +11,8 @@ export GPG_TTY=$CURRENT_TTY
 unset CURRENT_TTY
 
 # Only show n directorys in terminal working path
-export PROMPT_DIRTRIM=2
+export PROMPT_DIRTRIM=1
+
 
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"
