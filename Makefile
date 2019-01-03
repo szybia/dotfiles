@@ -26,6 +26,8 @@ install: # Install dotfiles
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
 	@# xinit
 	@ln -sfn $(CURDIR)/.xinitrc $(HOME)/.xinitrc
+	@# git
+	@ln -sfn $(CURDIR)/.gitconfig $(HOME)/.gitconfig
 	@#	vim
 	@ln -sfn $(CURDIR)/vim/.vimrc $(HOME)/.vimrc
 	@mkdir -p $(HOME)/.vim/backup
