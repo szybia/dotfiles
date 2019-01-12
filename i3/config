@@ -95,6 +95,10 @@ bindsym $mod+Shift+V exec VirtualBox
 # start GitKraken
 bindsym $mod+Shift+G exec gitkraken
 
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s exec /opt/enpass/Enpass showassistant
+
+
 # kill focused window
 bindsym $mod+q kill
 
@@ -127,12 +131,6 @@ bindsym $mod+Shift+Up move up
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-
 # split in horizontal orientation
 bindsym $mod+bar split h
 
@@ -148,9 +146,6 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 focus_follows_mouse no
-
-# focus the child container
-#bindsym $mod+d focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
