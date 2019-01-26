@@ -16,6 +16,14 @@ then
     alias gpg='gpg2'
 fi
 
+
+#   connman
+alias con='connmanctl'
+
+#   transmission
+alias tm='transmission-remote'
+alias tmd='transmission-daemon'
+
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
 #   List hidden
