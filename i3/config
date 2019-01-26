@@ -39,11 +39,8 @@ floating_modifier $mod
 font pango:$font 10
 
 ########## Autolaunch ##########
-exec --no-startup-id nm-applet
-exec --no-startup-id /usr/lib64/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id feh --bg-scale `echo $(ls "${HOME}/Dropbox/Wallpapers"/* | shuf -n1)`
 exec --no-startup-id dropbox start
-exec --no-startup-id gnome-session-i3
 exec --no-startup-id unclutter --timeout 3
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
 
@@ -95,7 +92,7 @@ bindsym $mod+Shift+V exec VirtualBox
 # start GitKraken
 bindsym $mod+Shift+G exec gitkraken
 
-# change container layout (stacked, tabbed, toggle split)
+# start enpass
 bindsym $mod+s exec /opt/enpass/Enpass showassistant
 
 
