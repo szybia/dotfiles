@@ -95,6 +95,7 @@ alias gscm="git commit -v -S -m"
 alias gcl='git clone --recursive'
 
 alias gd="git diff"
+alias gdc="git diff --cached"
 
 alias gl='git log'
 
