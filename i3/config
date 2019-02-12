@@ -75,7 +75,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q sset Master 5%+
 # Lower Volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
 # Mute
-bindsym XF86AudioMute exec --no-startup-id pactl list sinks | grep -q Mute:.no && pactl set-sink-mute 0 1 || pactl set-sink-mute 0 0
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
