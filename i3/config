@@ -84,7 +84,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 
 # start firefox
-bindsym $mod+Shift+F exec firefox
+bindsym $mod+Shift+F exec brave
 
 # start VirtualBox
 bindsym $mod+Shift+V exec VirtualBox
