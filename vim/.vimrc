@@ -49,6 +49,10 @@ Plug 'scrooloose/nerdcommenter'
     " Enable NERDCommenterToggle to check all selected lines is commented or not
     let g:NERDToggleCheckAllLines = 1
 
+Plug 'Raimondi/delimitMate'
+
+Plug 'scrooloose/nerdtree'
+
 call plug#end()
 
 " ---------- Themes and Aeshetic ----------
