@@ -8,14 +8,15 @@ endif
 "   Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-call plug#end()
+Plug 'drewtempelmeyer/palenight.vim'
 
+call plug#end()
 
 " ---------- Themes and Aeshetic ----------
 
 " dark theme
 set background=dark
-colorscheme slate
+colorscheme palenight
 
 
 " ---------- Searching ----------
