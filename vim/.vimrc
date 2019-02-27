@@ -7,7 +7,6 @@ endif
 
 "	*** VUNDLE SETUP ***
 
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -130,6 +129,9 @@ set scrolloff=10
 
 
 " ---------- Vim defaults ----------
+
+" be iMproved, required
+set nocompatible
 
 " keep 500 items in the history
 set history=500
