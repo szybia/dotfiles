@@ -17,6 +17,8 @@ Plug 'itchyny/lightline.vim'
       \ 'colorscheme': 'palenight',
       \ }
 
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
 
 " ---------- Themes and Aeshetic ----------
