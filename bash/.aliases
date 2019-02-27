@@ -89,6 +89,8 @@ alias g="git"
 
 alias ga="git add"
 
+alias gb="git branch"
+
 alias gc="git commit -v"
 alias gcm="git commit -v -m"
 alias gcs="git commit -v -S"
@@ -112,6 +114,8 @@ alias grm="git rm"
 alias grmc="git rm --cached"
 
 alias gs='git status'
+
+alias gst='git stash'
 
 alias gsh='git show'
 
