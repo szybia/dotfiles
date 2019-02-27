@@ -2,7 +2,7 @@
 
 " dark theme
 set background=dark
-colorscheme palenight
+colorscheme slate
 
 
 " ---------- Searching ----------
