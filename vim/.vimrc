@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'drewtempelmeyer/palenight.vim'
+    let g:palenight_terminal_italics=1
 
 Plug 'itchyny/lightline.vim'
     set laststatus=2
