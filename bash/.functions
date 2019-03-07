@@ -122,3 +122,6 @@ shred_current_directory() {
         echo "completed shredding."
     fi
 }
+
+#   Print readable $PATH
+path() ( IFS=: ; printf '%s\n' $PATH ; )
