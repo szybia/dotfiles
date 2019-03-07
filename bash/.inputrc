@@ -39,9 +39,6 @@ set completion-query-items 200
 # Show extra file information when completing, like `ls -F` does
 set visible-stats on
 
-# Allows cycling through options
-bind 'TAB':menu-complete
-
 # Partial completion of first tab, cycling on second onwards
 set menu-complete-display-prefix on
 

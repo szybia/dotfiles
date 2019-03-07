@@ -29,6 +29,9 @@ shopt -s globstar
 # Check window size after each command
 shopt -s checkwinsize
 
+# Allows cycling through options
+bind 'TAB':menu-complete
+
 for file in ~/.{aliases,functions,exports}; do
     if [[ -r "$file" ]]; then
         # shellcheck disable=SC1090
