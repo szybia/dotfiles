@@ -112,6 +112,10 @@ alias gmv='git mv'
 alias gp="git push"
 alias gpom="git push origin master"
 
+alias gr='git reset'
+alias grs='git reset --soft'
+alias grh='git reset --hard'
+
 alias grm="git rm"
 alias grmc="git rm --cached"
 
