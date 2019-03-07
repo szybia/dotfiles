@@ -13,6 +13,11 @@ unset CURRENT_TTY
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=1
 
+#   Reduce spam in history
+#   This allows us to start a command with space if
+#   we don't want it to be saved in history
+export HISTIGNORE="cd*:l[s|l]*:clear:exit: *"
+
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"
 username="\[\033[38;5;039m\]"
