@@ -1,0 +1,26 @@
+"\C-x\C-r": re-read-init-file
+
+#   ALT-e to expand an alias
+"\ee": alias-expand-line
+
+#   Alt/Meta + Delete to delete the preceding word
+"\e[3;3~": kill-word
+
+#   Alt/Meta + h to move cursor one word back
+"\eh": backward-word
+#   Alt/Meta + h to move cursor one word forward
+"\el": forward-word
+
+#   Search history for commands beginning with current text
+#   docker <up_arrow>
+#   docker run ubuntu
+"\e[B": history-search-forward
+"\e[A": history-search-backward
+
+#   Colored stats when showing output after tabbing
+#   vim <tab>
+set colored-stats on
+
+#   When tabbing show matched part of completion
+set colored-completion-prefix on
+
