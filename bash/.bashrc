@@ -35,9 +35,6 @@ bind 'set completion-ignore-case on'
 # List all matches in case multiple possible completions are possible
 bind 'set show-all-if-ambiguous on'
 
-# Do not autocomplete hidden files unless the pattern explicitly begins with a dot
-# bind 'set match-hidden-files off'
-
 # Show all autocomplete results at once
 bind 'set page-completions off'
 
