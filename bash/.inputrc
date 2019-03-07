@@ -28,6 +28,9 @@ set colored-completion-prefix on
 #   Tab case insensitive autocompletion
 set completion-ignore-case on
 
+#   '-' and '_' equivalent for filename searching and completion
+set completion-map-case on
+
 # List all matches in case multiple possible completions are possible
 set show-all-if-ambiguous on
 
