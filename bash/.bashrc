@@ -38,8 +38,8 @@ bind 'set show-all-if-ambiguous on'
 # Show all autocomplete results at once
 bind 'set page-completions off'
 
-# If there are more than 100 possible completions for a word, ask to show them all
-bind 'set completion-query-items 100'
+# If there are more than n possible completions for a word, ask to show them all
+bind 'set completion-query-items 200'
 
 # Show extra file information when completing, like `ls -F` does
 bind 'set visible-stats on'
