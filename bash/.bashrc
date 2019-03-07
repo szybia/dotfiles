@@ -50,6 +50,10 @@ bind 'TAB':menu-complete
 # Partial completion of first tab, cycling on second onwards
 bind "set menu-complete-display-prefix on"
 
+# Prevent completing a command at the cursor and leaving the text after
+# cd ~/etc   ->   cd ~/etctc
+bind "set skip-completed-text on"
+
 for file in ~/.{aliases,functions,exports}; do
     if [[ -r "$file" ]]; then
         # shellcheck disable=SC1090
