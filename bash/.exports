@@ -14,9 +14,10 @@ unset CURRENT_TTY
 export PROMPT_DIRTRIM=1
 
 #   Reduce spam in history
+#   cd, ls, safe git aliases
 #   This allows us to start a command with space if
 #   we don't want it to be saved in history
-export HISTIGNORE="cd*:l[s|l]*:clear:exit: *"
+export HISTIGNORE="cd*:l[s|l]*:clear:exit:g[s|d|dc|sh|shH]*: *:"
 
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"
