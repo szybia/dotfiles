@@ -29,6 +29,9 @@ shopt -s globstar
 #   Check window size after each command
 shopt -s checkwinsize
 
+#   Typing out a path on it's own will cd into it
+shopt -s autocd
+
 #   Allows cycling through options
 bind 'TAB':menu-complete
 
