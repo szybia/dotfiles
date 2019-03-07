@@ -14,22 +14,22 @@ eval "$(dircolors ~/.dir_colors)"
 #   Add go bin to path
 PATH=$PATH:~/go/bin
 
-# Case-insensitive globbing (used in pathname expansion)
+#   Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# Append to the Bash history file, rather than overwriting it
+#   Append to the Bash history file, rather than overwriting it
 shopt -s histappend
 
-# Autocorrect typos in path names when using `cd`
+#   Autocorrect typos in path names when using `cd`
 shopt -s cdspell
 
-# Allow bash recursive globbbing
+#   Allow bash recursive globbbing
 shopt -s globstar
 
-# Check window size after each command
+#   Check window size after each command
 shopt -s checkwinsize
 
-# Allows cycling through options
+#   Allows cycling through options
 bind 'TAB':menu-complete
 
 for file in ~/.{aliases,functions,exports}; do
