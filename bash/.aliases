@@ -115,6 +115,7 @@ alias gpom="git push origin master"
 alias gr='git reset'
 alias grs='git reset --soft'
 alias grh='git reset --hard'
+alias grH='git reset HEAD'
 
 alias grm="git rm"
 alias grmc="git rm --cached"
@@ -124,6 +125,7 @@ alias gs='git status'
 alias gst='git stash'
 
 alias gsh='git show'
+alias gshH='git show HEAD'
 
 #   Docker aliases
 alias dcom='docker-compose'
