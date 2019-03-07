@@ -13,7 +13,6 @@ unset CURRENT_TTY
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=1
 
-
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"
 username="\[\033[38;5;039m\]"
