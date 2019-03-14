@@ -9,8 +9,14 @@
 #   Moving cursor using vim/i3 buttons
 #   Alt/Meta + h to move cursor one word back
 "\eh": backward-word
+#   Alt/Meta + left
+"\e\e[D": backward-word
+
 #   Alt/Meta + h to move cursor one word forward
 "\el": forward-word
+#   Alt/Meta + right
+"\e\e[C": forward-word
+
 
 #   Search history for commands beginning with current text
 #   docker <up_arrow>
