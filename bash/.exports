@@ -17,7 +17,7 @@ export PROMPT_DIRTRIM=1
 #   cd, ls, safe git aliases
 #   This allows us to start a command with space if
 #   we don't want it to be saved in history
-export HISTIGNORE="cd*:l[s|l]*:clear:exit:g[s|d|dc|sh|shH]*: *:"
+export HISTIGNORE="cd*:l[s|l]*:clear:exit:gs:gs *:gd:gd *:gl:gl *:gdc:history:gsh:gshH:pwd: *:"
 
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"
