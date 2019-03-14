@@ -125,7 +125,7 @@ alias gs='git status'
 alias gst='git stash'
 
 alias gsh='git show'
-alias gshH='git show HEAD'
+alias gshh='git show HEAD'
 
 #   Docker aliases
 alias dcom='docker-compose'
