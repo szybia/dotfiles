@@ -73,6 +73,10 @@ alias h="history"
 alias r="ranger"
 alias v='vim'
 
+#   Tmux
+#   This fixes a problem which messes up the LS_COLORS
+alias tmux="tmux -2"
+
 
 #   Open file explorer
 alias wh='nohup thunar . &>/dev/null &'
