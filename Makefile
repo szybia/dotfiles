@@ -25,6 +25,8 @@ install: # Install dotfiles
 	@ln -sfn $(CURDIR)/urxvt/.Xdefaults $(HOME)/.Xdefaults
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/urxvt-font-size/font-size /usr/lib/urxvt/perl/font-size
+	@#	tmux
+	@ln -sfn $(CURDIR)/tmux/.tmux.conf $(HOME)/.tmux.conf
 	@# xinit
 	@ln -sfn $(CURDIR)/.xinitrc $(HOME)/.xinitrc
 	@# git
