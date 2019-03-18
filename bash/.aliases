@@ -129,6 +129,7 @@ alias grm="git rm"
 alias grmc="git rm --cached"
 
 alias gs='git status'
+alias gs.='git status .'
 
 alias gst='git stash'
 
