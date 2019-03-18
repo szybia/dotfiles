@@ -39,9 +39,6 @@ URxvt*letterSpace:      -1
 ! Fade terminal text when not in focus
 URxvt*fading:           25
 
-! Underline over block cursor
-URxvt*cursorUnderline:  true
-
 ! utf8
 URxvt*utf8: true
 
