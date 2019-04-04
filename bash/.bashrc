@@ -11,6 +11,10 @@ unset profile_file
 
 eval "$(dircolors ~/.dir_colors)"
 
+#   SSH agent
+source ~/.ssh-find-agent.sh
+set_ssh_agent_socket
+
 #   Add go bin to path
 PATH=$PATH:~/go/bin
 
@@ -42,3 +46,4 @@ for file in ~/.{aliases,functions,exports,custom}; do
     fi
 done
 unset file
+
