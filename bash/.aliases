@@ -143,5 +143,5 @@ alias dcom='docker-compose'
 alias pretty='python -m json.tool'
 
 #   easier clipboard
-alias cbcopy='xclip -selection clipboard'
-alias cbpaste='xclip -selection clipboard -o'
+alias ccopy='xclip -selection clipboard'
+alias cpaste='xclip -selection clipboard -o'
