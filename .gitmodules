@@ -1,3 +1,6 @@
 [submodule "urxvt/ext/urxvt-font-size"]
 	path = urxvt/ext/urxvt-font-size
 	url = https://github.com/majutsushi/urxvt-font-size
+[submodule "ssh/ssh-find-agent"]
+	path = ssh/ssh-find-agent
+	url = https://github.com/wwalker/ssh-find-agent
