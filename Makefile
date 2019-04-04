@@ -31,6 +31,8 @@ install: # Install dotfiles
 	@ln -sfn $(CURDIR)/.xinitrc $(HOME)/.xinitrc
 	@# git
 	@ln -sfn $(CURDIR)/.gitconfig $(HOME)/.gitconfig
+	@# ssh
+	@ln -sfn $(CURDIR)/ssh/ssh-find-agent/ssh-find-agent.sh  $(HOME)/.ssh-find-agent.sh
 	@#	vim
 	@ln -sfn $(CURDIR)/vim/.vimrc $(HOME)/.vimrc
 	@mkdir -p $(HOME)/.vim/backup
