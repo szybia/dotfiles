@@ -52,7 +52,7 @@ Xft.antialias:  1
 
 ! Colours
 URxvt*background:   #1a1a1a
-URxvt*foreground:   White
+URxvt*foreground:   #ECD2B1
 
 ! clickable urls
 URxvt.perl-ext-common:      default,matcher,selection-to-clipboard,clipboard,font-size
