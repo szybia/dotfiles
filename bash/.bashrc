@@ -12,6 +12,7 @@ unset profile_file
 eval "$(dircolors ~/.dir_colors)"
 
 #   SSH agent
+# shellcheck disable=SC1090
 source ~/.ssh-find-agent.sh
 set_ssh_agent_socket
 
