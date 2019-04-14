@@ -7,7 +7,7 @@ set -o pipefail
 PASSED=()
 ERRORS=()
 
-for f in $(find . -type f -not -path '*.git*' | sort -u); do
+for f in $(find . -type f -not -path '*.git*' -not -path '*ssh-find-agent*' | sort -u); do
     if file "$f" | grep --quiet shell; then
         {
             shellcheck "$f" && PASSED+=("$f")
