@@ -76,13 +76,12 @@ mktmpcd() {
 
 #   Enter a pre-existing tmp folder or create one
 tmpcd() {
-    local pattern="/tmp/tmp.*"
-    local tmps=( $pattern )
+    local tmps=( /tmp/tmp.* )
     #   If no tmp folders found $tmps will consist of pattern
-    if [ "${tmps[0]}" = "$pattern" ]; then
-        mktmpcd
+    if [ "${#tmps[@]}" -eq 0 ]; then
+        mktmpcd "$@"
     else
-        cd "${tmps[0]}"
+        cd "${tmps[0]}" || return
     fi
 }
 
