@@ -64,7 +64,7 @@ up() {
 }
 
 # Make a temporary directory and enter it
-tmpcd() {
+mktmpcd() {
 	local dir
 	if [ $# -eq 0 ]; then
 		dir=$(mktemp -d)
@@ -72,6 +72,18 @@ tmpcd() {
 		dir=$(mktemp -d -t "${1}.XXXXXXXXXX")
 	fi
 	cd "$dir" || exit
+}
+
+#   Enter a pre-existing tmp folder or create one
+tmpcd() {
+    local pattern="/tmp/tmp.*"
+    local tmps=( $pattern )
+    #   If no tmp folders found $tmps will consist of pattern
+    if [ "${tmps[0]}" = "$pattern" ]; then
+        mktmpcd
+    else
+        cd "${tmps[0]}"
+    fi
 }
 
 # Compare original and gzipped file size
