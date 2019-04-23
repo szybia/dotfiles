@@ -27,7 +27,7 @@ set $left h
 set $right l
 set $lockcmd i3lock
 set $barcmd i3status
-set $font Fira Code
+set $font Source Code Pro Semibold
 set $terminal urxvt
 
 

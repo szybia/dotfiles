@@ -30,10 +30,10 @@ URxvt*skipScroll:                       true
 URxvt*transparent:                      false
 
 ! Fonts
-URxvt*font:                             xft:Fira Code:pixelsize=15:hinting=full:antialias=true
-URxvt*italicFont:                       xft:Fira Code:italic:autohint=true:pixelsize=15:antialias=true
-URxvt*boldItalicFont:                   xft:Fira Code:bold:italic:autohint=true:pixelsize=15:antialias=true
-! Letter spacing adjustment (weird but makes Fira Code look more normal)
+URxvt*font:                             xft:Source Code Pro Semibold:pixelsize=15:hinting=full:antialias=true
+URxvt*italicFont:                       xft:Source Code Pro Semibold:italic:autohint=true:pixelsize=15:antialias=true
+URxvt*boldItalicFont:                   xft:Source Code Pro Semibold:bold:italic:autohint=true:pixelsize=15:antialias=true
+! Letter spacing adjustment (probably breaking Monospacing but it doesn't look normal to me)
 URxvt*letterSpace:      -1
 
 ! Fade terminal text when not in focus
