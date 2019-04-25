@@ -37,8 +37,8 @@ shopt -s checkwinsize
 #   Typing out a path on it's own will cd into it
 shopt -s autocd
 
-#   Prevent error if glob doesn't match name
-shopt -s nullglob
+#   Allow for cd <var>
+shopt -s cdable_vars
 
 #   Allows cycling through options
 bind 'TAB':menu-complete
