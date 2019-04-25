@@ -1,7 +1,7 @@
 "\C-x\C-r": re-read-init-file
 
 #   ALT-e to expand an alias
-"\ee": alias-expand-line
+"\ee": shell-expand-line
 
 #   Alt/Meta + Delete to delete the preceding word
 "\e[3;3~": kill-word
