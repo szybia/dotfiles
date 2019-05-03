@@ -76,6 +76,7 @@ mktmpcd() {
 
 #   Enter a pre-existing tmp folder or create one
 tmpcd() {
+    shopt -s nullglob
     local tmps=( /tmp/tmp.* )
     #   If no tmp folders found $tmps will consist of pattern
     if [ "${#tmps[@]}" -eq 0 ]; then
