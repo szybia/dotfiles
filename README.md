@@ -1,4 +1,4 @@
-[![Travis CI](https://img.shields.io/travis/BialkowskiSz/dotfiles.svg?style=for-the-badge)](https://travis-ci.org/BialkowskiSz/dotfiles)
+[![Travis CI](https://img.shields.io/travis/szybia/dotfiles.svg?style=for-the-badge)](https://travis-ci.org/szybia/dotfiles)
 
 ##### Place all custom aliases/functions/scripts in ~/.custom which .bashrc automatically reads
 
