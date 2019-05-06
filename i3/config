@@ -39,7 +39,7 @@ floating_modifier $mod
 font pango:$font 10
 
 ########## Autolaunch ##########
-exec --no-startup-id feh --bg-scale `echo $(ls "${HOME}/Dropbox/Wallpapers"/* | shuf -n1)`
+exec --no-startup-id feh --bg-scale `echo $(ls "${HOME}/Dropbox/wallpapers"/* | shuf -n1)`
 exec --no-startup-id dropbox start
 exec --no-startup-id unclutter --timeout 3
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
