@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #   Repeat previous command with sudo
 alias plz='sudo $(history -p \!\!)'
 
@@ -9,13 +8,6 @@ if hash htop 2>/dev/null;
 then
     alias top='htop'
 fi
-
-#   Use gpg2 rather than gpg
-if hash gpg2 2>/dev/null;
-then
-    alias gpg='gpg2'
-fi
-
 
 #   connman
 alias con='connmanctl'
@@ -79,7 +71,6 @@ alias v='vim'
 #   Tmux
 #   This fixes a problem which messes up the LS_COLORS
 alias tmux="tmux -2"
-
 
 #   Open file explorer
 alias wh='nohup thunar . &>/dev/null &'

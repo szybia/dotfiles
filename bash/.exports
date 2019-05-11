@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 #   History time format
 export HISTTIMEFORMAT="%d/%m/%y %T "
 export HISTSIZE=1000000
