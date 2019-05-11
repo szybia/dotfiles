@@ -94,3 +94,9 @@ alias cpaste='xclip -selection clipboard -o'
 
 #   print readable PATH
 alias path='echo -e ${PATH//:/\\n}'
+
+#   Copy SSH private key
+alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
+
+#   Copy SSH public key
+alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
