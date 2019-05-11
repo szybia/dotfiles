@@ -19,3 +19,50 @@
 
 [push]
     default = current
+
+[alias]
+
+    a = add
+    #   Amend staged files to latest commit
+    amend = commit --amend --reuse-message=HEAD
+
+    b = branch
+
+    #   Commit
+    c = commit -v
+    #   Commit all modified files
+    ca = commit -av
+    #   Checkout
+    ch = checkout
+    #   Clone a repository including all submodules
+    cl = clone --recursive
+    #   Commit with comment
+    cm = commit -vm
+
+    # Show the diff between the latest commit and the current state
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    dc = diff --cached
+
+    #   Color graph log view
+    graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+
+    #   View abbreviated SHA, description, and history graph of the latest 20 commits
+    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    p = push
+
+    r = reset
+    rs = reset --soft
+    rh = reset --hard
+    rhead = reset HEAD
+
+    rmc = rm --cached
+
+    #   View the current working tree status using the short format
+    s = status -s
+    sh = show
+    shead = show HEAD
+    st = stash
+
+    #   'Undo' a commit
+    undo = !git reset HEAD~1 --mixed
