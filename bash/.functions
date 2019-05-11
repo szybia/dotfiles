@@ -133,9 +133,6 @@ shred_current_directory() {
     fi
 }
 
-#   Print readable $PATH
-path() ( IFS=: ; printf '%s\n' "$PATH" ; )
-
 launch_ssh_agent() {
     eval "$(ssh-agent -s)"
     ssh-add

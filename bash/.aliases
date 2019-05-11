@@ -145,3 +145,6 @@ alias pretty='python -m json.tool'
 #   easier clipboard
 alias ccopy='xclip -selection clipboard'
 alias cpaste='xclip -selection clipboard -o'
+
+#   print readable PATH
+alias path='echo -e ${PATH//:/\\n}'
