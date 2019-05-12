@@ -83,6 +83,7 @@ tmpcd() {
     else
         cd "${tmps[0]}" || return
     fi
+    shopt -u nullglob
 }
 
 # Compare original and gzipped file size
