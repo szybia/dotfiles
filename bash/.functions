@@ -102,9 +102,12 @@ gz() {
 isup() {
 	local uri=$1
 
-	if curl -s --head  --request GET "$uri" | grep "200 OK" > /dev/null ; then
+    [ "$#" -ne 1 ] && echo "Usage: ${FUNCNAME[0]} <URI>" && return 1
+
+    #   If HTTP code not 200
+    if curl -Ls -o /dev/null -w "%{http_code}" "$uri" | grep -v "200" > /dev/null; then
         return 1
-	fi
+    fi
 }
 
 # define word
