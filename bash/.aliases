@@ -100,3 +100,7 @@ alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Pri
 
 #   Copy SSH public key
 alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=> Public key copied to pasteboard.'"
+
+#   Microphone mute/unmute
+alias micoff='amixer set Capture nocap'
+alias micon='amixer set Capture cap'
