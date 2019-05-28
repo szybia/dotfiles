@@ -72,4 +72,4 @@ shellcheck:
 		--name dotfiles_shellcheck \
 		-v $(CURDIR):/usr/src:ro \
 		--workdir /usr/src \
-		bialkowskisz/shellcheck ./test.sh
+		szybia/shellcheck ./test.sh
