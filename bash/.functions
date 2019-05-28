@@ -131,7 +131,7 @@ shred_current_directory() {
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
         echo "shredding..."
-        find . -type f -exec shred {} -n 1 -z \;
+        find . -type f -exec shred {} -n 1 -z --remove=wipe \;
         echo "completed shredding."
     fi
 }
