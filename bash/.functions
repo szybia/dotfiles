@@ -163,3 +163,22 @@ restart_gpgagent(){
     gpg-connect-agent /bye >/dev/null 2>&1
     gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 }
+
+#   randpw [--no-symbols,-n] [--clip,-c] [pass-length]
+#       Generate password from /dev/urandom of <pass-length> (default 25).
+#       optionally exclude symbols or pipe into clipboard.
+randpw() {
+    local length=25 clip=0 chars='A-Za-z0-9[:punct:]' pass
+    while true; do case $1 in
+        -n|--no-symbols) chars='A-Za-z0-9'; shift ;;
+        -c|--clip) clip=1; shift ;;
+        *[0-9]*) length="$1"; shift;;
+        *) break;;
+    esac done
+    pass=$( </dev/urandom tr -dc "$chars" | head -c "${1:-$length}" )
+    if [ "$clip" -eq 1 ]; then
+        echo -n "$pass" | xclip -selection clipboard
+    else
+        echo -n "$pass"
+    fi
+}
