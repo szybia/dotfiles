@@ -198,6 +198,8 @@ rename_to_lowercase() {
     for name in ${all}; do
         #   set new name in lower case for files and directories
         new_name="$(dirname "${name}")/$(basename "${name}" | tr '[:upper:]' '[:lower:]')"
+        #   replace spaces with tabs in new_name
+        new_name="${new_name// /_}"
 
         #   check if new name already exists
         if [ "${name}" != "${new_name}" ]; then
