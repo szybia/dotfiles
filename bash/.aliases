@@ -29,6 +29,10 @@ alias l='ls -CF --color=auto'
 #   df default
 alias df="df -Th --total"
 
+#   mv and cp default
+alias mv="mv -i"
+alias cp="cp -i"
+
 #   free default
 alias free="free -mt"
 
