@@ -208,3 +208,10 @@ rename_snake() {
     done
     unset IFS
 }
+
+#   create .tar.gz and remove it if successful
+#   basename takes care of trailing backslash in directory
+targz() { tar -zcvf "$(basename $1).tar.gz" "$1" && rm -r "$1"; }
+
+#   extract tar.gz and remove it if successful
+untargz() { tar -zxvf "$1" && rm -r "$1"; }
