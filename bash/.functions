@@ -183,7 +183,7 @@ randpw() {
     fi
 }
 
-rename_to_lowercase() {
+rename_snake() {
     # Credit:
     #   https://www.tecmint.com/rename-all-files-and-directory-names-to-lowercase-in-linux/
     if [ -z "$1" ];then
