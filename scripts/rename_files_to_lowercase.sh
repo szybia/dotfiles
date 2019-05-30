@@ -9,9 +9,7 @@ if [ -z "$1" ];then
 fi
 
 #process all subdirectories and files in parent directory
-all="$(find "$1" -depth)"
-
-
+all="$(find "$1" -maxdepth 1)"
 
 for name in ${all}; do
         #set new name in lower case for files and directories
