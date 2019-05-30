@@ -196,13 +196,13 @@ rename_to_lowercase() {
 
     IFS=$'\n'   #   only split on newline in case spaces in filename
     for name in ${all}; do
-            #set new name in lower case for files and directories
-            new_name="$(dirname "${name}")/$(basename "${name}" | tr '[:upper:]' '[:lower:]')"
+        #   set new name in lower case for files and directories
+        new_name="$(dirname "${name}")/$(basename "${name}" | tr '[:upper:]' '[:lower:]')"
 
-            #check if new name already exists
-            if [ "${name}" != "${new_name}" ]; then
-                    [ ! -e "${new_name}" ] && mv -T "${name}" "${new_name}"; echo "${name} was renamed to ${new_name}" || echo "${name} wasn't renamed!"
-            fi
+        #   check if new name already exists
+        if [ "${name}" != "${new_name}" ]; then
+            [ ! -e "${new_name}" ] && mv -T "${name}" "${new_name}"; echo "${name} was renamed to ${new_name}" || echo "${name} wasn't renamed!"
+        fi
     done
     unset IFS
 }
