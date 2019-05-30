@@ -182,3 +182,25 @@ randpw() {
         echo -n "$pass"
     fi
 }
+
+rename_to_lowercase() {
+    # Credit:
+    #   https://www.tecmint.com/rename-all-files-and-directory-names-to-lowercase-in-linux/
+    if [ -z "$1" ];then
+            echo "Usage: ${FUNCNAME[0]} <directory>"
+            return 1
+    fi
+
+    #process all subdirectories and files in parent directory
+    all="$(find "$1" -maxdepth 1)"
+
+    for name in ${all}; do
+            #set new name in lower case for files and directories
+            new_name="$(dirname "${name}")/$(basename "${name}" | tr '[:upper:]' '[:lower:]')"
+
+            #check if new name already exists
+            if [ "${name}" != "${new_name}" ]; then
+                    [ ! -e "${new_name}" ] && mv -T "${name}" "${new_name}"; echo "${name} was renamed to ${new_name}" || echo "${name} wasn't renamed!"
+            fi
+    done
+}
