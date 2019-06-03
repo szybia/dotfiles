@@ -3,44 +3,64 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := test
 
 .PHONY: install
-install: # Install dotfiles
-	@#	bash
+install: bash gpg i3 urxvt tmux xinit git ssh vim
+
+
+.PHONY: bash
+bash:
 	@for file in $(shell find "$(CURDIR)/bash" -name ".*"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/$$f; \
 	done;
-	@#	gpg
+	@unset file;
+
+.PHONY: gpg
+gpg:
 	@mkdir -p $(HOME)/.gnupg
 	@for file in $(shell find "$(CURDIR)/gnupg" -name "*.conf"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.gnupg/$$f; \
 	done;
-	@#	i3
+	@unset file;
+
+.PHONY: i3
+i3:
 	@mkdir -p $(HOME)/.config/i3/
 	@for file in $(shell find "$(CURDIR)/i3" -name "*conf*"); do \
 		f=$$(basename $$file); \
 		ln -sfn $$file $(HOME)/.config/i3/$$f; \
 	done;
-	@#	urxvt
+	@unset file;
+
+.PHONY: urxvt
+urxvt:
 	@ln -sfn $(CURDIR)/urxvt/.Xdefaults $(HOME)/.Xdefaults
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/urxvt-font-size/font-size /usr/lib/urxvt/perl/font-size
-	@#	tmux
+
+.PHONY: tmux
+tmux:
 	@ln -sfn $(CURDIR)/tmux/.tmux.conf $(HOME)/.tmux.conf
-	@# xinit
+
+.PHONY: xinit
+xinit:
 	@ln -sfn $(CURDIR)/.xinitrc $(HOME)/.xinitrc
-	@# git
+
+.PHONY: git
+git:
 	@ln -sfn $(CURDIR)/.gitconfig $(HOME)/.gitconfig
-	@# ssh
+
+.PHONY: ssh
+ssh:
 	@ln -sfn $(CURDIR)/ssh/ssh-find-agent/ssh-find-agent.sh  $(HOME)/.ssh-find-agent.sh
-	@#	vim
+
+.PHONY: vim
+vim:
 	@ln -sfn $(CURDIR)/vim/.vimrc $(HOME)/.vimrc
 	@mkdir -p $(HOME)/.vim/backup
 	@mkdir -p $(HOME)/.vim/bundle
 	@mkdir -p $(HOME)/.vim/swapfiles
 	@mkdir -p $(HOME)/.vim/undodir
-	@#	cleanup
-	@unset file;
 
 
 .PHONY: test
