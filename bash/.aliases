@@ -108,3 +108,6 @@ alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=>
 #   Microphone mute/unmute
 alias micoff='amixer set Capture nocap'
 alias micon='amixer set Capture cap'
+
+#   Arch remove orphans
+alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
