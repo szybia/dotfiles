@@ -67,7 +67,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 #   Popular command shortcuts
-alias dl="cd ~/Downloads"
+alias dl="cd ~/downloads"
 alias h="history"
 alias r="ranger"
 alias v='vim'
