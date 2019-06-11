@@ -89,13 +89,6 @@ bindsym $mod+Shift+F exec brave
 # start VirtualBox
 bindsym $mod+Shift+V exec VirtualBox
 
-# start GitKraken
-bindsym $mod+Shift+G exec gitkraken
-
-# start enpass
-bindsym $mod+s exec /opt/enpass/Enpass showassistant
-
-
 # kill focused window
 bindsym $mod+q kill
 
