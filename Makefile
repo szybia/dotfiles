@@ -3,7 +3,7 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := test
 
 .PHONY: install
-install: bash gpg i3 urxvt tmux xinit git ssh vim
+install: bash gpg i3 urxvt tmux xinit git ssh vim arch
 
 
 .PHONY: bash
@@ -62,6 +62,11 @@ vim:
 	@mkdir -p $(HOME)/.vim/bundle
 	@mkdir -p $(HOME)/.vim/swapfiles
 	@mkdir -p $(HOME)/.vim/undodir
+
+.PHONY: arch
+arch:
+	@sudo ln -sn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
+							/usr/share/libalpm/hooks/update_pkg_list.hook
 
 
 .PHONY: test
