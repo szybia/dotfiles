@@ -31,7 +31,7 @@ i3:
 		ln -sfn $$file $(HOME)/.config/i3/$$f; \
 	done;
 	@unset file;
-	@mkdir -p ~/Pictures/Screenshots/
+	@mkdir -p ~/pictures/screenshots/
 
 .PHONY: urxvt
 urxvt:
