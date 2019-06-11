@@ -29,6 +29,7 @@ set $lockcmd i3lock
 set $barcmd i3status
 set $font Source Code Pro Semibold
 set $terminal urxvt
+set $browser brave
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -84,7 +85,7 @@ floating_modifier $mod
 bindsym $mod+Return exec $terminal
 
 # start firefox
-bindsym $mod+Shift+F exec brave
+bindsym $mod+Shift+F exec $browser
 
 # start VirtualBox
 bindsym $mod+Shift+V exec VirtualBox
