@@ -3,7 +3,7 @@ SHELL = /bin/sh
 .DEFAULT_GOAL := test
 
 .PHONY: install
-install: bash gpg i3 urxvt tmux xinit git ssh vim arch
+install: bash gpg i3 urxvt tmux xinit git ssh vim arch ranger
 
 
 .PHONY: bash
@@ -68,6 +68,12 @@ vim:
 arch:
 	@sudo ln -sn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
 							/usr/share/libalpm/hooks/update_pkg_list.hook
+
+.PHONY: ranger
+ranger:
+	@mkdir -p $(HOME)/.config/ranger
+	@ln -sfn $(CURDIR)/ranger/rc.conf $(HOME)/.config/ranger/
+	@ln -sfn $(CURDIR)/ranger/rifle $(HOME)/.config/ranger/
 
 
 .PHONY: test
