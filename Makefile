@@ -68,6 +68,7 @@ vim:
 .PHONY: arch
 arch:
 	@mkdir -p /usr/share/libalpm/hooks/
+	@sudo ln -sfn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
 							/usr/share/libalpm/hooks/update_pkg_list.hook
 
 .PHONY: ranger
