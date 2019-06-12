@@ -67,9 +67,19 @@ vim:
 
 .PHONY: arch
 arch:
-	@mkdir -p /usr/share/libalpm/hooks/
 	@sudo ln -sfn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
 							/usr/share/libalpm/hooks/update_pkg_list.hook
+	@#	Parcimonie GPG key refreshing
+	@sudo ln -sfn $(CURDIR)/arch/parcimonie/s.conf \
+							/etc/parcimonie.sh.d/s.conf
+	@sudo ln -sfn $(CURDIR)/arch/parcimonie/user.conf \
+							/etc/systemd/system/parcimonie.sh@s.service.d/user.conf
+	@mkdir -p $(HOME)/.local/tmp/parcimonie
+	#	systemctl daemon-reload
+	#	systemctl cat parcimonie.sh@julian.service
+	# 	systemctl enable parcimonie.sh@julian.service
+	# 	systemctl start parcimonie.sh@julian.service
+	# 	systemctl status parcimonie.sh@julian.service
 
 .PHONY: ranger
 ranger:
