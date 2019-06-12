@@ -36,6 +36,7 @@ i3:
 .PHONY: urxvt
 urxvt:
 	@ln -sfn $(CURDIR)/urxvt/.Xdefaults $(HOME)/.Xdefaults
+	@mkdir -p /usr/lib/urxvt/perl/
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/urxvt-font-size/font-size /usr/lib/urxvt/perl/font-size
 
@@ -66,7 +67,7 @@ vim:
 
 .PHONY: arch
 arch:
-	@sudo ln -sn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
+	@mkdir -p /usr/share/libalpm/hooks/
 							/usr/share/libalpm/hooks/update_pkg_list.hook
 
 .PHONY: ranger
