@@ -67,7 +67,7 @@ vim:
 
 .PHONY: arch
 arch:
-	@sudo ln -sfn $(CURDIR)/scripts/arch/hooks/update_pkg_list.hook \
+	@sudo ln -sfn $(CURDIR)/arch/hooks/update_pkg_list.hook \
 							/usr/share/libalpm/hooks/update_pkg_list.hook
 	@#	Parcimonie GPG key refreshing
 	@sudo ln -sfn $(CURDIR)/arch/parcimonie/s.conf \
