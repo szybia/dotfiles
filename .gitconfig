@@ -5,6 +5,9 @@
 [commit]
     gpgsign = true
 
+[gpg]
+	program = gpg2
+
 [diff]
     # Detect copies as well as renames
     renames = copies
