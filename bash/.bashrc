@@ -16,8 +16,8 @@ eval "$(dircolors ~/.dir_colors)"
 source ~/.ssh-find-agent.sh
 set_ssh_agent_socket
 
-#   Add go bin to path
-PATH=$PATH:~/go/bin
+#   Define GOPATH
+export GOPATH="$HOME/go"
 
 #   Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
