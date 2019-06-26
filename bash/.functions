@@ -88,12 +88,11 @@ tmpcd() {
 
 # Compare original and gzipped file size
 gz() {
-	local origsize
+	local origsize gzipsize ratio
 	origsize=$(wc -c < "$1")
-	local gzipsize
 	gzipsize=$(gzip -c "$1" | wc -c)
-	local ratio
-	ratio=$(echo "$gzipsize * 100 / $origsize" | bc -l)
+    #   Calc is a bash function defined in this file
+    ratio=$(calc "$gzipsize/$origsize*100")
 	printf "orig: %d bytes\\n" "$origsize"
 	printf "gzip: %d bytes (%2.2f%%)\\n" "$gzipsize" "$ratio"
 }
