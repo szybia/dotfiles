@@ -111,3 +111,8 @@ alias micon='amixer set Capture cap'
 
 #   Arch remove orphans
 alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
+
+#   USBGuard
+alias usbl="usbguard list-devices"
+alias usba="usbguard allow-device"
+alias usbb="usbguard block-device"
