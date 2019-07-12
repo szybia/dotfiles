@@ -116,3 +116,6 @@ alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
 alias usbl="usbguard list-devices"
 alias usba="usbguard allow-device"
 alias usbb="usbguard block-device"
+
+#   youtube-dl
+alias youtube-audio='youtube-dl -x --audio-format mp3'
