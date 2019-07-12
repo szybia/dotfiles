@@ -18,6 +18,7 @@ set_ssh_agent_socket
 
 #   Define GOPATH
 export GOPATH="$HOME/go"
+export PATH="$PATH:$GOPATH/bin"
 
 #   Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
