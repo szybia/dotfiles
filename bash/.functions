@@ -182,8 +182,8 @@ rename_snake() {
     # Credit:
     #   https://www.tecmint.com/rename-all-files-and-directory-names-to-lowercase-in-linux/
     if [ -z "$1" ];then
-            echo "Usage: ${FUNCNAME[0]} <directory>"
-            return 1
+        >&2 echo "Usage: ${FUNCNAME[0]} <directory>"
+        return 1
     fi
 
     #process all subdirectories and files in parent directory
