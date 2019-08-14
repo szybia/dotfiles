@@ -174,7 +174,7 @@ randpw() {
         *[0-9]*) length="$1"; shift;;
         *) break;;
     esac done
-    pass=$( </dev/urandom tr -dc "$chars" | head -c "${1:-$length}" )
+    pass=$( LC_ALL=C </dev/urandom tr -dc "$chars" | head -c "${1:-$length}" )
     echo -n "$pass" | { if (( clip == 1 )); then xclip -selection clipboard; else cat -; fi; }
 }
 
