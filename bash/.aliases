@@ -119,3 +119,6 @@ alias usbb="usbguard block-device"
 
 #   youtube-dl
 alias youtube-audio='youtube-dl -x --audio-format mp3'
+
+#   calcurse
+alias cal='calcurse'
