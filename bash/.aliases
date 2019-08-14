@@ -21,6 +21,11 @@ alias tmd='transmission-daemon'
 
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
+if [ "${machine}" = "Mac" ]
+then
+    alias ll='ls -AlhFG'
+fi
+
 #   List hidden
 alias la='ls -A --color=auto'
 #   Classify and list by column
