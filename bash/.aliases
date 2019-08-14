@@ -21,6 +21,8 @@ alias tmd='transmission-daemon'
 
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
+# shellcheck disable=SC2154
+#   Machine is sourced in .bashrc
 if [ "${machine}" = "Mac" ]
 then
     alias ll='ls -AlhFG'
