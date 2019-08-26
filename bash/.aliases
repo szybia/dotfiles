@@ -111,15 +111,14 @@ then
     alias ccopy='pbcopy'
 fi
 
-
 #   print readable PATH
 alias path='echo -e ${PATH//:/\\n}'
 
 #   Copy SSH private key
-alias prikey="xclip -selection clipboard < ~/.ssh/id_ed25519 | echo '=> Private key copied to pasteboard.'"
+alias prikey="ccopy < ~/.ssh/id_ed25519 | echo '=> Private key copied to pasteboard.'"
 
 #   Copy SSH public key
-alias pubkey="xclip -selection clipboard < ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
+alias pubkey="ccopy < ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
 
 #   Microphone mute/unmute
 alias micoff='amixer set Capture nocap'
