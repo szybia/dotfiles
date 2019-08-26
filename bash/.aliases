@@ -21,17 +21,20 @@ alias tmd='transmission-daemon'
 
 #   Long list of everything
 alias ll='ls -AlhF --color=auto'
+#   List hidden
+alias la='ls -A --color=auto'
+#   Classify and list by column
+alias l='ls -CF --color=auto'
+
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
 if [ "${machine}" = "Mac" ]
 then
     alias ll='ls -AlhFG'
+    alias la='ls -AG'
+    #   Classify and list by column
+    alias l='ls -CFG'
 fi
-
-#   List hidden
-alias la='ls -A --color=auto'
-#   Classify and list by column
-alias l='ls -CF --color=auto'
 
 #   df default
 alias df="df -Th --total"
@@ -108,15 +111,14 @@ then
     alias ccopy='pbcopy'
 fi
 
-
 #   print readable PATH
 alias path='echo -e ${PATH//:/\\n}'
 
 #   Copy SSH private key
-alias prikey="xclip -selection clipboard < ~/.ssh/id_ed25519 | echo '=> Private key copied to pasteboard.'"
+alias prikey="ccopy < ~/.ssh/id_ed25519 | echo '=> Private key copied to pasteboard.'"
 
 #   Copy SSH public key
-alias pubkey="xclip -selection clipboard < ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
+alias pubkey="ccopy < ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
 
 #   Microphone mute/unmute
 alias micoff='amixer set Capture nocap'
@@ -135,3 +137,8 @@ alias youtube-audio='youtube-dl -x --audio-format mp3'
 
 #   calcurse
 alias cal='calcurse'
+
+#   clear screen
+#       keeps previous output while allowing for
+#       distuingishing the gap between commands
+alias clear_man="for i in {1..100}; do echo; done"
