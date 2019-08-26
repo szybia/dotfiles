@@ -137,3 +137,8 @@ alias youtube-audio='youtube-dl -x --audio-format mp3'
 
 #   calcurse
 alias cal='calcurse'
+
+#   clear screen
+#       keeps previous output while allowing for
+#       distuingishing the gap between commands
+alias clear_man="for i in {1..100}; do echo; done"
