@@ -36,29 +36,22 @@ export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 
 #   Case-insensitive globbing (used in pathname expansion)
-shopt -s nocaseglob
+shopt -s nocaseglob &>/dev/null
 
 #   Append to the Bash history file, rather than overwriting it
-shopt -s histappend
+shopt -s histappend &>/dev/null
 
-if [ "${machine}" != "Mac" ]
-then
-    #   Allow bash recursive globbbing
-    shopt -s globstar
-
-    #   Typing out a path on it's own will cd into it
-    shopt -s autocd
-fi
-
-
-#   Check window size after each command
-shopt -s checkwinsize
+#   Allow bash recursive globbbing
+shopt -s globstar &>/dev/null
 
 #   Typing out a path on it's own will cd into it
-shopt -s autocd
+shopt -s autocd &>/dev/null
+
+#   Check window size after each command
+shopt -s checkwinsize &>/dev/null
 
 #   Allow for cd <var>
-shopt -s cdable_vars
+shopt -s cdable_vars &>/dev/null
 
 #   Allows cycling through options
 bind 'TAB':menu-complete
