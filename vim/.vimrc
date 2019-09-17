@@ -172,9 +172,6 @@ inoremap <C-j> <ESC><C-W>j
 " Call ESC on Ctrl-C
 inoremap <C-c> <ESC>
 
-" Remap VIM 0 to first non-blank character
-map 0 ^
-
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
 
