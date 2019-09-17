@@ -1,0 +1,88 @@
+" ---------- Searching ----------
+
+" incremental, highlighted, case insensitive smart search
+ set incsearch
+ set hlsearch
+ set ignorecase
+ set smartcase
+
+"  " Quick search
+ map <space> /
+ map <c-space> ?
+
+" ---------- Cursor and rulers ----------
+
+" show the cursor position
+ set ruler
+
+" cursor centered
+ set scrolloff=10
+
+
+" keep 500 items in the history
+set history=500
+
+" show incomplete commands
+set showcmd
+
+" show a menu when using tab completion
+set wildmenu
+
+" Integrate with system clipboard
+set clipboard=unnamedplus,unnamed
+
+" prevent linebreak within word
+set lbr
+
+" map leader
+let mapleader=','
+
+" default encoding
+set encoding=utf-8
+
+" Dont redraw when executing macros
+set lazyredraw
+
+" Regex magic
+set magic
+
+" Read file when it is changed from the outside
+set autoread
+
+" Set 15 lines to the cursor when moving vertically
+set so=15
+
+let $LANG='en'
+set langmenu=en
+
+" Height of bottom command bar
+set cmdheight=2
+
+" Unix standard file type
+set ffs=unix,dos,mac
+
+set noerrorbells
+
+" speed up syntax highlighting
+set nocursorcolumn
+set nocursorline
+" automatic smart indent
+set ai
+set si
+
+" enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" tabs to spaces
+set expandtab
+" smart tab
+set smarttab
+" tab size 4 spaces
+set tabstop=4
+" shift width 4 spaces
+set shiftwidth=4
+
+" shortcut to delete in the black hole register
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
