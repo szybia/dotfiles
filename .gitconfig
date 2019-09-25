@@ -26,8 +26,9 @@
 [alias]
 
     a = add
+    ac = !sh -c 'git add \"$1\" && git c' -
     #   Amend staged files to latest commit
-    amend = commit --amend --reuse-message=HEAD
+    amend = commit --amend
 
     b = branch
 
@@ -41,6 +42,9 @@
     cl = clone --recursive
     #   Commit with comment
     cm = commit -vm
+
+    #   Rebase continue
+    continue = rebase --continue
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color=always"
@@ -57,7 +61,7 @@
     r = reset
     rs = reset --soft
     rh = reset --hard
-    rhead = reset HEAD
+    rhead = reset HEAD --colour=always
 
     rmc = rm --cached
 
@@ -69,3 +73,5 @@
 
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
+[core]
+	pager = less -F -X
