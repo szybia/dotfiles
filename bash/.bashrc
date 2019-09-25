@@ -16,7 +16,7 @@ case "${uname_out}" in
     CYGWIN*)    machine=Cygwin;;
     MINGW*)     machine=MinGw;;
     *)          machine="UNKNOWN:${uname_out}"
-    esac
+esac
 unset uname_out
 
 if [ "${machine}" == "Mac" ]
