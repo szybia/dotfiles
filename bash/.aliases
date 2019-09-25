@@ -142,3 +142,14 @@ alias cal='calcurse'
 #       keeps previous output while allowing for
 #       distuingishing the gap between commands
 alias clear_man="for i in {1..100}; do echo; done"
+
+#   escape all special characters
+alias escape="sed 's/[^a-zA-Z0-9]/\/&/g'"
+
+#   Vagrant aliases
+alias vll="vagrant global-status --prune"
+alias vd="vagrant destroy"
+alias vssh="vagrant ssh"
+
+#   git typo
+alias gti="git"
