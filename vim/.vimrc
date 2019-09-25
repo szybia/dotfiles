@@ -71,8 +71,8 @@ set ignorecase
 set smartcase
 
 " Quick search
-map <space> /
-map <c-space> ?
+map <Space> 20j
+map <C-@> 20k
 
 " ---------- Cursor and rulers ----------
 
