@@ -38,6 +38,8 @@
     ca = commit -av
     #   Checkout
     ch = checkout
+    #   View files changed
+    changed = diff-tree --no-commit-id --name-only -r
     #   Clone a repository including all submodules
     cl = clone --recursive
     #   Commit with comment
@@ -56,7 +58,7 @@
     #   View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
-    p = push
+    p = push origin HEAD
 
     r = reset
     rs = reset --soft
