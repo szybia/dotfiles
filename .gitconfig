@@ -67,6 +67,8 @@
 
     rmc = rm --cached
 
+    rv = remote -v
+
     #   View the current working tree status using the short format
     s = status -s
     stat = status
