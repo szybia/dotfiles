@@ -69,8 +69,11 @@
 
     #   View the current working tree status using the short format
     s = status -s
+    stat = status
+
     sh = show
     shead = show HEAD
+
     st = stash
 
     #   'Undo' a commit
