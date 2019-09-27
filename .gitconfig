@@ -76,7 +76,9 @@
     sh = show
     shead = show HEAD
 
+    #   st default to push and stp to pop
     st = stash
+    stp = stash pop
 
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
