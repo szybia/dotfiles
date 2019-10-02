@@ -80,6 +80,12 @@
     st = stash
     stp = stash pop
 
+    stl = stash list
+    #   Shortcut for stash show diff
+    #   `git sts` (latest) = `git stash show -p stash@{0}`
+    #   `git sts <num>`    = `git stash show -p stash@{<num>}`
+    sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
+
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
 [core]
