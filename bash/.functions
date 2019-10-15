@@ -19,7 +19,7 @@ sha256check () {
 }
 
 histg () {
-    history | grep "$1"
+    history | grep -e "$1"
 }
 
 extract() {
