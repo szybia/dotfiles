@@ -28,6 +28,8 @@
 
     a = add
     ac = !sh -c 'git add \"$1\" && git c' -
+    apatch = add --patch .
+
     #   Amend staged files to latest commit
     amend = commit --amend
 
@@ -46,8 +48,10 @@
     #   Commit with comment
     cm = commit -vm
 
-    #   Rebase continue
+    #   Rebase
     continue = rebase --continue
+    abort = rebase --abort
+
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color=always"
@@ -65,6 +69,8 @@
     rs = reset --soft
     rh = reset --hard
     rhead = reset HEAD --colour=always
+
+    restaged = restore --staged
 
     rmc = rm --cached
 
@@ -86,6 +92,14 @@
     #   `git sts` (latest) = `git stash show -p stash@{0}`
     #   `git sts <num>`    = `git stash show -p stash@{<num>}`
     sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
+
+    #   List remote tags
+    taglsremote = ls-remote --tags
+    #   Remove all local tags not in specified remote (default origin)
+    #       removes all tags and then fetches them from specified remote
+    #   Usage: git tagsrmlocal (origin default)
+    #          git tagsrmlocal upstream
+    tagsrmlocal = "!f() { git tag -d $(git tag) && git fetch --tags ${1:-origin}; }; f"
 
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
