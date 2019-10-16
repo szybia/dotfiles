@@ -42,7 +42,8 @@
     #   Checkout
     ch = checkout
     #   View files changed
-    changed = diff-tree --no-commit-id --name-only -r
+    changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
+
     #   Clone a repository including all submodules
     cl = clone --recursive
     #   Commit with comment
