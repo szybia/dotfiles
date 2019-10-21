@@ -87,8 +87,14 @@ alias v='vim'
 alias tmux="tmux -2"
 
 #   Open file explorer
-alias wh='nohup thunar . &>/dev/null &'
-alias wx='nohup thunar . &>/dev/null & exit'
+if [ "${machine}" == "Mac" ]
+then
+    alias wh='open .'
+    alias wx='wh & exit'
+else
+    alias wh='nohup thunar . &>/dev/null &'
+    alias wx='nohup thunar . &>/dev/null & exit'
+fi
 
 #   Coloured grep
 alias grep="grep --color=auto"
