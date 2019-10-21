@@ -28,6 +28,7 @@
 
     a = add
     ac = !sh -c 'git add \"$1\" && git c' -
+    all = add .
     apatch = add --patch .
 
     #   Amend staged files to latest commit
