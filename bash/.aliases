@@ -105,9 +105,6 @@ alias rgh="rg --hidden -g '!.git/*'"
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
-#   Docker aliases
-alias dcom='docker-compose'
-
 #   curl API | pretty
 alias pretty='python -m json.tool'
 
@@ -162,3 +159,49 @@ alias vssh="vagrant ssh"
 
 #   git typo
 alias gti="git"
+
+
+# ------------------------------------
+# Docker aliases and functions
+#   credit: https://github.com/tcnksm/docker-alias
+# ------------------------------------
+
+alias dk="docker"
+alias dcom="docker-compose"
+
+# Get container process
+alias dps="docker ps"
+
+# Get process included stop container
+alias dpa="docker ps -a"
+
+# Get images
+alias di="docker images"
+
+# Remove all <none> images
+alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
+
+# Get container IP
+alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+
+# Run aliase
+alias dr="docker run"
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd="docker run -d -P"
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki="docker run -i -t -P"
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex="docker exec -i -t"
+
+# Stop and remove all containers
+alias dsrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Kill and remove all containers
+alias dkrm='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+
+# Prune all containers
+alias dprune='docker container prune -f'
+
