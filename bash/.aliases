@@ -59,7 +59,7 @@ alias wget="wget -c"
 alias fhere='find . -name '
 
 #   Search files for string
-alias fsearch='grep -I --exclude-dir .git -rn . -e '
+alias fsearch='rg -i . -e '
 
 #   List IP
 alias myip="curl http://ipecho.net/plain; echo"
@@ -98,6 +98,9 @@ fi
 
 #   Coloured grep
 alias grep="grep --color=auto"
+
+#   ripgrep search hidden files
+alias rgh="rg --hidden -g '!.git/*'"
 
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
