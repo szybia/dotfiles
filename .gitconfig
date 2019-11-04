@@ -28,6 +28,7 @@
 
     a = add
     ac = !sh -c 'git add \"$1\" && git c' -
+    all = add .
     apatch = add --patch .
 
     #   Amend staged files to latest commit
@@ -42,7 +43,8 @@
     #   Checkout
     ch = checkout
     #   View files changed
-    changed = diff-tree --no-commit-id --name-only -r
+    changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
+
     #   Clone a repository including all submodules
     cl = clone --recursive
     #   Commit with comment
@@ -54,8 +56,8 @@
 
 
     # Show the diff between the latest commit and the current state
-    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words=."
-    dc = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --cached --patch-with-stat --color-words=."
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
+    dc = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --cached --patch-with-stat --color-words"
 
     #   Color graph log view
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
@@ -80,7 +82,7 @@
     s = status -s
     stat = status
 
-    sh = !"git --no-pager show --color-words=."
+    sh = !"git --no-pager show --color-words"
 
     #   st default to push and stp to pop
     st = stash
@@ -103,4 +105,8 @@
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
 [core]
-	pager = less -F -X
+    pager = less -F -X
+
+[color "diff"]
+    old = red bold
+    new = yellow bold

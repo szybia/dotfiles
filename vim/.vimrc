@@ -53,6 +53,8 @@ Plug 'Raimondi/delimitMate'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'tpope/vim-surround'
+
 call plug#end()
 
 " ---------- Themes and Aeshetic ----------
