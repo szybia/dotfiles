@@ -50,7 +50,7 @@ xinit:
 
 .PHONY: git
 git:
-	@ln -sfn $(CURDIR)/.gitconfig $(HOME)/.gitconfig
+	@ln -sfn $(CURDIR)/git/.gitconfig $(HOME)/.gitconfig
 
 .PHONY: ssh
 ssh:
