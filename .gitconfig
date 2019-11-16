@@ -104,9 +104,12 @@
 
     #   'Undo' a commit
     undo = !git reset HEAD~1 --mixed
+
 [core]
     pager = less -F -X
+	editor = vim
 
 [color "diff"]
     old = red bold
     new = yellow bold
+
