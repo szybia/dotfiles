@@ -66,6 +66,9 @@ alias fsearch='rg -uu -g "!.git/" -i . -e '
 #   List IP
 alias myip="curl http://ipecho.net/plain; echo"
 
+# check internet connection
+alias online='wget -q --spider szybia.com'
+
 #   listen to processes on network
 alias listen="lsof -P -i -n"
 
