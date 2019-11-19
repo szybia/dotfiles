@@ -27,7 +27,7 @@
 [alias]
 
     a = add
-    ac = !sh -c 'git add \"$1\" && git c' -
+    ac = !sh -c 'git add $@ && git c' -
     all = add .
     apatch = add --patch .
 
