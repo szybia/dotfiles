@@ -74,7 +74,9 @@
     rh = reset --hard
     rhead = reset HEAD --colour=always
 
+    restall = restore .
     restaged = restore --staged
+    restagedall = restore --staged .
 
     rmc = rm --cached
 
@@ -95,6 +97,8 @@
     #   `git sts` (latest) = `git stash show -p stash@{0}`
     #   `git sts <num>`    = `git stash show -p stash@{<num>}`
     sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
+
+    switchback = switch -
 
     #   List remote tags
     taglsremote = ls-remote --tags
