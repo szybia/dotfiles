@@ -182,6 +182,9 @@ alias dpa="docker ps -a"
 # Get images
 alias di="docker images"
 
+# Remove image shortcut
+alias dri='docker rmi'
+
 # Remove all <none> images
 alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
 

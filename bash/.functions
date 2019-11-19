@@ -224,10 +224,10 @@ calc(){ awk "BEGIN { print ""$*"" }"; }
 dstop() { docker stop "$(docker ps -a -q)"; }
 
 # Remove all containers
-drm() { docker rm "$(docker ps -a -q)"; }
+drmall() { docker rm "$(docker ps -a -q)"; }
 
 # Remove all images
-dri() { docker rmi "$(docker images -q)"; }
+drmiall() { docker images -q | xargs docker rmi -f; }
 
 # Dockerfile build, e.g., $dbu tcnksm/test
 dbu() { docker build -t "$1" .; }
