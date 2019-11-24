@@ -72,9 +72,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" Quick search
-map <Space> 20j
-map <C-@> 20k
+" "Scroll" through file
+map <Space> 10j
+map <C-@> 10k
 
 " ---------- Cursor and rulers ----------
 
