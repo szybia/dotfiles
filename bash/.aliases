@@ -170,7 +170,6 @@ alias gti="git"
 #   credit: https://github.com/tcnksm/docker-alias
 # ------------------------------------
 
-alias dk="docker"
 alias dcom="docker-compose"
 
 # Get container process
@@ -183,7 +182,7 @@ alias dpa="docker ps -a"
 alias di="docker images"
 
 # Remove image shortcut
-alias dri='docker rmi'
+alias drmi='docker rmi'
 
 # Remove all <none> images
 alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
@@ -207,7 +206,10 @@ alias dex="docker exec -i -t"
 alias dsrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 # Kill and remove all containers
-alias dkrm='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+alias dkrmall='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+
+# Kill container
+alias dkill='docker kill'
 
 # Prune all containers
 alias dprune='docker container prune -f'
