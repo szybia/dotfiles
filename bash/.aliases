@@ -104,7 +104,7 @@ fi
 alias grep="grep --color=auto"
 
 #   ripgrep search hidden files
-alias rgh="rg --hidden -g '!.git/*'"
+alias rgh="rg --hidden -g '!.git/*' -i"
 
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
