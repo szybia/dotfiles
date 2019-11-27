@@ -36,12 +36,16 @@
 
     b = branch
 
+    #   Clean
+    cleanall = clean -dfX
     #   Commit
     c = commit -v
     #   Commit all modified files
     ca = commit -av
     #   Checkout
     ch = checkout
+    #   Checkout last branch you were on
+    chback = checkout -
     #   View files changed
     changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
 
@@ -53,7 +57,6 @@
     #   Rebase
     continue = rebase --continue
     abort = rebase --abort
-
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
@@ -68,12 +71,14 @@
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
     p = push origin HEAD
+    pups = pull upstream HEAD
 
     r = reset
     rs = reset --soft
     rh = reset --hard
     rhead = reset HEAD --colour=always
 
+    rest = restore
     restall = restore .
     restaged = restore --staged
     restagedall = restore --staged .
@@ -91,6 +96,8 @@
     #   st default to push and stp to pop
     st = stash
     stp = stash pop
+    #   stash only unstaged changes
+    stun = stash -k -u
 
     stl = stash list
     #   Shortcut for stash show diff
