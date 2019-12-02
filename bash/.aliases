@@ -164,6 +164,10 @@ alias vssh="vagrant ssh"
 #   git typo
 alias gti="git"
 
+#   npm aliases
+#   npm clean and install
+alias npmclinstall='rm -rf node_modules/ package-lock.json && npm install'
+
 
 # ------------------------------------
 # Docker aliases and functions
