@@ -175,7 +175,7 @@ randpw() {
         *) break;;
     esac done
     pass=$( LC_ALL=C </dev/urandom tr -dc "$chars" | head -c "${1:-$length}" )
-    echo -n "$pass" | { if (( clip == 1 )); then xclip -selection clipboard; else cat -; fi; }
+    echo -n "$pass" | { if (( clip == 1 )); then ccopy; else cat -; fi; }
 }
 
 rename_snake() {
