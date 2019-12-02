@@ -19,7 +19,7 @@ case "${uname_out}" in
 esac
 unset uname_out
 
-if [ "${machine}" == "Mac" ]
+if [ "${machine}" == 'Mac' ]
 then
     eval "$(gdircolors ~/.dir_colors)";
 else
@@ -56,7 +56,7 @@ shopt -s cdable_vars &>/dev/null
 #   Allows cycling through options
 bind 'TAB':menu-complete
 
-if [ "${machine}" == "Mac" ]
+if [ "${machine}" == 'Mac' ]
 then
     #   Source bash and git auto-complete
     # shellcheck disable=SC1091,SC2015

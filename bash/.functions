@@ -104,7 +104,7 @@ isup() {
     [ "$#" -ne 1 ] && echo "Usage: ${FUNCNAME[0]} <URI>" && return 1
 
     #   If HTTP code not 200
-    if curl -Ls -o /dev/null -w "%{http_code}" "$uri" | grep -v "200" > /dev/null; then
+    if curl -Ls -o /dev/null -w '%{http_code}' "$uri" | grep -v '200' > /dev/null; then
         return 1
     fi
 }
@@ -124,14 +124,14 @@ bak() { cp "$1"{,.bak};}
 
 #   Crypto
 shred_current_directory() {
-    echo "You will IRREVERSIBLY shred the following files:"
+    echo 'You will IRREVERSIBLY shred the following files:'
     find . ! -path .
-    read -p "Are you sure? (y/n): " -r
+    read -p 'Are you sure? (y/n): ' -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        echo "shredding..."
+        echo 'shredding...'
         find . -type f -exec shred {} -n 1 --remove=wipe \;
-        echo "completed shredding."
+        echo 'completed shredding.'
     fi
 }
 
@@ -221,7 +221,7 @@ uuid() {
         -c|--clip) clip=1; shift ;;
         *) break;;
     esac done
-python3 -c "import uuid; print(uuid.uuid4(), end='')" | { if (( clip == 1 )); then ccopy; else cat -; fi; }
+python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); then ccopy; else cat -; fi; }
 }
 
 # ------------------------------------
