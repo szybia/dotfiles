@@ -214,6 +214,15 @@ untargz() { tar -zxvf "$1" && rm -r "$1"; }
 #   calculate
 calc(){ awk "BEGIN { print ""$*"" }"; }
 
+#   generate UUID
+uuid() {
+    local clip=0
+    while true; do case $1 in
+        -c|--clip) clip=1; shift ;;
+        *) break;;
+    esac done
+python3 -c "import uuid; print(uuid.uuid4(), end='')" | { if (( clip == 1 )); then ccopy; else cat -; fi; }
+}
 
 # ------------------------------------
 # Docker functions
