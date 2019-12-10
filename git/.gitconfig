@@ -105,6 +105,7 @@
     #   `git sts <num>`    = `git stash show -p stash@{<num>}`
     sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
 
+    swba = switch -
     switchback = switch -
 
     #   List remote tags
