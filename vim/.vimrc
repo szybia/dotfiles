@@ -259,3 +259,10 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 " shortcut to paste but keeping the current register
 vnoremap <leader>p "_dP
+
+
+" detect MacOS and relevent overrides
+let s:uname = system('echo -n "$(uname -s)"')
+if !v:shell_error && s:uname == 'Darwin'
+    set clipboard=unnamed
+endif
