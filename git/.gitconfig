@@ -44,6 +44,8 @@
     ca = commit -av
     #   Checkout
     ch = checkout
+    #   Checkout new branch
+    chnew = checkout -b
     #   Checkout last branch you were on
     chback = checkout -
     #   View files changed
@@ -57,6 +59,8 @@
     #   Rebase
     continue = rebase --continue
     abort = rebase --abort
+
+    remaster = rebase -i master
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
