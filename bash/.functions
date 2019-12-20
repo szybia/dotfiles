@@ -246,3 +246,8 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 
 # Bash into running container
 dbash() { docker exec -it "$(docker ps -aqf "name=$1")" bash; }
+
+# Copy string into clipboard
+clipb () {
+    echo "$1" | ccopy
+}
