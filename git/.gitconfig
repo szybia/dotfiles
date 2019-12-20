@@ -38,6 +38,8 @@
 
     #   Clean
     cleanall = clean -dfX
+    #   Clean dry-run
+    cleanalln = clean -dfXn
     #   Commit
     c = commit -v
     #   Commit all modified files
