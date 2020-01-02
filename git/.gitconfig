@@ -27,7 +27,7 @@
 [alias]
 
     a = add
-    ac = !sh -c 'git add \"$1\" && git c' -
+    ac = !sh -c 'git add $@ && git c' -
     all = add .
     apatch = add --patch .
 
@@ -36,12 +36,20 @@
 
     b = branch
 
+    #   Clean
+    cleanall = clean -dfX
+    #   Clean dry-run
+    cleanalln = clean -dfXn
     #   Commit
     c = commit -v
     #   Commit all modified files
     ca = commit -av
     #   Checkout
     ch = checkout
+    #   Checkout new branch
+    chnew = checkout -b
+    #   Checkout last branch you were on
+    chback = checkout -
     #   View files changed
     changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
 
@@ -54,6 +62,7 @@
     continue = rebase --continue
     abort = rebase --abort
 
+    remaster = rebase -i master
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
@@ -68,13 +77,17 @@
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
     p = push origin HEAD
+    pups = pull upstream HEAD
 
     r = reset
     rs = reset --soft
     rh = reset --hard
     rhead = reset HEAD --colour=always
 
+    rest = restore
+    restall = restore .
     restaged = restore --staged
+    restagedall = restore --staged .
 
     rmc = rm --cached
 
@@ -89,12 +102,17 @@
     #   st default to push and stp to pop
     st = stash
     stp = stash pop
+    #   stash only unstaged changes
+    stun = stash -k -u
 
     stl = stash list
     #   Shortcut for stash show diff
     #   `git sts` (latest) = `git stash show -p stash@{0}`
     #   `git sts <num>`    = `git stash show -p stash@{<num>}`
     sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
+
+    swba = switch -
+    switchback = switch -
 
     #   List remote tags
     taglsremote = ls-remote --tags
@@ -117,4 +135,7 @@
 
 [feature]
 	manyFiles = true
+
+[checkout]
+	defaultRemote = origin
 

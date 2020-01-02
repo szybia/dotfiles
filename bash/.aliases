@@ -28,7 +28,7 @@ alias l='ls -CF --color=auto'
 
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
-if [ "${machine}" = "Mac" ]
+if [ "${machine}" = 'Mac' ]
 then
     alias ll='ls -AlhFG'
     alias la='ls -AG'
@@ -37,23 +37,23 @@ then
 fi
 
 #   df default
-alias df="df -Th --total"
+alias df='df -Th --total'
 
 #   mv and cp default
-alias mv="mv -i"
-alias cp="cp -i"
+alias mv='mv -i'
+alias cp='cp -i'
 
 #   free default
-alias free="free -mt"
+alias free='free -mt'
 
 #   ps default
-alias ps="ps auxf"
+alias ps='ps auxf'
 
 #   mkdir default create parents
-alias mkdir="mkdir -p"
+alias mkdir='mkdir -p'
 
 #   wget continue downloading in case of problem
-alias wget="wget -c"
+alias wget='wget -c'
 
 #   Search for files
 alias fhere='find . -name '
@@ -64,16 +64,16 @@ alias fhere='find . -name '
 alias fsearch='rg -uu -g "!.git/" -i . -e '
 
 #   List IP
-alias myip="curl http://ipecho.net/plain; echo"
+alias myip='curl https://ipinfo.tw; echo'
 
 # check internet connection
 alias online='wget -q --spider szybia.com'
 
 #   listen to processes on network
-alias listen="lsof -P -i -n"
+alias listen='lsof -P -i -n'
 
 #   hilarious
-alias busy="hexdump -C < /dev/urandom | grep 'ca fe'"
+alias busy='hexdump -C < /dev/urandom | grep "ca fe"'
 
 #   Make cd quicker
 alias cd..='cd ../'
@@ -82,29 +82,29 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 #   Popular command shortcuts
-alias dl="cd ~/downloads"
-alias h="history"
-alias r="ranger"
+alias dl='cd ~/downloads'
+alias h='history'
+alias r='ranger'
 alias v='vim'
 
 #   Tmux
 #   This fixes a problem which messes up the LS_COLORS
-alias tmux="tmux -2"
+alias tmux='tmux -2'
 
 #   Open file explorer
 alias wh='nohup thunar . &>/dev/null &'
 alias wx='nohup thunar . &>/dev/null & exit'
-if [ "${machine}" == "Mac" ]
+if [ "${machine}" == 'Mac' ]
 then
     alias wh='open .'
     alias wx='wh & exit'
 fi
 
 #   Coloured grep
-alias grep="grep --color=auto"
+alias grep='grep --color=auto'
 
 #   ripgrep search hidden files
-alias rgh="rg --hidden -g '!.git/*'"
+alias rgh="rg --hidden -g '!.git/*' -i"
 
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
@@ -115,7 +115,7 @@ alias pretty='python -m json.tool'
 #   easier clipboard
 alias ccopy='xclip -selection clipboard'
 alias cpaste='xclip -selection clipboard -o'
-if [ "${machine}" = "Mac" ]
+if [ "${machine}" = 'Mac' ]
 then
     alias cpaste='pbpaste'
     alias ccopy='pbcopy'
@@ -125,10 +125,10 @@ fi
 alias path='echo -e ${PATH//:/\\n}'
 
 #   Copy SSH private key
-alias prikey="ccopy < ~/.ssh/id_ed25519 | echo '=> Private key copied to pasteboard.'"
+alias prikey='ccopy < ~/.ssh/id_ed25519 | echo "=> Private key copied to pasteboard."'
 
 #   Copy SSH public key
-alias pubkey="ccopy < ~/.ssh/id_ed25519.pub | echo '=> Public key copied to pasteboard.'"
+alias pubkey='ccopy < ~/.ssh/id_ed25519.pub | echo "=> Public key copied to pasteboard."'
 
 #   Microphone mute/unmute
 alias micoff='amixer set Capture nocap'
@@ -138,9 +138,9 @@ alias micon='amixer set Capture cap'
 alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 #   USBGuard
-alias usbl="usbguard list-devices"
-alias usba="usbguard allow-device"
-alias usbb="usbguard block-device"
+alias usbl='usbguard list-devices'
+alias usba='usbguard allow-device'
+alias usbb='usbguard block-device'
 
 #   youtube-dl
 alias youtube-audio='youtube-dl -x --audio-format mp3'
@@ -153,18 +153,22 @@ alias cal='calcurse'
 #   clear screen
 #       keeps previous output while allowing for
 #       distuingishing the gap between commands
-alias clear_man="for i in {1..100}; do echo; done"
+alias clear_man='for i in {1..100}; do echo; done'
 
 #   escape all special characters
 alias escape="sed 's/[^a-zA-Z0-9]/\\\&/g'"
 
 #   Vagrant aliases
-alias vll="vagrant global-status --prune"
-alias vd="vagrant destroy"
-alias vssh="vagrant ssh"
+alias vll='vagrant global-status --prune'
+alias vd='vagrant destroy'
+alias vssh='vagrant ssh'
 
 #   git typo
-alias gti="git"
+alias gti='git'
+
+#   npm aliases
+#   npm clean and install
+alias npmclinstall='rm -rf node_modules/ package-lock.json && npm install'
 
 
 # ------------------------------------
@@ -172,41 +176,46 @@ alias gti="git"
 #   credit: https://github.com/tcnksm/docker-alias
 # ------------------------------------
 
-alias dk="docker"
-alias dcom="docker-compose"
+alias dcom='docker-compose'
 
 # Get container process
-alias dps="docker ps"
+alias dps='docker ps'
 
 # Get process included stop container
-alias dpa="docker ps -a"
+alias dpa='docker ps -a'
 
 # Get images
-alias di="docker images"
+alias di='docker images'
+
+# Remove image shortcut
+alias drmi='docker rmi'
 
 # Remove all <none> images
 alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
 
 # Get container IP
-alias dip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias dip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
 
 # Run aliase
-alias dr="docker run"
+alias dr='docker run'
 
 # Run deamonized container, e.g., $dkd base /bin/echo hello
-alias dkd="docker run -d -P"
+alias dkd='docker run -d -P'
 
 # Run interactive container, e.g., $dki base /bin/bash
-alias dki="docker run -i -t -P"
+alias dki='docker run -i -t -P'
 
 # Execute interactive container, e.g., $dex base /bin/bash
-alias dex="docker exec -i -t"
+alias dex='docker exec -i -t'
 
 # Stop and remove all containers
 alias dsrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
 
 # Kill and remove all containers
-alias dkrm='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+alias dkrmall='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+
+# Kill container
+alias dkill='docker kill'
 
 # Prune all containers
 alias dprune='docker container prune -f'

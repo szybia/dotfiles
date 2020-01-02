@@ -259,3 +259,12 @@ nnoremap <leader>d "_d
 vnoremap <leader>d "_d
 " shortcut to paste but keeping the current register
 vnoremap <leader>p "_dP
+
+" set ~/.custom filetype to be bash
+au BufRead,BufNewFile .custom set filetype=bash
+
+" detect MacOS and relevent overrides
+let s:uname = system('echo -n "$(uname -s)"')
+if !v:shell_error && s:uname == 'Darwin'
+    set clipboard=unnamed
+endif

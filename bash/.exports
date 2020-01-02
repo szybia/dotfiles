@@ -1,13 +1,17 @@
 #!/bin/bash
 
 #   History time format
-export HISTTIMEFORMAT="%d/%m/%y %T "
+export HISTTIMEFORMAT='%d/%m/%y %T '
 export HISTSIZE=1000000
 export HISTFILESIZE=$HISTSIZE;
 export HISTCONTROL=ignoredups;
 CURRENT_TTY=$(tty)
 export GPG_TTY=$CURRENT_TTY
 unset CURRENT_TTY
+
+#   Language
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=1
@@ -16,7 +20,7 @@ export PROMPT_DIRTRIM=1
 #   cd, ls, safe git aliases
 #   This allows us to start a command with space if
 #   we don't want it to be saved in history
-export HISTIGNORE="clear:exit:history:pwd: *:"
+export HISTIGNORE='clear:exit:history:pwd: *:'
 
 # PS1 Appearance
 brackets="\[\033[38;5;015m\]"

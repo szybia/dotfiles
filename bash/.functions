@@ -19,7 +19,7 @@ sha256check () {
 }
 
 histg () {
-    history | rg -e "$1"
+    history | rg -i -e "$1"
 }
 
 extract() {
@@ -105,7 +105,7 @@ isup() {
     [ "$#" -ne 1 ] && echo "Usage: ${FUNCNAME[0]} <URI>" && return 1
 
     #   If HTTP code not 200
-    if curl -Ls -o /dev/null -w "%{http_code}" "$uri" | grep -v "200" > /dev/null; then
+    if curl -Ls -o /dev/null -w '%{http_code}' "$uri" | grep -v '200' > /dev/null; then
         return 1
     fi
 }
@@ -125,14 +125,14 @@ bak() { cp "$1"{,.bak};}
 
 #   Crypto
 shred_current_directory() {
-    echo "You will IRREVERSIBLY shred the following files:"
+    echo 'You will IRREVERSIBLY shred the following files:'
     find . ! -path .
-    read -p "Are you sure? (y/n): " -r
+    read -p 'Are you sure? (y/n): ' -r
     if [[ $REPLY =~ ^[Yy]$ ]]
     then
-        echo "shredding..."
+        echo 'shredding...'
         find . -type f -exec shred {} -n 1 --remove=wipe \;
-        echo "completed shredding."
+        echo 'completed shredding.'
     fi
 }
 
@@ -176,7 +176,7 @@ randpw() {
         *) break;;
     esac done
     pass=$( LC_ALL=C </dev/urandom tr -dc "$chars" | head -c "${1:-$length}" )
-    echo -n "$pass" | { if (( clip == 1 )); then xclip -selection clipboard; else cat -; fi; }
+    echo -n "$pass" | { if (( clip == 1 )); then ccopy; else cat -; fi; }
 }
 
 rename_snake() {
@@ -215,6 +215,15 @@ untargz() { tar -zxvf "$1" && rm -r "$1"; }
 #   calculate
 calc(){ awk "BEGIN { print ""$*"" }"; }
 
+#   generate UUID
+uuid() {
+    local clip=0
+    while true; do case $1 in
+        -c|--clip) clip=1; shift ;;
+        *) break;;
+    esac done
+python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); then ccopy; else cat -; fi; }
+}
 
 # ------------------------------------
 # Docker functions
@@ -225,10 +234,10 @@ calc(){ awk "BEGIN { print ""$*"" }"; }
 dstop() { docker stop "$(docker ps -a -q)"; }
 
 # Remove all containers
-drm() { docker rm "$(docker ps -a -q)"; }
+drmall() { docker rm "$(docker ps -a -q)"; }
 
 # Remove all images
-dri() { docker rmi "$(docker images -q)"; }
+drmiall() { docker images -q | xargs docker rmi -f; }
 
 # Dockerfile build, e.g., $dbu tcnksm/test
 dbu() { docker build -t "$1" .; }
@@ -238,3 +247,8 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 
 # Bash into running container
 dbash() { docker exec -it "$(docker ps -aqf "name=$1")" bash; }
+
+# Copy string into clipboard
+clipb () {
+    echo "$1" | ccopy
+}
