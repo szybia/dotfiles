@@ -75,4 +75,4 @@ for file in ~/.{aliases,functions,exports,custom}; do
     fi
 done
 
-unset file machine
+unset file
