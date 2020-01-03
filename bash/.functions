@@ -78,9 +78,11 @@ mktmpcd() {
 tmpcd() {
     shopt -s nullglob
     local tmps
+    #   We assign `machine` in `.bashrc`
+    # shellcheck disable=SC2154
     if [ "${machine}" == 'Mac' ]
     then
-        tmps=( $TMPDIR/tmp.* )
+        tmps=( "$TMPDIR"/tmp.* )
     else
         tmps=( /tmp/tmp.* )
     fi
