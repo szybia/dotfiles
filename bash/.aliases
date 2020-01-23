@@ -223,3 +223,6 @@ alias dkill='docker kill'
 # Prune all containers
 alias dprune='docker container prune -f'
 
+# For when you're really not sure which letter comes first
+alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
+
