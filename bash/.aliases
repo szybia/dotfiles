@@ -191,7 +191,7 @@ alias ghprview='gh pr view'
 
 # gh hub cli
 alias hubbr='hub browse'
-alias hubci='hub ci-statusu'
+alias hubci='hub ci-status'
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
 
