@@ -268,3 +268,8 @@ let s:uname = system('echo -n "$(uname -s)"')
 if !v:shell_error && s:uname == 'Darwin'
     set clipboard=unnamed
 endif
+
+" Treat :Wq as :wq to save time
+:command W w
+:command Wq wq
+:command WQ wq
