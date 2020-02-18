@@ -30,11 +30,9 @@ URxvt*skipScroll:                       true
 URxvt*transparent:                      false
 
 ! Fonts
-URxvt*font:                             xft:Source Code Pro Semibold:pixelsize=15:hinting=full:antialias=true
-URxvt*italicFont:                       xft:Source Code Pro Semibold:italic:autohint=true:pixelsize=15:antialias=true
-URxvt*boldItalicFont:                   xft:Source Code Pro Semibold:bold:italic:autohint=true:pixelsize=15:antialias=true
-! Letter spacing adjustment (probably breaking Monospacing but it doesn't look normal to me)
-URxvt*letterSpace:      -1
+URxvt*font:                             xft:JetBrains Mono:pixelsize=15:hinting=full:antialias=true
+URxvt*italicFont:                       xft:JetBrains Mono:italic:autohint=true:pixelsize=15:antialias=true
+URxvt*boldItalicFont:                   xft:JetBrains Mono:bold:italic:autohint=true:pixelsize=15:antialias=true
 
 ! Fade terminal text when not in focus
 URxvt*fading:           25
