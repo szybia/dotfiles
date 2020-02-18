@@ -160,6 +160,10 @@ alias clear_man='for i in {1..100}; do echo; done'
 
 #   escape all special characters
 alias escape="sed 's/[^a-zA-Z0-9]/\\\&/g'"
+#   DO NOT ask me how this works
+#       https://stackoverflow.com/a/1250279
+# shellcheck disable=SC2142
+alias safescape='sed -e '"'"'s/[]\/$*.^[]/\\&/g'"'"''
 
 #   Vagrant aliases
 alias vll='vagrant global-status --prune'
@@ -173,6 +177,8 @@ alias gti='git'
 #   npm clean and install
 alias npmclinstall='rm -rf node_modules/ package-lock.json && npm install'
 
+#   I also like to live dangerously
+alias rmr="rm -r"
 
 # ------------------------------------
 # Docker aliases and functions
