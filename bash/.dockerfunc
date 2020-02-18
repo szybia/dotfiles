@@ -1,0 +1,32 @@
+# ------------------------------------
+# Docker functions
+#   credit: https://github.com/tcnksm/docker-alias
+# ------------------------------------
+
+# Stop all containers
+dstop() { docker stop "$(docker ps -a -q)"; }
+
+# Remove all containers
+drmall() { docker rm "$(docker ps -a -q)"; }
+
+# Remove all images
+drmiall() { docker images -q | xargs docker rmi -f; }
+
+# Dockerfile build, e.g., $dbu tcnksm/test
+dbu() { docker build -t "$1" .; }
+
+# Show all alias related docker
+dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
+
+# Bash into running container
+dbash() { docker exec -it "$(docker ps -aqf "name=$1")" bash; }
+
+# sh into running container
+dsh() { docker exec -it "$(docker ps -aqf "name=$1")" sh; }
+
+# Remove images based on grep
+drmig() {
+    # shellcheck disable=SC2046
+    docker rmi $(docker images | grep "$@" | awk '{print $3}')
+}
+

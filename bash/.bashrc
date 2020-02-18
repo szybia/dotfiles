@@ -72,7 +72,7 @@ then
     fi
 fi
 
-for file in ~/.{aliases,functions,exports,custom}; do
+for file in ~/.{aliases,functions,exports,custom,docker{func,alias}}; do
     if [[ -r "$file" ]]; then
         # shellcheck disable=SC1090
         source "$file"

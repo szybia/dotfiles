@@ -261,7 +261,7 @@ vnoremap <leader>d "_d
 vnoremap <leader>p "_dP
 
 " set ~/.custom filetype to be bash
-au BufRead,BufNewFile .custom set filetype=bash
+au BufRead,BufNewFile .custom,.dockerfunc,.dockeralias set filetype=bash
 
 " detect MacOS and relevent overrides
 let s:uname = system('echo -n "$(uname -s)"')
