@@ -141,9 +141,9 @@ alias micon='amixer set Capture cap'
 alias remove_orphans='sudo pacman -Rns $(pacman -Qtdq)'
 
 #   USBGuard
-alias usbl='usbguard list-devices'
-alias usba='usbguard allow-device'
-alias usbb='usbguard block-device'
+alias usbl='sudo usbguard list-devices'
+alias usba='sudo usbguard allow-device'
+alias usbb='sudo usbguard block-device'
 
 #   youtube-dl
 alias youtube-audio='youtube-dl -x --audio-format mp3'
