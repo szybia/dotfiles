@@ -64,6 +64,7 @@
     abort = rebase --abort
 
     remaster = rebase -i master
+    redevel = rebase -i devel
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
@@ -140,3 +141,5 @@
 [checkout]
 	defaultRemote = origin
 
+[hub]
+	protocol = ssh
