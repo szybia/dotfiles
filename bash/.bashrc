@@ -58,14 +58,18 @@ bind 'TAB':menu-complete
 
 if [ "${machine}" == 'Mac' ]
 then
-    #   Source bash and git auto-complete
-    # shellcheck disable=SC1091,SC2015
-    [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
-        # if not found in /usr/local/etc, try the brew --prefix location
-        # shellcheck source=/usr/local
-        [ -f "$(brew --prefix)/etc/bash_completion.d/git-completion.bash" ] && \
-        . "$(brew --prefix)"/etc/bash_completion.d/git-completion.bash
-    }
+    if type brew &>/dev/null; then
+      HOMEBREW_PREFIX="$(brew --prefix)"
+      if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+        # shellcheck disable=SC1090
+        source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+      else
+        for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+          # shellcheck disable=SC1090
+          [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+        done
+      fi
+    fi
 fi
 
 for file in ~/.{aliases,functions,exports,custom}; do
