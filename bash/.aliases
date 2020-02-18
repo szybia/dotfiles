@@ -183,3 +183,15 @@ alias rmr="rm -r"
 # For when you're really not sure which letter comes first
 alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
+# gh cli
+alias ghprlist='gh pr list'
+alias ghprnew='gh pr create'
+alias ghprstat='gh pr status'
+alias ghprview='gh pr view'
+
+# gh hub cli
+alias hubbr='hub browse'
+alias hubci='hub ci-statusu'
+alias hubfork='hub fork --remote-name origin'
+alias hubsync='hub sync'
+
