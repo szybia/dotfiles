@@ -257,6 +257,15 @@ dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/[
 # Bash into running container
 dbash() { docker exec -it "$(docker ps -aqf "name=$1")" bash; }
 
+# sh into running container
+dsh() { docker exec -it "$(docker ps -aqf "name=$1")" sh; }
+
+# Remove images based on grep
+drmig() {
+    # shellcheck disable=SC2046
+    docker rmi $(docker images | grep "$@" | awk '{print $3}')
+}
+
 # Copy string into clipboard
 clipb () {
     echo "$1" | ccopy
