@@ -32,3 +32,9 @@ drmig() {
     docker rmi $(docker images | grep "$@" | awk '{print $3}')
 }
 
+# Remove dangling/none volumes
+dvrmnone() {
+    #   We want to word-split
+    # shellcheck disable=SC2046
+    docker volume rm $(docker volume ls -qf dangling=true)
+}
