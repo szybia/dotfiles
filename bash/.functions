@@ -77,7 +77,16 @@ mktmpcd() {
 #   Enter a pre-existing tmp folder or create one
 tmpcd() {
     shopt -s nullglob
-    local tmps=( /tmp/tmp.* )
+    local tmps
+    #   We assign `machine` in `.bashrc`
+    # shellcheck disable=SC2154
+    if [ "${machine}" == 'Mac' ]
+    then
+        tmps=( "$TMPDIR"/tmp.* )
+    else
+        tmps=( /tmp/tmp.* )
+    fi
+
     #   If no tmp folders found $tmps will consist of pattern
     if [ "${#tmps[@]}" -eq 0 ]; then
         mktmpcd "$@"
@@ -224,29 +233,6 @@ uuid() {
     esac done
 python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); then ccopy; else cat -; fi; }
 }
-
-# ------------------------------------
-# Docker functions
-#   credit: https://github.com/tcnksm/docker-alias
-# ------------------------------------
-
-# Stop all containers
-dstop() { docker stop "$(docker ps -a -q)"; }
-
-# Remove all containers
-drmall() { docker rm "$(docker ps -a -q)"; }
-
-# Remove all images
-drmiall() { docker images -q | xargs docker rmi -f; }
-
-# Dockerfile build, e.g., $dbu tcnksm/test
-dbu() { docker build -t "$1" .; }
-
-# Show all alias related docker
-dalias() { alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort; }
-
-# Bash into running container
-dbash() { docker exec -it "$(docker ps -aqf "name=$1")" bash; }
 
 # Copy string into clipboard
 clipb () {

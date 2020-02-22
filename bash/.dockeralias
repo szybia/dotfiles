@@ -1,0 +1,49 @@
+# ------------------------------------
+# Docker aliases and functions
+#   credit: https://github.com/tcnksm/docker-alias
+# ------------------------------------
+
+alias dcom='docker-compose'
+
+# Get container process
+alias dps='docker ps'
+
+# Get process included stop container
+alias dpa='docker ps -a'
+
+# Get images
+alias di='docker images'
+
+# Remove image shortcut
+alias drmi='docker rmi'
+
+# Remove all <none> images
+alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
+
+# Get container IP
+alias dip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
+
+# Run aliase
+alias dr='docker run'
+
+# Run deamonized container, e.g., $dkd base /bin/echo hello
+alias dkd='docker run -d -P'
+
+# Run interactive container, e.g., $dki base /bin/bash
+alias dki='docker run -i -t -P'
+
+# Execute interactive container, e.g., $dex base /bin/bash
+alias dex='docker exec -i -t'
+
+# Stop and remove all containers
+alias dsrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
+
+# Kill and remove all containers
+alias dkrmall='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
+
+# Kill container
+alias dkill='docker kill'
+
+# Prune all containers
+alias dprune='docker container prune -f'
+

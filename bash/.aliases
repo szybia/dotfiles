@@ -112,6 +112,9 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 #   curl API | pretty
 alias pretty='python -m json.tool'
 
+#   python import sorting
+alias pythonsort='isort -rc .'
+
 #   easier clipboard
 alias ccopy='xclip -selection clipboard'
 alias cpaste='xclip -selection clipboard -o'
@@ -157,6 +160,10 @@ alias clear_man='for i in {1..100}; do echo; done'
 
 #   escape all special characters
 alias escape="sed 's/[^a-zA-Z0-9]/\\\&/g'"
+#   DO NOT ask me how this works
+#       https://stackoverflow.com/a/1250279
+# shellcheck disable=SC2142
+alias safescape='sed -e '"'"'s/[]\/$*.^[]/\\&/g'"'"''
 
 #   Vagrant aliases
 alias vll='vagrant global-status --prune'
@@ -170,53 +177,21 @@ alias gti='git'
 #   npm clean and install
 alias npmclinstall='rm -rf node_modules/ package-lock.json && npm install'
 
+#   I also like to live dangerously
+alias rmr="rm -r"
 
-# ------------------------------------
-# Docker aliases and functions
-#   credit: https://github.com/tcnksm/docker-alias
-# ------------------------------------
+# For when you're really not sure which letter comes first
+alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
-alias dcom='docker-compose'
+# gh cli
+alias ghprlist='gh pr list'
+alias ghprnew='gh pr create'
+alias ghprstat='gh pr status'
+alias ghprview='gh pr view'
 
-# Get container process
-alias dps='docker ps'
-
-# Get process included stop container
-alias dpa='docker ps -a'
-
-# Get images
-alias di='docker images'
-
-# Remove image shortcut
-alias drmi='docker rmi'
-
-# Remove all <none> images
-alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
-
-# Get container IP
-alias dip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
-
-# Run aliase
-alias dr='docker run'
-
-# Run deamonized container, e.g., $dkd base /bin/echo hello
-alias dkd='docker run -d -P'
-
-# Run interactive container, e.g., $dki base /bin/bash
-alias dki='docker run -i -t -P'
-
-# Execute interactive container, e.g., $dex base /bin/bash
-alias dex='docker exec -i -t'
-
-# Stop and remove all containers
-alias dsrm='docker stop $(docker ps -a -q) && docker rm $(docker ps -a -q)'
-
-# Kill and remove all containers
-alias dkrmall='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) || true'
-
-# Kill container
-alias dkill='docker kill'
-
-# Prune all containers
-alias dprune='docker container prune -f'
+# gh hub cli
+alias hubbr='hub browse'
+alias hubci='hub ci-status'
+alias hubfork='hub fork --remote-name origin'
+alias hubsync='hub sync'
 
