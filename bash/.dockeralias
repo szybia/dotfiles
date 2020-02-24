@@ -20,7 +20,7 @@ alias di='docker images'
 alias drmi='docker rmi'
 
 # Remove all <none> images
-alias drmnone='docker rmi $(docker images -f "dangling=true" -q)'
+alias drminone='docker rmi $(docker images -f "dangling=true" -q)'
 
 # Get container IP
 alias dip='docker inspect --format "{{ .NetworkSettings.IPAddress }}"'
