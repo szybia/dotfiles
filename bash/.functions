@@ -238,3 +238,9 @@ python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); th
 clipb () {
     echo "$1" | ccopy
 }
+
+rsed() {
+    rg -l "$1" . | xargs sed -i "s/$1/$2/g"
+
+}
+
