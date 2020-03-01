@@ -273,3 +273,8 @@ endif
 :command W w
 :command Wq wq
 :command WQ wq
+
+:command Cq cq
+:command CQ cq
+
+:command Q q
