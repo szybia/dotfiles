@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #   Credit:
 #       github.com/jessfraz/dotfiles
 

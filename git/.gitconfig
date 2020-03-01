@@ -84,7 +84,7 @@
     r = reset
     rs = reset --soft
     rh = reset --hard
-    rhead = reset HEAD --colour=always
+    rhead = reset HEAD~
 
     rest = restore
     restall = restore .
@@ -112,6 +112,7 @@
     #   `git sts` (latest) = `git stash show -p stash@{0}`
     #   `git sts <num>`    = `git stash show -p stash@{<num>}`
     sts = "!f() { git stash show -p stash@{${1:-0}}; }; f"
+    std = "!f() { git stash drop stash@{${1:-0}}; }; f"
 
     swba = switch -
     switchback = switch -

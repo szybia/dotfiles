@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #   Repeat previous command with sudo
 alias plz='sudo $(history -p \!\!)'
@@ -185,7 +185,7 @@ alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
 # gh cli
 alias ghprlist='gh pr list'
-alias ghprnew='gh pr create'
+alias ghprnew='gh pr create --web'
 alias ghprstat='gh pr status'
 alias ghprview='gh pr view'
 
