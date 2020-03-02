@@ -185,7 +185,6 @@ alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
 # gh cli
 alias ghprlist='gh pr list'
-alias ghprnew='gh pr create --web'
 alias ghprstat='gh pr status'
 alias ghprview='gh pr view'
 
@@ -194,4 +193,5 @@ alias hubbr='hub browse'
 alias hubci='hub ci-status'
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
+alias hubprnew='hub pull-request -od'
 
