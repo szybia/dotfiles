@@ -51,6 +51,10 @@
     chnew = checkout -b
     #   Checkout last branch you were on
     chback = checkout -
+    #   Checkout master
+    chm = checkout master
+    #   Checkout development
+    chd = checkout devel
     #   View files changed
     changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
 
