@@ -239,6 +239,11 @@ clipb () {
     echo "$1" | ccopy
 }
 
+# The amount of mistypes is too damn high
+clibp () {
+    clipb "$@"
+}
+
 rsed() {
     rg -l "$1" . | xargs sed -i "s/$1/$2/g"
 
