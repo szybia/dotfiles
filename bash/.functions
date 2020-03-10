@@ -236,7 +236,7 @@ python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); th
 
 # Copy string into clipboard
 clipb () {
-    echo "$1" | ccopy
+    echo "$@" | ccopy
 }
 
 # The amount of mistypes is too damn high
