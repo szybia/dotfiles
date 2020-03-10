@@ -246,6 +246,26 @@ clibp () {
 
 rsed() {
     rg -l "$1" . | xargs sed -i "s/$1/$2/g"
-
 }
 
+hubclfork() {
+    if [ -z "$1" ];then
+        >&2 echo "Usage: ${FUNCNAME[0]} <hub_clone_repo>"
+        return 1
+    fi
+
+    local repo="$1" arguments
+    IFS='/' read -ra arguments <<< "$1"
+    if (( ${#arguments[@]} > 2 )); then
+        >&2 echo "Usage: ${FUNCNAME[0]} <hub_clone_repo>"
+        return 1
+    fi
+
+    if (( ${#arguments[@]} == 2 )); then
+        repo="${arguments[1]}"
+    fi
+
+    hub clone "$1" && \
+        cd "${repo}" && \
+        hub fork --remote-name origin
+}
