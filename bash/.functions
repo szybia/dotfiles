@@ -52,7 +52,7 @@ sbsall() {
 }
 
 #   List non-hidden directories of current directory sorted by size
-sbs() { du -hsx ./* | sort -rh; }
+sbs() { du -hsx ./* 2>/dev/null | sort -rh; }
 
 up() {
     times=$1
