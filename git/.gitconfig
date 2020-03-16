@@ -36,6 +36,9 @@
 
     b = branch
     bnew = checkout -b
+    bd = branch -d
+    bD = branch -D
+    bm = branch -m
 
     #   Clean
     cleanall = clean -dfX
