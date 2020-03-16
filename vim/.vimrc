@@ -183,6 +183,9 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>sr z=
 
+" Open NERDTREE
+map <leader>n :NERDTree<cr>
+
 
 " ---------- Undo, swap and backup files ----------
 
