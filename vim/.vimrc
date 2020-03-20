@@ -8,13 +8,12 @@ endif
 "   Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'drewtempelmeyer/palenight.vim'
-    let g:palenight_terminal_italics=1
+Plug 'nanotech/jellybeans.vim'
 
 Plug 'itchyny/lightline.vim'
     set laststatus=2
     let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'one',
       \ }
 
 Plug 'tpope/vim-fugitive'
@@ -24,8 +23,6 @@ Plug 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
     let g:gitgutter_max_signs = 500  " only show 500 changes
-
-Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'Yggdroot/indentLine'
 
@@ -61,8 +58,7 @@ call plug#end()
 
 " dark theme
 set background=dark
-colorscheme palenight
-
+colorscheme jellybeans
 
 " ---------- Searching ----------
 
