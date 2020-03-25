@@ -23,8 +23,6 @@ export PROMPT_DIRTRIM=1
 export HISTIGNORE='clear:exit:history:pwd: *:'
 
 # PS1 Appearance
-brackets="\[\033[38;5;015m\]"
-username="\[\033[38;5;039m\]"
 endchar="\[\033[38;5;209m\]"
 path="\[\033[38;5;045m\]"
 exit_colour="\[\033[38;5;001m\]"
@@ -47,12 +45,9 @@ __parse_git_branch() {
 exit_status='$(__exitstatus)'
 # shellcheck disable=SC2016
 git_branch='$(__parse_git_branch)'
-final_PS1="${brackets}[${username}\u${brackets}] ${path}\w ${exit_colour}${exit_status}${branch_colour}${git_branch}${endchar}\\$ \[$(tput sgr0)\]"
+final_PS1="${path}\w ${exit_colour}${exit_status}${branch_colour}${git_branch}${endchar}\\$ \[$(tput sgr0)\]"
 export PS1="$final_PS1"
 
-unset brackets
-unset username
-unset at
 unset hostname
 unset endchar
 unset path
