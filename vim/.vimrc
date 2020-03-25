@@ -80,6 +80,13 @@ set ruler
 " cursor centered
 set scrolloff=10
 
+" Fix jellybeans which highlights the entire line white
+:augroup fixjellybean
+:  autocmd!
+    :autocmd VimEnter * hi CursorLine cterm=underline ctermbg=black
+    :autocmd VimEnter * hi Visual cterm=bold ctermbg=238 ctermfg=NONE
+:augroup END
+
 " show cursorline when in insert mode
 :autocmd InsertEnter,InsertLeave * set cul!
 
@@ -91,8 +98,7 @@ set scrolloff=10
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
 
-
-
+"
 " ---------- Vim defaults ----------
 
 " be iMproved, required
