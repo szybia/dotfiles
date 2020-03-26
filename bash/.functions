@@ -273,12 +273,10 @@ hubclfork() {
 
 goclean() {
  local pkg=$1; shift || return 1
- local ost
- local cnt
- local scr
+ local ost cnt
 
  # Clean removes object files from package source directories (ignore error)
- go clean -i $pkg &>/dev/null
+ go clean -i "${pkg}" &>/dev/null
 
  # Set local variables
  [[ "$(uname -m)" == "x86_64" ]] \
