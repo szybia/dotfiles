@@ -87,7 +87,7 @@
 
     p = push origin HEAD
     pups = pull upstream HEAD
-    update = !git pups && git p && git fetchall
+    update = !git pups && git p
     #   Quick way to get started on a story
     new = "!f() { git update && git bnew \"$1\";  }; f"
 
