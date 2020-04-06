@@ -293,3 +293,8 @@ goclean() {
  fi
 }
 
+# Ain't nobody got time for finding ~
+vimhome() {
+    vim "$HOME/$1"
+}
+
