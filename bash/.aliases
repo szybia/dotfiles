@@ -172,6 +172,8 @@ alias vssh='vagrant ssh'
 
 #   git typo
 alias gti='git'
+#   vim gitconfig
+alias vimgit='vim $HOME/.gitconfig'
 
 #   npm aliases
 #   npm clean and install
@@ -196,4 +198,11 @@ alias hubcl="hub clone"
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
 alias hubprnew='hub pull-request -od'
+
+# git utilities
+alias prnew='git p && hubprnew'
+
+# unix timestamp utilities (no newlines)
+alias unixnow='echo -n "$(gdate +%s%3N)" | ccopy'
+alias unixyes='echo -n "$(gdate -d "yesterday" +%s%3N)" | ccopy'
 
