@@ -172,6 +172,8 @@ alias vssh='vagrant ssh'
 
 #   git typo
 alias gti='git'
+#   vim gitconfig
+alias vimgit='vim $HOME/.gitconfig'
 
 #   npm aliases
 #   npm clean and install
@@ -179,19 +181,28 @@ alias npmclinstall='rm -rf node_modules/ package-lock.json && npm install'
 
 #   I also like to live dangerously
 alias rmr="rm -r"
+alias rmrf="rm -rf"
 
 # For when you're really not sure which letter comes first
 alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
 # gh cli
 alias ghprlist='gh pr list'
-alias ghprnew='gh pr create --web'
 alias ghprstat='gh pr status'
 alias ghprview='gh pr view'
 
 # gh hub cli
 alias hubbr='hub browse'
 alias hubci='hub ci-status'
+alias hubcl="hub clone"
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
+alias hubprnew='hub pull-request -od'
+
+# git utilities
+alias prnew='git p && hubprnew'
+
+# unix timestamp utilities (no newlines)
+alias unixnow='echo -n "$(gdate +%s%3N)" | ccopy'
+alias unixyes='echo -n "$(gdate -d "yesterday" +%s%3N)" | ccopy'
 

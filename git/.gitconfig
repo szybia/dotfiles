@@ -27,7 +27,7 @@
 [alias]
 
     a = add
-    ac = !sh -c 'git add $@ && git c' -
+    ac = !sh -c 'git add "$@" && git c' -
     all = add .
     apatch = add --patch .
 
@@ -36,6 +36,9 @@
 
     b = branch
     bnew = checkout -b
+    bd = branch -d
+    bD = branch -D
+    bm = branch -m
 
     #   Clean
     cleanall = clean -dfX
@@ -51,6 +54,10 @@
     chnew = checkout -b
     #   Checkout last branch you were on
     chback = checkout -
+    #   Checkout master
+    chm = checkout master
+    #   Checkout development
+    chd = checkout devel
     #   View files changed
     changed = "!f() { git diff-tree --no-commit-id --name-only -r ${1:-HEAD}; }; f"
 
@@ -65,6 +72,7 @@
 
     remaster = rebase -i master
     redevel = rebase -i devel
+    redev = rebase -i devel
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
@@ -80,6 +88,9 @@
 
     p = push origin HEAD
     pups = pull upstream HEAD
+    update = !git pups && git p
+    #   Quick way to get started on a story
+    new = "!f() { git update && git bnew \"$1\";  }; f"
 
     r = reset
     rs = reset --soft
@@ -131,6 +142,7 @@
 [core]
     pager = less -F -X
 	editor = vim
+	autocrlf = input
 
 [color "diff"]
     old = red bold

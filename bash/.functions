@@ -52,7 +52,7 @@ sbsall() {
 }
 
 #   List non-hidden directories of current directory sorted by size
-sbs() { du -hsx ./* | sort -rh; }
+sbs() { du -hsx ./* 2>/dev/null | sort -rh; }
 
 up() {
     times=$1
@@ -236,11 +236,65 @@ python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); th
 
 # Copy string into clipboard
 clipb () {
-    echo "$1" | ccopy
+    echo "$@" | ccopy
+}
+
+# The amount of mistypes is too damn high
+clibp () {
+    clipb "$@"
 }
 
 rsed() {
     rg -l "$1" . | xargs sed -i "s/$1/$2/g"
+}
 
+hubclfork() {
+    if [ -z "$1" ];then
+        >&2 echo "Usage: ${FUNCNAME[0]} <hub_clone_repo>"
+        return 1
+    fi
+
+    local repo="$1" arguments
+    IFS='/' read -ra arguments <<< "$1"
+    if (( ${#arguments[@]} > 2 )); then
+        >&2 echo "Usage: ${FUNCNAME[0]} <hub_clone_repo>"
+        return 1
+    fi
+
+    if (( ${#arguments[@]} == 2 )); then
+        repo="${arguments[1]}"
+    fi
+
+    hub clone "$1" && \
+        cd "${repo}" && \
+        hub fork --remote-name origin
+}
+
+
+goclean() {
+ local pkg=$1; shift || return 1
+ local ost cnt
+
+ # Clean removes object files from package source directories (ignore error)
+ go clean -i "${pkg}" &>/dev/null
+
+ # Set local variables
+ [[ "$(uname -m)" == "x86_64" ]] \
+ && ost="$(uname)";ost="${ost,,}_amd64" \
+ && cnt="${pkg//[^\/]}"
+
+ # Delete the source directory and compiled package directory(ies)
+ if (("${#cnt}" == "2")); then
+  rm -rf "${GOPATH%%:*}/src/${pkg%/*}"
+  rm -rf "${GOPATH%%:*}/pkg/${ost}/${pkg%/*}"
+ elif (("${#cnt}" > "2")); then
+  rm -rf "${GOPATH%%:*}/src/${pkg%/*/*}"
+  rm -rf "${GOPATH%%:*}/pkg/${ost}/${pkg%/*/*}"
+ fi
+}
+
+# Ain't nobody got time for finding ~
+vimhome() {
+    vim "$HOME/$1"
 }
 

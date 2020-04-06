@@ -40,6 +40,10 @@ urxvt:
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/clipboard /usr/lib/urxvt/perl/clipboard
 	@sudo ln -sfn $(CURDIR)/urxvt/ext/urxvt-font-size/font-size /usr/lib/urxvt/perl/font-size
 
+.PHONY: alacritty
+alacritty:
+	@ln -sfn "$(CURDIR)/alacritty/.alacritty.yml" "$(HOME)/.alacritty.yml"
+
 .PHONY: tmux
 tmux:
 	@ln -sfn $(CURDIR)/tmux/.tmux.conf $(HOME)/.tmux.conf
@@ -108,3 +112,4 @@ shellcheck:
 		-v $(CURDIR):/usr/src:ro \
 		--workdir /usr/src \
 		szybia/shellcheck ./test.sh
+

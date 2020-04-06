@@ -8,13 +8,12 @@ endif
 "   Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'drewtempelmeyer/palenight.vim'
-    let g:palenight_terminal_italics=1
+Plug 'nanotech/jellybeans.vim'
 
 Plug 'itchyny/lightline.vim'
     set laststatus=2
     let g:lightline = {
-      \ 'colorscheme': 'palenight',
+      \ 'colorscheme': 'one',
       \ }
 
 Plug 'tpope/vim-fugitive'
@@ -24,8 +23,6 @@ Plug 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
     set updatetime=250
     let g:gitgutter_max_signs = 500  " only show 500 changes
-
-Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'Yggdroot/indentLine'
 
@@ -61,8 +58,7 @@ call plug#end()
 
 " dark theme
 set background=dark
-colorscheme palenight
-
+colorscheme jellybeans
 
 " ---------- Searching ----------
 
@@ -84,6 +80,13 @@ set ruler
 " cursor centered
 set scrolloff=10
 
+" Fix jellybeans which highlights the entire line white
+:augroup fixjellybean
+:  autocmd!
+    :autocmd VimEnter * hi CursorLine cterm=underline ctermbg=black
+    :autocmd VimEnter * hi Visual cterm=bold ctermbg=238 ctermfg=NONE
+:augroup END
+
 " show cursorline when in insert mode
 :autocmd InsertEnter,InsertLeave * set cul!
 
@@ -95,8 +98,10 @@ set scrolloff=10
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
 
+" Add new line to file if doesn't exist
+autocmd BufWritePre * if (getline('$') !~ "^\s*$") | call append(line('$'), "") | endif
 
-
+"
 " ---------- Vim defaults ----------
 
 " be iMproved, required
@@ -183,6 +188,9 @@ map <leader>sp [s
 map <leader>sa zg
 map <leader>sr z=
 
+" Open NERDTREE
+map <leader>n :NERDTree<cr>
+
 
 " ---------- Undo, swap and backup files ----------
 
@@ -214,21 +222,6 @@ set smarttab
 set tabstop=4
 " shift width 4 spaces
 set shiftwidth=4
-
-
-
-" ---------- Functions ----------
-
-
-" Delete trailing white space on save, useful for some file types ;)
-fun! CleanExtraSpaces()
-    let save_cursor = getpos(".")
-    let old_query = getreg('/')
-    silent! %s/\s\+$//e
-    call setpos('.', save_cursor)
-    call setreg('/', old_query)
-endfun
-
 
 
 " ---------- Miscalleanous ----------
