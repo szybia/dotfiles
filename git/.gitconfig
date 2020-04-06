@@ -142,6 +142,7 @@
 [core]
     pager = less -F -X
 	editor = vim
+	autocrlf = input
 
 [color "diff"]
     old = red bold
