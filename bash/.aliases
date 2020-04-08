@@ -123,6 +123,7 @@ then
     alias cpaste='pbpaste'
     alias ccopy='pbcopy'
 fi
+alias cclear='echo -n '' | ccopy'
 
 #   print readable PATH
 alias path='echo -e ${PATH//:/\\n}'
