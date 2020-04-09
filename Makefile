@@ -55,6 +55,8 @@ xinit:
 .PHONY: git
 git:
 	@ln -sfn $(CURDIR)/git/.gitconfig $(HOME)/.gitconfig
+	@ln -sfn "${CURDIR}/git/template" "${HOME}/.git_template"
+
 
 .PHONY: ssh
 ssh:
