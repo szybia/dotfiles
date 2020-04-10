@@ -299,3 +299,17 @@ vimhome() {
     vim "$HOME/$1"
 }
 
+# Define repl when reading books
+definerepl() {
+    #   When we ctrl-c we want to exit the loop. We run in a sub-shell since
+    #   we don't want the trap to be active in our terminal after we exit
+    (
+        trap "return 0" SIGINT
+        while true
+        do
+            read -rp "define: " word
+            define "${word}"
+        done
+    )
+}
+
