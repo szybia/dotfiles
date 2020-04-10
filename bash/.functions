@@ -308,6 +308,7 @@ definerepl() {
         while true
         do
             read -rp "define: " word
+            [[ -z "${word// }" ]] && continue
             define "${word}"
         done
     )
