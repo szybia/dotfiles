@@ -158,3 +158,4 @@
 	protocol = ssh
 [init]
 	templateDir = ~/.git_template
+
