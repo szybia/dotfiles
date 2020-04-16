@@ -28,7 +28,7 @@
 
     a = add
     ac = !sh -c 'git add "$@" && git c' -
-    all = add .
+    all = add -A
     apatch = add --patch .
 
     #   Amend staged files to latest commit
@@ -98,9 +98,9 @@
     rhead = reset HEAD~
 
     rest = restore
-    restall = restore .
+    restall = restore :/
     restaged = restore --staged
-    restagedall = restore --staged .
+    restagedall = restore --staged :/
 
     rmc = rm --cached
 
