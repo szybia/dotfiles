@@ -48,6 +48,8 @@
     c = commit -v
     #   Commit all modified files
     ca = commit -av
+    #   Commit all files - even untracked
+    allc = !"git all && git ca"
     #   Checkout
     ch = checkout
     #   Checkout new branch
