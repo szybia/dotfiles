@@ -220,3 +220,7 @@ alias nightmode='xrandr --output eDP-1 --gamma 1.1:0.8:0.7 --brightness 0.80'
 alias nightmodeoff='xrandr --output eDP-1 --gamma 1:1:1 --brightness 1.0'
 alias xrandrreset='xrandr -s 0'
 
+# maven aliases
+alias mvnverify='mvn clean verify'
+alias mvnskip='mvn clean verify -DskipTests'
+
