@@ -198,7 +198,7 @@ alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 # gh cli
 alias ghprlist='gh pr list'
 alias ghprstat='gh pr status'
-alias ghprview='gh pr view'
+alias ghprview='gh pr view -w'  # open in browser
 
 # gh hub cli
 alias hubbr='hub browse'
