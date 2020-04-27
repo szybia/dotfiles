@@ -176,6 +176,7 @@ alias gti='git'
 #   vim shortcuts for popular files
 alias vimgit='vim $HOME/.gitconfig'
 alias vimbashrc='vim $HOME/.bashrc'
+alias vimrc='vim $HOME/.vimrc'
 alias vimaliases='vim $HOME/.aliases'
 alias vimfunctions='vim $HOME/.functions'
 alias vimexports='vim $HOME/.exports'
