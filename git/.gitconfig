@@ -43,9 +43,9 @@
     bm = branch -m
 
     #   Clean
-    cleanall = clean -dfX
+    cleanall = clean -df
     #   Clean dry-run
-    cleanalln = clean -dfXn
+    cleanalln = clean -dfn
     #   Commit
     c = commit -v
     #   Commit all modified files
