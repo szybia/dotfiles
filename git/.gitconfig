@@ -33,6 +33,8 @@
 
     #   Amend staged files to latest commit
     amend = commit --amend
+    #   Amend all files to latest commit
+    amendall = !sh -c 'git all && git amend'
 
     b = branch
     bnew = checkout -b
