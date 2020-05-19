@@ -175,6 +175,7 @@ alias vssh='vagrant ssh'
 alias gti='git'
 #   vim gitconfig
 alias vimgit='vim $HOME/.gitconfig'
+alias vimcust='vim $HOME/.custom'
 
 #   npm aliases
 #   npm clean and install
