@@ -59,6 +59,7 @@ git:
 .PHONY: ssh
 ssh:
 	@mkdir -p $(HOME)/.ssh
+	@ln -sfn $(CURDIR)/ssh/config  $(HOME)/.ssh/config
 	@ln -sfn $(CURDIR)/ssh/ssh-find-agent/ssh-find-agent.sh  $(HOME)/.ssh-find-agent.sh
 
 .PHONY: vim
