@@ -173,9 +173,16 @@ alias vssh='vagrant ssh'
 
 #   git typo
 alias gti='git'
-#   vim gitconfig
+#   vim shortcuts for popular files
 alias vimgit='vim $HOME/.gitconfig'
-alias vimcust='vim $HOME/.custom'
+alias vimbashrc='vim $HOME/.bashrc'
+alias vimaliases='vim $HOME/.aliases'
+alias vimfunctions='vim $HOME/.functions'
+alias vimexports='vim $HOME/.exports'
+alias vimcustom='vim $HOME/.exports'
+alias viminput='vim $HOME/.inputrc'
+alias vimssh='vim $HOME/.ssh/config'
+alias vimtmux='vim $HOME/.tmux.conf'
 
 #   npm aliases
 #   npm clean and install
