@@ -13,6 +13,9 @@ unset CURRENT_TTY
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
+#   FZF
+export FZF_DEFAULT_COMMAND="rg --hidden -g '!.git/' -l ."
+
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=1
 
@@ -56,3 +59,4 @@ unset exit_colour
 unset git_branch
 unset branch_colour
 unset final_PS1
+

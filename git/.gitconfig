@@ -28,11 +28,13 @@
 
     a = add
     ac = !sh -c 'git add "$@" && git c' -
-    all = add .
+    all = add -A
     apatch = add --patch .
 
     #   Amend staged files to latest commit
     amend = commit --amend
+    #   Amend all files to latest commit
+    amendall = !sh -c 'git all && git amend'
 
     b = branch
     bnew = checkout -b
@@ -41,13 +43,15 @@
     bm = branch -m
 
     #   Clean
-    cleanall = clean -dfX
+    cleanall = clean -df
     #   Clean dry-run
-    cleanalln = clean -dfXn
+    cleanalln = clean -dfn
     #   Commit
     c = commit -v
     #   Commit all modified files
     ca = commit -av
+    #   Commit all files - even untracked
+    allc = !"git all && git ca"
     #   Checkout
     ch = checkout
     #   Checkout new branch
@@ -98,9 +102,10 @@
     rhead = reset HEAD~
 
     rest = restore
-    restall = restore .
+    restall = restore :/
     restaged = restore --staged
-    restagedall = restore --staged .
+    restagedall = restore --staged :/
+    clearall = !sh -c 'git restagedall && git restall && git cleanall'
 
     rmc = rm --cached
 
@@ -156,3 +161,6 @@
 
 [hub]
 	protocol = ssh
+[init]
+	templateDir = ~/.git_template
+

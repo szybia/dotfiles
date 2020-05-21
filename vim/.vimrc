@@ -48,9 +48,12 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'Raimondi/delimitMate'
 
-Plug 'scrooloose/nerdtree'
+Plug 'dylanaraps/fff.vim'
+let g:fff#split = "30new"
 
 Plug 'tpope/vim-surround'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
@@ -271,3 +274,4 @@ endif
 :command CQ cq
 
 :command Q q
+

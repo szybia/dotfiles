@@ -173,9 +173,19 @@ alias vssh='vagrant ssh'
 
 #   git typo
 alias gti='git'
-#   vim gitconfig
+#   vim shortcuts
 alias vimgit='vim $HOME/.gitconfig'
-alias vimcust='vim $HOME/.custom'
+alias vimbashrc='vim $HOME/.bashrc'
+alias vimrc='vim $HOME/.vimrc'
+alias vimaliases='vim $HOME/.aliases'
+alias vimfunctions='vim $HOME/.functions'
+alias vimexports='vim $HOME/.exports'
+alias vimcustom='vim $HOME/.custom'
+alias viminput='vim $HOME/.inputrc'
+alias vimssh='vim $HOME/.ssh/config'
+alias vimtmux='vim $HOME/.tmux.conf'
+
+alias vimfzf='vim $(fzf -m)'
 
 #   npm aliases
 #   npm clean and install
@@ -190,8 +200,9 @@ alias alphabet='echo "abcdefghijklmnopqrstuvwxyz"'
 
 # gh cli
 alias ghprlist='gh pr list'
+alias ghprls='gh pr list'
 alias ghprstat='gh pr status'
-alias ghprview='gh pr view'
+alias ghprview='gh pr view -w'  # open in browser
 
 # gh hub cli
 alias hubbr='hub browse'
@@ -212,4 +223,17 @@ alias unixyes='echo -n "$(gdate -d "yesterday" +%s%3N)" | ccopy'
 alias nightmode='xrandr --output eDP-1 --gamma 1.1:0.8:0.7 --brightness 0.80'
 alias nightmodeoff='xrandr --output eDP-1 --gamma 1:1:1 --brightness 1.0'
 alias xrandrreset='xrandr -s 0'
+
+# maven aliases
+alias mvnverify='mvn clean verify'
+alias mvntest='mvn clean test'
+alias mvnskip='mvn clean verify -DskipTests'
+alias mvntestpush='mvn clean test && git p'
+
+# uuid's
+alias uuid_dummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
+
+# I'm sick and tired of looking for shebangs
+alias bashshebang="echo '#!/usr/bin/env bash' | ccopy"
+alias shshebang="echo '#!/usr/bin/env sh' | ccopy"
 
