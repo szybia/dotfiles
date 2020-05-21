@@ -8,14 +8,6 @@ endif
 "   Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'nanotech/jellybeans.vim'
-
-Plug 'itchyny/lightline.vim'
-    set laststatus=2
-    let g:lightline = {
-      \ 'colorscheme': 'one',
-      \ }
-
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 
@@ -57,11 +49,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
-" ---------- Themes and Aeshetic ----------
-
-" dark theme
-set background=dark
-colorscheme jellybeans
 
 " ---------- Searching ----------
 
@@ -82,13 +69,6 @@ set ruler
 
 " cursor centered
 set scrolloff=10
-
-" Fix jellybeans which highlights the entire line white
-:augroup fixjellybean
-:  autocmd!
-    :autocmd VimEnter * hi CursorLine cterm=underline ctermbg=black
-    :autocmd VimEnter * hi Visual cterm=bold ctermbg=238 ctermfg=NONE
-:augroup END
 
 " show cursorline when in insert mode
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -225,16 +205,6 @@ set smarttab
 set tabstop=4
 " shift width 4 spaces
 set shiftwidth=4
-
-
-" ---------- Miscalleanous ----------
-
-" netrw NERDtree like setup
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
 
 " always split evenly
 autocmd VimResized * wincmd =
