@@ -3,7 +3,9 @@ key_bindings:
   - { key: K,        mods: Alt,     chars: "\x1bk"}
   - { key: H,        mods: Alt,     chars: "\x1bh"}
   - { key: L,        mods: Alt,     chars: "\x1bl"}
-  - { key: E,        mods: Alt,     chars: "\x1be"}
+    # Here we add a Tab at the end in order to get tab completion with same
+    # key after expanding command
+  - { key: E,        mods: Control, chars: "\x1be\t"}
 
 font:
   size: 12.0
