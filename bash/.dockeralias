@@ -63,3 +63,7 @@ alias dnprune='docker network prune -f'
 alias dv='docker volume'
 alias dvls='docker volume ls'
 
+# Docker logs
+alias dlogs='docker logs'
+alias dlogsf='docker logs -f'
+
