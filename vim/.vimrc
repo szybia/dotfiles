@@ -52,6 +52,8 @@ Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-surround'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+
 call plug#end()
 
 " ---------- Themes and Aeshetic ----------

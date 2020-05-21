@@ -59,3 +59,4 @@ unset exit_colour
 unset git_branch
 unset branch_colour
 unset final_PS1
+
