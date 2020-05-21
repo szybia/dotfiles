@@ -185,7 +185,7 @@ alias viminput='vim $HOME/.inputrc'
 alias vimssh='vim $HOME/.ssh/config'
 alias vimtmux='vim $HOME/.tmux.conf'
 
-alias vimfzf='vim $(fzf)'
+alias vimfzf='vim $(fzf -m)'
 
 #   npm aliases
 #   npm clean and install
