@@ -72,7 +72,7 @@ then
     fi
 fi
 
-for file in ~/.{aliases,functions,exports,custom,docker{func,alias}}; do
+for file in ~/.{aliases,functions,exports,custom,docker{func,alias},fzf.bash}; do
     if [[ -r "$file" ]]; then
         # shellcheck disable=SC1090
         source "$file"
@@ -80,3 +80,4 @@ for file in ~/.{aliases,functions,exports,custom,docker{func,alias}}; do
 done
 
 unset file
+
