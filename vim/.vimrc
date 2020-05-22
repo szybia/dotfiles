@@ -49,6 +49,9 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 call plug#end()
 
+" ---------- Searching ----------
+
+autocmd VimEnter * colorscheme wombat
 
 " ---------- Searching ----------
 

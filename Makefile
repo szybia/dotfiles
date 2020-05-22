@@ -71,6 +71,8 @@ vim:
 	@mkdir -p $(HOME)/.vim/bundle
 	@mkdir -p $(HOME)/.vim/swapfiles
 	@mkdir -p $(HOME)/.vim/undodir
+	@mkdir -p $(HOME)/.vim/colors
+	@ln -sfn $(CURDIR)/vim/.vim/colors/wombat.vim $(HOME)/.vim/colors/wombat.vim
 
 .PHONY: arch
 arch:
