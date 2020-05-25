@@ -35,8 +35,6 @@ Plug 'scrooloose/nerdcommenter'
     " Enable NERDCommenterToggle to check all selected lines is commented or not
     let g:NERDToggleCheckAllLines = 1
 
-Plug 'Raimondi/delimitMate'
-
 Plug 'dylanaraps/fff.vim'
 let g:fff#split = "30new"
 
