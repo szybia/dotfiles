@@ -17,8 +17,7 @@ Plug 'airblade/vim-gitgutter'
     let g:gitgutter_max_signs = 500  " only show 500 changes
 
 Plug 'ntpeters/vim-better-whitespace'
-    let g:better_whitespace_enabled=1
-    let g:strip_whitespace_on_save=1
+    autocmd BufWritePre * :StripWhitespace
 
 Plug 'scrooloose/nerdcommenter'
     " Add spaces after comment delimiters by default
