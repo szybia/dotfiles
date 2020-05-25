@@ -16,8 +16,6 @@ Plug 'airblade/vim-gitgutter'
     set updatetime=250
     let g:gitgutter_max_signs = 500  " only show 500 changes
 
-Plug 'Yggdroot/indentLine'
-
 Plug 'ntpeters/vim-better-whitespace'
     let g:better_whitespace_enabled=1
     let g:strip_whitespace_on_save=1
