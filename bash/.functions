@@ -321,3 +321,7 @@ f() {
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")" || exit
 }
 
+vdefault() {
+    vagrant destroy -f "$(vagrant global-status --prune | head -3 | tail -1 | awk '{print $1}')"
+}
+

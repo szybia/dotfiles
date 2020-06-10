@@ -169,7 +169,6 @@ alias safescape='sed -e '"'"'s/[]\/$*.^[]/\\&/g'"'"''
 #   Vagrant aliases
 alias vll='vagrant global-status --prune'
 alias vd='vagrant destroy'
-alias vdefault="vagrant destroy -f \"\$(vagrant global-status --prune | head -3 | tail -1 | awk '{print $1}')\""
 
 alias vssh='vagrant ssh'
 
