@@ -165,3 +165,5 @@
 [init]
 	templateDir = ~/.git_template
 
+[rebase]
+	autosquash = true
