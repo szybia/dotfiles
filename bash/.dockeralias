@@ -66,4 +66,6 @@ alias dvls='docker volume ls'
 # Docker logs
 alias dlogs='docker logs'
 alias dlogsf='docker logs -f'
+alias dlog='docker logs'
+alias dlogf='docker logs -f'
 
