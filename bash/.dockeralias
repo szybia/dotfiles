@@ -50,7 +50,7 @@ alias dkill='docker kill'
 alias dprune='docker container prune -f'
 
 # Remove/prune containers and remove networks
-alias dclear='dkrmall && dprune && dnprune'
+alias dclear='dkrmall && dprune && dnprune && dvprune'
 # Remove everything
 alias dclearall='dclear && docker system prune -af'
 
@@ -62,6 +62,7 @@ alias dnprune='docker network prune -f'
 # Docker volumes
 alias dv='docker volume'
 alias dvls='docker volume ls'
+alias dvprune='docker volume prune -f'
 
 # Docker logs
 alias dlogs='docker logs'
