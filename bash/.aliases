@@ -211,7 +211,6 @@ alias hubci='hub ci-status'
 alias hubcl="hub clone"
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
-alias hubprnew='hub pull-request -od'
 
 # git utilities
 alias prnew='git p && hubprnew'
