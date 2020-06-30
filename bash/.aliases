@@ -238,3 +238,6 @@ alias uuiddummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
 alias bashshebang="echo '#!/usr/bin/env bash' | ccopy"
 alias shshebang="echo '#!/usr/bin/env sh' | ccopy"
 
+# So awkward
+alias chx='chmod +x'
+
