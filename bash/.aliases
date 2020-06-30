@@ -226,6 +226,7 @@ alias xrandrreset='xrandr -s 0'
 
 # maven aliases
 alias mvnverify='mvn clean verify'
+alias mvninstall='mvn clean install'
 alias mvntest='mvn clean test'
 alias mvnskip='mvn clean verify -DskipTests'
 alias mvntestpush='mvn clean test && git p'
