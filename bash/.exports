@@ -14,7 +14,7 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 #   FZF
-export FZF_DEFAULT_COMMAND="rg --hidden -g '!.git/' -l ."
+export FZF_DEFAULT_COMMAND="rg -uu -g '!.git/' -l ."
 
 # Only show n directorys in terminal working path
 export PROMPT_DIRTRIM=1
