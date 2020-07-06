@@ -241,3 +241,6 @@ alias shshebang="echo '#!/usr/bin/env sh' | ccopy"
 # So awkward
 alias chx='chmod +x'
 
+# Sentence to python function name
+alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
+
