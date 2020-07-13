@@ -11,6 +11,7 @@
 [diff]
     # Detect copies as well as renames
     renames = copies
+    algorithm = patience
 
 [help]
     # Automatically correct and execute mistyped commands
@@ -163,4 +164,7 @@
 	protocol = ssh
 [init]
 	templateDir = ~/.git_template
+
+[rebase]
+	autosquash = true
 

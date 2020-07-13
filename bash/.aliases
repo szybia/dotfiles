@@ -169,6 +169,7 @@ alias safescape='sed -e '"'"'s/[]\/$*.^[]/\\&/g'"'"''
 #   Vagrant aliases
 alias vll='vagrant global-status --prune'
 alias vd='vagrant destroy'
+
 alias vssh='vagrant ssh'
 
 #   git typo
@@ -210,7 +211,6 @@ alias hubci='hub ci-status'
 alias hubcl="hub clone"
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
-alias hubprnew='hub pull-request -od'
 
 # git utilities
 alias prnew='git p && hubprnew'
@@ -225,15 +225,23 @@ alias nightmodeoff='xrandr --output eDP-1 --gamma 1:1:1 --brightness 1.0'
 alias xrandrreset='xrandr -s 0'
 
 # maven aliases
+alias mvnpackage='mvn clean package'
 alias mvnverify='mvn clean verify'
+alias mvninstall='mvn clean install'
 alias mvntest='mvn clean test'
 alias mvnskip='mvn clean verify -DskipTests'
 alias mvntestpush='mvn clean test && git p'
 
 # uuid's
-alias uuid_dummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
+alias uuiddummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
 
 # I'm sick and tired of looking for shebangs
 alias bashshebang="echo '#!/usr/bin/env bash' | ccopy"
 alias shshebang="echo '#!/usr/bin/env sh' | ccopy"
+
+# So awkward
+alias chx='chmod +x'
+
+# Sentence to python function name
+alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
 

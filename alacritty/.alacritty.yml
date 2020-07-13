@@ -5,7 +5,7 @@ key_bindings:
   - { key: L,        mods: Alt,     chars: "\x1bl"}
     # Here we add a Tab at the end in order to get tab completion with same
     # key after expanding command
-  - { key: E,        mods: Control, chars: "\x1be\t"}
+  - { key: W,        mods: Control, chars: "\x1be\t"}
 
 font:
   size: 12.0

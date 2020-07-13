@@ -249,6 +249,11 @@ rsed() {
     rg -l "$1" . | xargs sed -i "s/$1/$2/g"
 }
 
+
+hubprnew() {
+    hub pull-request -od "$@"
+}
+
 hubclfork() {
     if [ -z "$1" ];then
         >&2 echo "Usage: ${FUNCNAME[0]} <hub_clone_repo>"
@@ -319,5 +324,9 @@ definerepl() {
 f() {
     fff "$@"
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")" || exit
+}
+
+vdefault() {
+    vagrant destroy -f "$(vagrant global-status --prune | head -3 | tail -1 | awk '{print $1}')"
 }
 
