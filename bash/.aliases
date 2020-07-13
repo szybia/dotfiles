@@ -149,6 +149,7 @@ alias usbb='sudo usbguard block-device'
 #   youtube-dl
 alias youtube-audio='youtube-dl -x --audio-format mp3'
 alias youtube-video='youtube-dl -i'
+alias youtube-playlist='youtube-dl -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" -i'
 
 
 #   calcurse
