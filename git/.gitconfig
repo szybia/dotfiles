@@ -117,6 +117,10 @@
     stat = status
 
     sh = !"git --no-pager show --color-words"
+    #   Show all changes on this branch since base
+    #       Low index for git to detect file renames correctly
+    shd = sh devel..HEAD -M10%
+    shm = sh master..HEAD -M10%
 
     #   st default to push and stp to pop
     st = stash
