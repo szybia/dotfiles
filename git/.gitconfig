@@ -45,6 +45,7 @@
 
     #   Clean
     cleanall = clean -df
+    cleanallx = clean -dfX
     #   Clean dry-run
     cleanalln = clean -dfn
     #   Commit
