@@ -226,6 +226,8 @@ alias nightmodeoff='xrandr --output eDP-1 --gamma 1:1:1 --brightness 1.0'
 alias xrandrreset='xrandr -s 0'
 
 # maven aliases
+#  Yes, I'm really that lazy
+alias mvnclean='mvn clean'
 alias mvnpackage='mvn clean package'
 alias mvnverify='mvn clean verify'
 alias mvninstall='mvn clean install'
