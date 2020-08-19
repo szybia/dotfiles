@@ -210,6 +210,8 @@ alias ghprview='gh pr view -w'  # open in browser
 alias hubbr='hub browse'
 alias hubci='hub ci-status'
 alias hubcl="hub clone"
+#   Ain't nobody got time fo' that
+alias hcl='hubclfork'
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
 
