@@ -330,3 +330,11 @@ vdefault() {
     vagrant destroy -f "$(vagrant global-status --prune | head -3 | tail -1 | awk '{print $1}')"
 }
 
+#   This seems to take a bit and isn't needed in every terminal
+setupssh() {
+#   SSH agent
+# shellcheck disable=SC1090
+source ~/.ssh-find-agent.sh
+set_ssh_agent_socket
+}
+
