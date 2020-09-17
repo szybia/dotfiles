@@ -186,6 +186,15 @@ alias vimcustom='vim $HOME/.custom'
 alias viminput='vim $HOME/.inputrc'
 alias vimssh='vim $HOME/.ssh/config'
 alias vimtmux='vim $HOME/.tmux.conf'
+#   source those files
+alias sourcebashrc='source $HOME/.bashrc'
+alias sourcerc='source $HOME/.vimrc'
+alias sourcealiases='source $HOME/.aliases'
+alias sourcefunctions='source $HOME/.functions'
+alias sourceexports='source $HOME/.exports'
+alias sourcecustom='source $HOME/.custom'
+alias sourceinput='source $HOME/.inputrc'
+
 
 alias vimfzf='vim $(fzf -m)'
 
