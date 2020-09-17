@@ -107,7 +107,7 @@
     restall = restore :/
     restaged = restore --staged
     restagedall = restore --staged :/
-    clearall = !sh -c 'git restagedall && git restall && git cleanall'
+    clearall = !sh -c 'git restagedall && git restall && git cleanall && git cleanallx'
 
     rmc = rm --cached
 
