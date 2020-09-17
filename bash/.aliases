@@ -259,3 +259,16 @@ alias chx='chmod +x'
 # Sentence to python function name
 alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
 
+# Mr. Terraform
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+
+# Open text editors/IDEs
+alias c='code .'
+alias i='idea .'
+
+#   When you want to check something in a project
+alias guc='c && git update'
+
