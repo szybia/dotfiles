@@ -26,11 +26,6 @@ else
     eval "$(dircolors ~/.dir_colors)"
 fi
 
-#   SSH agent
-# shellcheck disable=SC1090
-source ~/.ssh-find-agent.sh
-set_ssh_agent_socket
-
 #   Define GOPATH
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"

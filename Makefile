@@ -56,6 +56,7 @@ xinit:
 git:
 	@ln -sfn $(CURDIR)/git/.gitconfig $(HOME)/.gitconfig
 	@ln -sfn "${CURDIR}/git/template" "${HOME}/.git_template"
+	@ln -sfn "${CURDIR}/git/.gitignore" "${HOME}/.gitignore"
 
 
 .PHONY: ssh

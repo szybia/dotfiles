@@ -45,6 +45,7 @@
 
     #   Clean
     cleanall = clean -df
+    cleanallx = clean -dfX
     #   Clean dry-run
     cleanalln = clean -dfn
     #   Commit
@@ -106,7 +107,7 @@
     restall = restore :/
     restaged = restore --staged
     restagedall = restore --staged :/
-    clearall = !sh -c 'git restagedall && git restall && git cleanall'
+    clearall = !sh -c 'git restagedall && git restall && git cleanall && git cleanallx'
 
     rmc = rm --cached
 
@@ -117,6 +118,10 @@
     stat = status
 
     sh = !"git --no-pager show --color-words"
+    #   Show all changes on this branch since base
+    #       Low index for git to detect file renames correctly
+    shd = sh devel..HEAD -M10%
+    shm = sh master..HEAD -M10%
 
     #   st default to push and stp to pop
     st = stash
@@ -149,6 +154,7 @@
     pager = less -F -X
 	editor = vim
 	autocrlf = input
+	excludesFile = ~/.gitignore
 
 [color "diff"]
     old = red bold

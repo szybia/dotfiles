@@ -186,6 +186,15 @@ alias vimcustom='vim $HOME/.custom'
 alias viminput='vim $HOME/.inputrc'
 alias vimssh='vim $HOME/.ssh/config'
 alias vimtmux='vim $HOME/.tmux.conf'
+#   source those files
+alias sourcebashrc='source $HOME/.bashrc'
+alias sourcerc='source $HOME/.vimrc'
+alias sourcealiases='source $HOME/.aliases'
+alias sourcefunctions='source $HOME/.functions'
+alias sourceexports='source $HOME/.exports'
+alias sourcecustom='source $HOME/.custom'
+alias sourceinput='source $HOME/.inputrc'
+
 
 alias vimfzf='vim $(fzf -m)'
 
@@ -210,6 +219,8 @@ alias ghprview='gh pr view -w'  # open in browser
 alias hubbr='hub browse'
 alias hubci='hub ci-status'
 alias hubcl="hub clone"
+#   Ain't nobody got time fo' that
+alias hcl='hubclfork'
 alias hubfork='hub fork --remote-name origin'
 alias hubsync='hub sync'
 
@@ -226,6 +237,8 @@ alias nightmodeoff='xrandr --output eDP-1 --gamma 1:1:1 --brightness 1.0'
 alias xrandrreset='xrandr -s 0'
 
 # maven aliases
+#  Yes, I'm really that lazy
+alias mvnclean='mvn clean'
 alias mvnpackage='mvn clean package'
 alias mvnverify='mvn clean verify'
 alias mvninstall='mvn clean install'
@@ -245,4 +258,17 @@ alias chx='chmod +x'
 
 # Sentence to python function name
 alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
+
+# Mr. Terraform
+alias tf='terraform'
+alias tfi='terraform init'
+alias tfp='terraform plan'
+alias tfa='terraform apply'
+
+# Open text editors/IDEs
+alias c='code .'
+alias i='idea .'
+
+#   When you want to check something in a project
+alias guc='c && git pups'
 
