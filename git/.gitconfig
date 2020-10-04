@@ -155,6 +155,7 @@
 	editor = vim
 	autocrlf = input
 	excludesFile = ~/.gitignore
+	eol = lf
 
 [color "diff"]
     old = red bold
