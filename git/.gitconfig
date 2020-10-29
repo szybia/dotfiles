@@ -43,6 +43,10 @@
     bD = branch -D
     bm = branch -m
 
+    #   Checkout and delete branch
+    chmbd = !sh -c 'git chm && git bd "$@"' -
+    chdbd = !sh -c 'git chd && git bd "$@"' -
+
     #   Clean
     cleanall = clean -df
     cleanallx = clean -dfX
