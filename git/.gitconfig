@@ -175,3 +175,5 @@
 [rebase]
 	autosquash = true
 
+[advice]
+	detachedHead = false
