@@ -243,3 +243,6 @@ endif
 
 :command Q q
 
+" Just to random line
+:command! RandomLine execute 'normal! '.(matchstr(system('od -vAn -N3 -tu4 /dev/urandom'), '^\_s*\zs.\{-}\ze\_s*$') % line('$')).'G'
+
