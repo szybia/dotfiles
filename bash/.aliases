@@ -239,12 +239,12 @@ alias xrandrreset='xrandr -s 0'
 # maven aliases
 #  Yes, I'm really that lazy
 alias mvnclean='mvn clean'
-alias mvnpackage='mvn clean package'
-alias mvnverify='mvn clean verify'
-alias mvninstall='mvn clean install'
-alias mvntest='mvn clean test'
-alias mvnskip='mvn clean package -DskipTests'
-alias mvntestpush='mvn clean test && git p'
+alias mvnpackage='mvn package'
+alias mvnverify='mvn verify'
+alias mvninstall='mvn install'
+alias mvntest='mvn test'
+alias mvnskip='mvn package -DskipTests -Dcheckstyle.skip'
+alias mvntestpush='mvntest && git p'
 
 # uuid's
 alias uuiddummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
