@@ -25,6 +25,7 @@ set $up k
 set $down j
 set $left h
 set $right l
+set $lockcmd i3lock
 set $barcmd i3status
 set $font Source Code Pro Semibold
 set $terminal urxvt
@@ -45,6 +46,7 @@ exec --no-startup-id unclutter --timeout 3
 exec i3 --force-xinerama -V >>~/.i3/i3log 2>&1
 
 ########## Keybindings ##########
+bindsym $mod+Shift+s exec $lockcmd -uec 000000
 
 ### Backlight ###
 # Note: If light doesn't work, install xbacklight and 1) uncomment the two lines below.
@@ -82,7 +84,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec $terminal
 
-# start firefox
+# start browser
 bindsym $mod+Shift+F exec $browser
 
 # start VirtualBox
