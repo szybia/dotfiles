@@ -171,6 +171,7 @@
 	protocol = ssh
 [init]
 	templateDir = ~/.git_template
+	defaultBranch = master
 
 [rebase]
 	autosquash = true
