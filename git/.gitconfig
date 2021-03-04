@@ -80,9 +80,9 @@
     continue = rebase --continue
     abort = rebase --abort
 
-    remaster = rebase -i master
-    redevel = rebase -i devel
-    redev = rebase -i devel
+    remaster = rebase --autosquash -i master
+    redevel =  rebase --autosquash -i devel
+    redev =    redevel
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
