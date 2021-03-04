@@ -20,20 +20,20 @@ alias tm='transmission-remote'
 alias tmd='transmission-daemon'
 
 #   Long list of everything
-alias ll='ls -AlhF --color=auto'
+alias l='ls -AlhF --color=auto'
 #   List hidden
 alias la='ls -A --color=auto'
 #   Classify and list by column
-alias l='ls -CF --color=auto'
+alias ll='ls -CF --color=auto'
 
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
 if [ "${machine}" = 'Mac' ]
 then
-    alias ll='ls -AlhFG'
+    alias l='ls -AlhFG'
     alias la='ls -AG'
     #   Classify and list by column
-    alias l='ls -CFG'
+    alias ll='ls -CFG'
 fi
 
 #   df default
