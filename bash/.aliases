@@ -226,6 +226,7 @@ alias hubsync='hub sync'
 
 # git utilities
 alias prnew='git p && hubprnew'
+alias prnewf='git p -f && hubprnew'
 
 # unix timestamp utilities (no newlines)
 alias unixnow='echo -n "$(gdate +%s%3N)" | ccopy'
