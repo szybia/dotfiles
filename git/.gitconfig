@@ -129,6 +129,8 @@
 
     #   st default to push and stp to pop
     st = stash
+    #   save stash but apply it back
+    sta = "!git stash && git stash apply"
     stp = stash pop
     #   stash only unstaged changes
     stun = stash -k -u
