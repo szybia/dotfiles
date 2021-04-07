@@ -160,6 +160,13 @@ alias cal='calcurse'
 #       distuingishing the gap between commands
 alias clear_man='for i in {1..100}; do echo; done'
 
+if [ "${machine}" = 'Mac' ]
+then
+    # if mac sed was any slower I'd breakdown
+    alias sed='gsed'
+fi
+
+
 #   escape all special characters
 alias escape="sed 's/[^a-zA-Z0-9]/\\\&/g'"
 #   DO NOT ask me how this works
