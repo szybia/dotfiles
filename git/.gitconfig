@@ -49,7 +49,7 @@
 
     #   Clean
     cleanall = clean -df
-    cleanallx = clean -dfX
+    cleanallx = clean -dfx
     #   Clean dry-run
     cleanalln = clean -dfn
     #   Commit
