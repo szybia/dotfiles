@@ -111,6 +111,8 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 #   curl API | pretty
 alias pretty='python -m json.tool'
+alias cpretty='cpaste | pretty'
+alias ccpretty='cpaste | pretty | ccopy'
 
 #   python import sorting
 alias pythonsort='isort -rc .'
