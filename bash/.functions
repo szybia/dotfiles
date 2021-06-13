@@ -235,6 +235,16 @@ uuid() {
 python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); then ccopy; else cat -; fi; }
 }
 
+#   Prettyfi a python object stored in clipboard
+pythonpretty() {
+    cpaste | python -c "$(cat <<EOF
+import ast, json, sys
+o = ast.literal_eval(sys.stdin.read())
+print(json.dumps(o, indent=2))
+EOF
+)"
+}
+
 # Copy string into clipboard
 clipb () {
     echo "$@" | ccopy
@@ -332,9 +342,9 @@ vdefault() {
 
 #   This seems to take a bit and isn't needed in every terminal
 setupssh() {
-#   SSH agent
-# shellcheck disable=SC1090
-source ~/.ssh-find-agent.sh
-set_ssh_agent_socket
+    #   SSH agent
+    # shellcheck disable=SC1090
+    source ~/.ssh-find-agent.sh
+    set_ssh_agent_socket
 }
 

@@ -20,20 +20,20 @@ alias tm='transmission-remote'
 alias tmd='transmission-daemon'
 
 #   Long list of everything
-alias ll='ls -AlhF --color=auto'
+alias l='ls -AlhF --color=auto'
 #   List hidden
 alias la='ls -A --color=auto'
 #   Classify and list by column
-alias l='ls -CF --color=auto'
+alias ll='ls -CF --color=auto'
 
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
 if [ "${machine}" = 'Mac' ]
 then
-    alias ll='ls -AlhFG'
+    alias l='ls -AlhFG'
     alias la='ls -AG'
     #   Classify and list by column
-    alias l='ls -CFG'
+    alias ll='ls -CFG'
 fi
 
 #   df default
@@ -111,6 +111,8 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 #   curl API | pretty
 alias pretty='python -m json.tool'
+alias cpretty='cpaste | pretty'
+alias ccpretty='cpaste | pretty | ccopy'
 
 #   python import sorting
 alias pythonsort='isort -rc .'
@@ -159,6 +161,13 @@ alias cal='calcurse'
 #       keeps previous output while allowing for
 #       distuingishing the gap between commands
 alias clear_man='for i in {1..100}; do echo; done'
+
+if [ "${machine}" = 'Mac' ]
+then
+    # if mac sed was any slower I'd breakdown
+    alias sed='gsed'
+fi
+
 
 #   escape all special characters
 alias escape="sed 's/[^a-zA-Z0-9]/\\\&/g'"
@@ -226,6 +235,7 @@ alias hubsync='hub sync'
 
 # git utilities
 alias prnew='git p && hubprnew'
+alias prnewf='git p -f && hubprnew'
 
 # unix timestamp utilities (no newlines)
 alias unixnow='echo -n "$(gdate +%s%3N)" | ccopy'
@@ -239,12 +249,12 @@ alias xrandrreset='xrandr -s 0'
 # maven aliases
 #  Yes, I'm really that lazy
 alias mvnclean='mvn clean'
-alias mvnpackage='mvn clean package'
-alias mvnverify='mvn clean verify'
-alias mvninstall='mvn clean install'
-alias mvntest='mvn clean test'
-alias mvnskip='mvn clean verify -DskipTests'
-alias mvntestpush='mvn clean test && git p'
+alias mvnpackage='mvn package'
+alias mvnverify='mvn verify'
+alias mvninstall='mvn install'
+alias mvntest='mvn test'
+alias mvnskip='mvn package -DskipTests -Dcheckstyle.skip'
+alias mvntestpush='mvntest && git p'
 
 # uuid's
 alias uuiddummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'

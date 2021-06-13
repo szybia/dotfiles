@@ -49,7 +49,7 @@ alias dkill='docker kill'
 # Prune all containers
 alias dprune='docker container prune -f'
 
-# Remove/prune containers and remove networks
+# Remove/prune containers, networks and volumes
 alias dclear='dkrmall && dprune && dnprune && dvprune'
 # Remove everything
 alias dclearall='dclear && docker system prune -af'

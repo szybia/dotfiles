@@ -43,9 +43,13 @@
     bD = branch -D
     bm = branch -m
 
+    #   Checkout and delete branch
+    chmbd = !sh -c 'git chm && git bd "$@"' -
+    chdbd = !sh -c 'git chd && git bd "$@"' -
+
     #   Clean
     cleanall = clean -df
-    cleanallx = clean -dfX
+    cleanallx = clean -dfx
     #   Clean dry-run
     cleanalln = clean -dfn
     #   Commit
@@ -53,7 +57,7 @@
     #   Commit all modified files
     ca = commit -av
     #   Commit all files - even untracked
-    allc = !"git all && git ca"
+    allc = !sh -c 'git all && git ca "$@"' -
     #   Checkout
     ch = checkout
     #   Checkout new branch
@@ -76,9 +80,9 @@
     continue = rebase --continue
     abort = rebase --abort
 
-    remaster = rebase -i master
-    redevel = rebase -i devel
-    redev = rebase -i devel
+    remaster = rebase --autosquash -i master
+    redevel =  rebase --autosquash -i devel
+    redev =    redevel
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
@@ -120,11 +124,13 @@
     sh = !"git --no-pager show --color-words"
     #   Show all changes on this branch since base
     #       Low index for git to detect file renames correctly
-    shd = sh devel..HEAD -M10%
-    shm = sh master..HEAD -M10%
+    shd = diff devel..HEAD -M10%
+    shm = diff master..HEAD -M10%
 
     #   st default to push and stp to pop
     st = stash
+    #   save stash but apply it back
+    sta = "!git stash && git stash apply"
     stp = stash pop
     #   stash only unstaged changes
     stun = stash -k -u
