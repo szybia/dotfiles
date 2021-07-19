@@ -10,3 +10,4 @@ while true; do
   amixer set PCM 100% unmute > /dev/null
   break
 done
+

@@ -78,6 +78,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q sset Master 5%-
 # Mute
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
 
+### Brightness ###
+#   i'm making some assumptions here about your git clone setup
+bindsym XF86Search exec --no-startup-id ~/repos/dotfiles/scripts/xrandr_brightness_toggle.sh
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
