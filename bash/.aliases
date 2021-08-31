@@ -208,6 +208,7 @@ alias sourceinput='source $HOME/.inputrc'
 
 
 alias vimfzf='vim $(fzf -m)'
+alias rmfzf='rm -rf $(fzf -m)'
 
 #   npm aliases
 #   npm clean and install
@@ -283,4 +284,6 @@ alias i='idea .'
 
 #   When you want to check something in a project
 alias guc='c && git pups'
+
+alias b='git branch'
 
