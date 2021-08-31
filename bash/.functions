@@ -351,3 +351,12 @@ setupssh() {
     set_ssh_agent_socket
 }
 
+topp() {
+  "$@" &>/dev/null &
+  pid="$!"
+  trap ':' INT
+  echo 'RSS  MEM'
+  while sleep 1; do \ps -o 'rss,%mem' -p "$pid"; done
+  kill "$pid"
+}
+
