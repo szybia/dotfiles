@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'chrisbra/csv.vim'
 
 Plug 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
