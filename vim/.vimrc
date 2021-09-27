@@ -115,6 +115,7 @@ set encoding=utf-8
 
 " Dont redraw when executing macros
 set lazyredraw
+set ttyfast
 
 " Regex magic
 set magic
