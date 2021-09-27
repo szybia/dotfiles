@@ -255,8 +255,8 @@ alias mvnclean='mvn clean'
 alias mvnpackage='mvn package'
 alias mvnverify='mvn verify'
 alias mvninstall='mvn install'
-alias mvntest='mvn test'
-alias mvnskip='mvn package -DskipTests -Dcheckstyle.skip'
+alias mvntest='mvn clean test'
+alias mvnskip='mvn clean package -DskipTests -Dcheckstyle.skip -Dskip.coverage'
 alias mvntestpush='mvntest && git p'
 
 # uuid's
