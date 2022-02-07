@@ -115,6 +115,9 @@
     restall = restore :/
     restaged = restore --staged
     restagedall = restore --staged :/
+    #   git amazes me sometimes
+    #   restore a file you've deleted in history
+    restoredeletedfile = !sh -c 'git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"'
     clearall = !sh -c 'git restagedall && git restall && git cleanall && git cleanallx'
 
     rmc = rm --cached
