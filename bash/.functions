@@ -134,7 +134,7 @@ syn() {
 
 #   Create backup file
 bak() { cp "$1"{,.bak};}
-unbak() { mv "$1" ${1%".bak"}; }
+unbak() { mv "$1" "${1%".bak"}"; }
 
 #   Crypto
 shred_current_directory() {
