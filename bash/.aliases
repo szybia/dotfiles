@@ -106,6 +106,9 @@ alias grep='grep --color=auto'
 #   ripgrep search hidden files
 alias rgh="rg --hidden -g '!.git/*' -i"
 
+#   search for a filename
+alias rgf='rg --files | rg'
+
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
@@ -271,6 +274,7 @@ alias chx='chmod +x'
 
 # Sentence to python function name
 alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
+alias camel="cpaste | sed -r 's/_([a-z])/\U\1/gi' | sed -r 's/^([A-Z])/\l\1/' | ccopy"
 
 # Mr. Terraform
 alias tf='terraform'
@@ -287,3 +291,7 @@ alias guc='c && git pups'
 
 alias b='git branch'
 
+alias wcl='wc -l'
+
+#   delete a host from known_hosts
+alias sshdel='ssh-keygen -f ~/.ssh/known_hosts -R'
