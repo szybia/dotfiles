@@ -80,10 +80,7 @@ set scrolloff=10
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
 
-" Add new line to file if doesn't exist
-autocmd BufWritePre * if (getline('$') !~ "^\s*$") | call append(line('$'), "") | endif
 
-"
 " ---------- Vim defaults ----------
 
 " be iMproved, required
