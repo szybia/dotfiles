@@ -48,7 +48,7 @@ __parse_git_branch() {
 exit_status='$(__exitstatus)'
 # shellcheck disable=SC2016
 git_branch='$(__parse_git_branch)'
-final_PS1="${path}\w ${exit_colour}${exit_status}${branch_colour}${git_branch} ${endchar}\\$ \[$(tput sgr0)\]"
+final_PS1="${path}\w ${exit_colour}${exit_status}${branch_colour}${endchar}\\$ \[$(tput sgr0)\]"
 export PS1="$final_PS1"
 
 unset hostname
