@@ -106,6 +106,9 @@ alias grep='grep --color=auto'
 #   ripgrep search hidden files
 alias rgh="rg --hidden -g '!.git/*' -i"
 
+#   search for a filename
+alias rgf='rg --files | rg'
+
 #   Stopwatch
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
@@ -162,10 +165,12 @@ alias cal='calcurse'
 #       distuingishing the gap between commands
 alias clear_man='for i in {1..100}; do echo; done'
 
+#   get rid of useless BSD core utils
 if [ "${machine}" = 'Mac' ]
 then
     # if mac sed was any slower I'd breakdown
     alias sed='gsed'
+    alias du='gdu'
 fi
 
 
@@ -206,6 +211,7 @@ alias sourceinput='source $HOME/.inputrc'
 
 
 alias vimfzf='vim $(fzf -m)'
+alias rmfzf='rm -rf $(fzf -m)'
 
 #   npm aliases
 #   npm clean and install
@@ -252,8 +258,8 @@ alias mvnclean='mvn clean'
 alias mvnpackage='mvn package'
 alias mvnverify='mvn verify'
 alias mvninstall='mvn install'
-alias mvntest='mvn test'
-alias mvnskip='mvn package -DskipTests -Dcheckstyle.skip'
+alias mvntest='mvn clean test'
+alias mvnskip='mvn clean package -DskipTests -Dcheckstyle.skip -Dskip.coverage'
 alias mvntestpush='mvntest && git p'
 
 # uuid's
@@ -268,6 +274,7 @@ alias chx='chmod +x'
 
 # Sentence to python function name
 alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
+alias camel="cpaste | sed -r 's/_([a-z])/\U\1/gi' | sed -r 's/^([A-Z])/\l\1/' | ccopy"
 
 # Mr. Terraform
 alias tf='terraform'
@@ -282,3 +289,9 @@ alias i='idea .'
 #   When you want to check something in a project
 alias guc='c && git pups'
 
+alias b='git branch'
+
+alias wcl='wc -l'
+
+#   delete a host from known_hosts
+alias sshdel='ssh-keygen -f ~/.ssh/known_hosts -R'

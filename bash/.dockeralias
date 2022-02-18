@@ -47,12 +47,10 @@ alias dkrmall='docker kill $(docker ps -a -q) || docker rm $(docker ps -a -q) ||
 alias dkill='docker kill'
 
 # Prune all containers
-alias dprune='docker container prune -f'
+alias dprune='docker system prune -f --volumes'
 
 # Remove/prune containers, networks and volumes
-alias dclear='dkrmall && dprune && dnprune && dvprune'
-# Remove everything
-alias dclearall='dclear && docker system prune -af'
+alias dclear='dkrmall && dprune'
 
 # Docker networks
 alias dn='docker network'

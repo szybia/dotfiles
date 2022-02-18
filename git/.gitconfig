@@ -89,6 +89,8 @@
     dc = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --cached --patch-with-stat --color-words"
 
     fetchall = fetch --all
+    fetchud = fetch upstream devel:devel
+    fetchmd = fetch upstream master:master
 
     #   Color graph log view
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
@@ -97,8 +99,10 @@
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
     p = push origin HEAD
+    pf = !git p -f
     pups = pull upstream HEAD
     update = !git pups && git p
+    u = update
     #   Quick way to get started on a story
     new = "!f() { git update && git bnew \"$1\";  }; f"
 
@@ -111,6 +115,9 @@
     restall = restore :/
     restaged = restore --staged
     restagedall = restore --staged :/
+    #   git amazes me sometimes
+    #   restore a file you've deleted in history
+    restoredeletedfile = !sh -c 'git checkout $(git rev-list -n 1 HEAD -- "$1")^ -- "$1"'
     clearall = !sh -c 'git restagedall && git restall && git cleanall && git cleanallx'
 
     rmc = rm --cached
@@ -124,8 +131,8 @@
     sh = !"git --no-pager show --color-words"
     #   Show all changes on this branch since base
     #       Low index for git to detect file renames correctly
-    shd = diff devel..HEAD -M10%
-    shm = diff master..HEAD -M10%
+    shd = d devel..HEAD -M10%
+    shm = d master..HEAD -M10%
 
     #   st default to push and stp to pop
     st = stash
@@ -184,3 +191,4 @@
 
 [advice]
 	detachedHead = false
+

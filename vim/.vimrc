@@ -10,6 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'chrisbra/csv.vim'
 
 Plug 'airblade/vim-gitgutter'
     " set vim update time to quarter of a second for git tracking
@@ -79,10 +80,7 @@ set scrolloff=10
 :  autocmd BufLeave,FocusLost,InsertEnter   * set number norelativenumber
 :augroup END
 
-" Add new line to file if doesn't exist
-autocmd BufWritePre * if (getline('$') !~ "^\s*$") | call append(line('$'), "") | endif
 
-"
 " ---------- Vim defaults ----------
 
 " be iMproved, required
@@ -114,6 +112,7 @@ set encoding=utf-8
 
 " Dont redraw when executing macros
 set lazyredraw
+set ttyfast
 
 " Regex magic
 set magic
