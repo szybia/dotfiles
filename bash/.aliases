@@ -211,7 +211,7 @@ alias sourcecustom='source $HOME/.custom'
 alias sourceinput='source $HOME/.inputrc'
 
 
-alias vimfzf='vim $(fzf -m)'
+alias vf='vim $(fzf -m)'
 alias rmfzf='rm -rf $(fzf -m)'
 
 #   npm aliases
