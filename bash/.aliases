@@ -19,22 +19,23 @@ alias n='nmcli'
 alias tm='transmission-remote'
 alias tmd='transmission-daemon'
 
-#   Long list of everything
-alias l='ls -AlhF --color=auto'
-#   List hidden
-alias la='ls -A --color=auto'
-#   Classify and list by column
-alias ll='ls -CF --color=auto'
 
+
+export ls_command='ls'
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
 if [ "${machine}" = 'Mac' ]
 then
-    alias l='ls -AlhFG'
-    alias la='ls -AG'
-    #   Classify and list by column
-    alias ll='ls -CFG'
+    export ls_command='gls'
 fi
+
+#   Long list of everything
+alias l="${ls_command} -AlhF --color=auto"
+#   List hidden
+alias la="${ls_command} -A --color=auto"
+#   Classify and list by column
+alias ll="${ls_command} -CF --color=auto"
+
 
 #   df default
 alias df='df -Th --total'
