@@ -48,7 +48,7 @@ alias cp='cp -i'
 alias free='free -mt'
 
 #   ps default
-alias ps='ps auxf'
+alias ps='ps -ef'
 
 #   mkdir default create parents
 alias mkdir='mkdir -p'
@@ -114,7 +114,7 @@ alias rgf='rg --files | rg'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   curl API | pretty
-alias pretty='python -m json.tool'
+alias pretty='python3 -m json.tool'
 alias cpretty='cpaste | pretty'
 alias ccpretty='cpaste | pretty | ccopy'
 
@@ -291,6 +291,7 @@ alias i='idea .'
 alias guc='c && git pups'
 
 alias b='git branch'
+alias sb='git s && git b'
 
 alias wcl='wc -l'
 
