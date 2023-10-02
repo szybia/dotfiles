@@ -68,7 +68,7 @@ alias fsearch='rg -uu -g "!.git/" -i . -e '
 alias myip='curl https://ipinfo.tw; echo'
 
 # check internet connection
-alias online='wget -q --spider szybia.com'
+alias online='wget -q --spider google.com'
 
 #   listen to processes on network
 alias listen='lsof -P -i -n'
@@ -285,13 +285,14 @@ alias tfa='terraform apply'
 
 # Open text editors/IDEs
 alias c='code .'
-alias i='idea .'
+alias i='nohup idea . &>/dev/null &'
 
 #   When you want to check something in a project
 alias guc='c && git pups'
 
 alias b='git branch'
 alias sb='git s && git b'
+alias s='git s'
 
 alias wcl='wc -l'
 

@@ -59,4 +59,3 @@ for file in ~/.{aliases,functions,exports,custom,docker{func,alias},fzf.bash}; d
 done
 
 unset file
-

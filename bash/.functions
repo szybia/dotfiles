@@ -39,6 +39,7 @@ extract() {
             *.zip)       unzip "$file"       ;;
             *.Z)         uncompress "$file"  ;;
             *.7z)        7z x "$file"        ;;
+            *.tar.xz)    tar xJf "$file"        ;;
             *)     echo "$file cannot be extracted via extract()" ;;
              esac
          else
