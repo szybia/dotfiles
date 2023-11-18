@@ -48,6 +48,8 @@ shopt -s checkwinsize &>/dev/null
 #   Allow for cd <var>
 shopt -s cdable_vars &>/dev/null
 
+shopt -s cdspell &>/dev/null
+
 #   Allows cycling through options
 bind 'TAB':menu-complete
 

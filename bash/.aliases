@@ -77,7 +77,7 @@ alias listen='lsof -P -i -n'
 alias busy='hexdump -C < /dev/urandom | grep "ca fe"'
 
 #   Make cd quicker
-alias cd..='cd ../'
+alias -- -='cd -'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
