@@ -39,6 +39,7 @@ extract() {
             *.zip)       unzip "$file"       ;;
             *.Z)         uncompress "$file"  ;;
             *.7z)        7z x "$file"        ;;
+            *.tar.xz)    tar xJf "$file"        ;;
             *)     echo "$file cannot be extracted via extract()" ;;
              esac
          else
@@ -241,7 +242,7 @@ python3 -c 'import uuid; print(uuid.uuid4(), end="")' | { if (( clip == 1 )); th
 
 #   Prettyfi a python object stored in clipboard
 pythonpretty() {
-    cpaste | python -c "$(cat <<EOF
+    cpaste | python3 -c "$(cat <<EOF
 import ast, json, sys
 o = ast.literal_eval(sys.stdin.read())
 print(json.dumps(o, indent=2))
@@ -340,18 +341,6 @@ f() {
     cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")" || exit
 }
 
-vdefault() {
-    vagrant destroy -f "$(vagrant global-status --prune | head -3 | tail -1 | awk '{print $1}')"
-}
-
-#   This seems to take a bit and isn't needed in every terminal
-setupssh() {
-    #   SSH agent
-    # shellcheck disable=SC1090
-    source ~/.ssh-find-agent.sh
-    set_ssh_agent_socket
-}
-
 topp() {
   "$@" &>/dev/null &
   pid="$!"
@@ -361,3 +350,10 @@ topp() {
   kill "$pid"
 }
 
+r () {
+    cd "$(git rev-parse --show-toplevel 2>/dev/null)"
+}
+
+rep () {
+    cd "$(ls -d ${HOME}/repos/* | fzf)"
+}

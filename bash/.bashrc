@@ -48,6 +48,8 @@ shopt -s checkwinsize &>/dev/null
 #   Allow for cd <var>
 shopt -s cdable_vars &>/dev/null
 
+shopt -s cdspell &>/dev/null
+
 #   Allows cycling through options
 bind 'TAB':menu-complete
 
@@ -59,4 +61,3 @@ for file in ~/.{aliases,functions,exports,custom,docker{func,alias},fzf.bash}; d
 done
 
 unset file
-

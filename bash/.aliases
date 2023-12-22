@@ -19,22 +19,23 @@ alias n='nmcli'
 alias tm='transmission-remote'
 alias tmd='transmission-daemon'
 
-#   Long list of everything
-alias l='ls -AlhF --color=auto'
-#   List hidden
-alias la='ls -A --color=auto'
-#   Classify and list by column
-alias ll='ls -CF --color=auto'
 
+
+export ls_command='ls'
 # shellcheck disable=SC2154
 #   Machine is sourced in .bashrc
 if [ "${machine}" = 'Mac' ]
 then
-    alias l='ls -AlhFG'
-    alias la='ls -AG'
-    #   Classify and list by column
-    alias ll='ls -CFG'
+    export ls_command='gls'
 fi
+
+#   Long list of everything
+alias l="${ls_command} -AlhF --color=auto"
+#   List hidden
+alias la="${ls_command} -A --color=auto"
+#   Classify and list by column
+alias ll="${ls_command} -CF --color=auto"
+
 
 #   df default
 alias df='df -Th --total'
@@ -47,7 +48,7 @@ alias cp='cp -i'
 alias free='free -mt'
 
 #   ps default
-alias ps='ps auxf'
+alias ps='ps -ef'
 
 #   mkdir default create parents
 alias mkdir='mkdir -p'
@@ -67,7 +68,7 @@ alias fsearch='rg -uu -g "!.git/" -i . -e '
 alias myip='curl https://ipinfo.tw; echo'
 
 # check internet connection
-alias online='wget -q --spider szybia.com'
+alias online='wget -q --spider google.com'
 
 #   listen to processes on network
 alias listen='lsof -P -i -n'
@@ -76,7 +77,7 @@ alias listen='lsof -P -i -n'
 alias busy='hexdump -C < /dev/urandom | grep "ca fe"'
 
 #   Make cd quicker
-alias cd..='cd ../'
+alias -- -='cd -'
 alias ..='cd ../'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -113,7 +114,7 @@ alias rgf='rg --files | rg'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   curl API | pretty
-alias pretty='python -m json.tool'
+alias pretty='python3 -m json.tool'
 alias cpretty='cpaste | pretty'
 alias ccpretty='cpaste | pretty | ccopy'
 
@@ -210,7 +211,7 @@ alias sourcecustom='source $HOME/.custom'
 alias sourceinput='source $HOME/.inputrc'
 
 
-alias vimfzf='vim $(fzf -m)'
+alias vf='vim $(fzf -m)'
 alias rmfzf='rm -rf $(fzf -m)'
 
 #   npm aliases
@@ -284,12 +285,14 @@ alias tfa='terraform apply'
 
 # Open text editors/IDEs
 alias c='code .'
-alias i='idea .'
+alias i='nohup idea . &>/dev/null &'
 
 #   When you want to check something in a project
 alias guc='c && git pups'
 
 alias b='git branch'
+alias sb='git s && git b'
+alias s='git s'
 
 alias wcl='wc -l'
 
