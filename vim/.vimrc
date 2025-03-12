@@ -86,6 +86,8 @@ set scrolloff=10
 " be iMproved, required
 set nocompatible
 
+syntax enable
+
 " keep 500 items in the history
 set history=500
 
