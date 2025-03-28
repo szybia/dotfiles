@@ -307,3 +307,5 @@ alias sshdel='ssh-keygen -f ~/.ssh/known_hosts -R'
 # typo
 alias clera='clear'
 
+alias cdf='cd "$(find . -type d -print | fzf)"'
+
