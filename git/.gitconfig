@@ -1,9 +1,9 @@
 [user]
 	email = szybia@tuta.io
-	name = Szymon Bialkowski
+    name = Szymon Bialkowski
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [gpg]
 	program = gpg

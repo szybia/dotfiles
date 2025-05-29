@@ -51,7 +51,7 @@ shopt -s cdable_vars &>/dev/null
 shopt -s cdspell &>/dev/null
 
 #   Allows cycling through options
-bind 'TAB':menu-complete
+# bind 'TAB':menu-complete
 
 for file in ~/.{aliases,functions,exports,custom,docker{func,alias},fzf.bash}; do
     if [[ -r "$file" ]]; then
