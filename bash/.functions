@@ -266,7 +266,7 @@ rsed() {
 
 
 hubprnew() {
-    hub pull-request -od "$@"
+    hub pull-request -m "$(git log -1 --pretty=%B)" -od "$@"
 }
 
 hubclfork() {
@@ -287,8 +287,7 @@ hubclfork() {
     fi
 
     hub clone "$1" && \
-        cd "${repo}" && \
-        hub fork --remote-name origin
+        cd "${repo}"
 }
 
 
@@ -356,4 +355,8 @@ r () {
 
 rep () {
     cd "$(ls -d ${HOME}/repos/* | fzf)"
+}
+
+iso() {
+  printf "%s%03dZ" "$(date -u +'%Y-%m-%dT%H:%M:%S.')" $(( $(date -u +%N) / 1000000 )) | ccopy
 }

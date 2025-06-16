@@ -39,3 +39,11 @@ dvrmnone() {
     docker volume rm $(docker volume ls -qf dangling=true)
 }
 
+darch() {
+    docker ps --filter "status=running" --format '{{.Names}}\t{{.Image}}' | while read -r name image; do
+      arch=$(docker image inspect "$image" --format '{{.Architecture}}')
+      if ! grep -q $(uname -m) <<<"$arch"; then
+        printf "%-40s %s\n" "$name" "$arch"
+      fi
+    done
+}

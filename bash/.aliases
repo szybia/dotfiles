@@ -63,6 +63,7 @@ alias fhere='find . -name '
 #       Search .gitignore and hidden files without git folder
 #       case-insensitively with extended pattern
 alias fsearch='rg -uu -g "!.git/" -i . -e '
+alias fs='fsearch'
 
 #   List IP
 alias myip='curl https://ipinfo.tw; echo'
@@ -114,9 +115,9 @@ alias rgf='rg --files | rg'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   curl API | pretty
-alias pretty='python3 -m json.tool'
-alias cpretty='cpaste | pretty'
-alias ccpretty='cpaste | pretty | ccopy'
+alias pret='python3 -m json.tool'
+alias cpret='cpaste | pret'
+alias ccpret='cpaste | pret | ccopy'
 
 #   python import sorting
 alias pythonsort='isort -rc .'
@@ -230,6 +231,7 @@ alias ghprlist='gh pr list'
 alias ghprls='gh pr list'
 alias ghprstat='gh pr status'
 alias ghprview='gh pr view -w'  # open in browser
+alias ghch='gh pr checkout'
 
 # gh hub cli
 alias hubbr='hub browse'
@@ -262,9 +264,11 @@ alias mvninstall='mvn install'
 alias mvntest='mvn clean test'
 alias mvnskip='mvn clean package -DskipTests -Dcheckstyle.skip -Dskip.coverage'
 alias mvntestpush='mvntest && git p'
+alias mvntestpr='mvntest && prnew'
 
 # uuid's
-alias uuiddummy='echo -n "00112233-4455-6677-8899-aabbccddeeff" | ccopy'
+alias dum='echo -n "00000000-0000-0000-0000-000000000000" | ccopy'
+alias jdum='echo -n "UUID.fromString(\"00000000-0000-0000-0000-000000000000\");" | ccopy'
 
 # I'm sick and tired of looking for shebangs
 alias bashshebang="echo '#!/usr/bin/env bash' | ccopy"
@@ -291,10 +295,17 @@ alias i='nohup idea . &>/dev/null &'
 alias guc='c && git pups'
 
 alias b='git branch'
-alias sb='git s && git b'
+alias sb='git s && git b && git rv'
 alias s='git s'
+alias rv='git rv'
 
 alias wcl='wc -l'
 
 #   delete a host from known_hosts
 alias sshdel='ssh-keygen -f ~/.ssh/known_hosts -R'
+
+# typo
+alias clera='clear'
+
+alias cdf='cd "$(find . -type d -print | fzf)"'
+
