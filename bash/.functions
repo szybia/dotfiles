@@ -287,7 +287,8 @@ hubclfork() {
     fi
 
     hub clone "$1" && \
-        cd "${repo}"
+        cd "${repo}" && \
+        hub fork --remote-name origin
 }
 
 
