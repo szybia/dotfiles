@@ -63,7 +63,7 @@ alias fhere='find . -name '
 #       Search .gitignore and hidden files without git folder
 #       case-insensitively with extended pattern
 alias fsearch='rg -uu -g "!.git/" -i . -e '
-alias fs='fsearch'
+alias fs='rg -uu -g "!.git/" -i . -e '
 
 #   List IP
 alias myip='curl https://ipinfo.tw; echo'

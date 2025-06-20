@@ -59,7 +59,8 @@ set smartcase
 
 " "Scroll" through file
 map <Space> 10j
-map <C-@> 10k
+" map <C-Space> 10k
+map <Nul> 10k
 
 " ---------- Cursor and rulers ----------
 
