@@ -115,7 +115,7 @@ alias rgf='rg --files | rg'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   curl API | pretty
-alias pret='python3 -m json.tool'
+alias pret='jq'
 alias cpret='cpaste | pret'
 alias ccpret='cpaste | pret | ccopy'
 
