@@ -8,14 +8,7 @@ endif
 "   Vim-Plug
 call plug#begin('~/.vim/plugged')
 
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'chrisbra/csv.vim'
-
-Plug 'airblade/vim-gitgutter'
-    " set vim update time to quarter of a second for git tracking
-    set updatetime=250
-    let g:gitgutter_max_signs = 500  " only show 500 changes
 
 Plug 'ntpeters/vim-better-whitespace'
     autocmd BufWritePre * :StripWhitespace
@@ -36,18 +29,24 @@ Plug 'scrooloose/nerdcommenter'
     " Enable NERDCommenterToggle to check all selected lines is commented or not
     let g:NERDToggleCheckAllLines = 1
 
-Plug 'dylanaraps/fff.vim'
-let g:fff#split = "30new"
-
 Plug 'tpope/vim-surround'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
+Plug 'diepm/vim-rest-console'
+    let g:vrc_elasticsearch_support = 1
+    let g:vrc_curl_opts = {
+      \ '-u' : 'elastic:password',
+      \ '-i': '',
+    \}
+    let g:vrc_show_command = 1
+    let g:vrc_auto_format_response_patterns = {
+    \   'json': "jq ."
+    \}
+    let g:vrc_trigger = '<C-d>'
+
 call plug#end()
 
-" ---------- Searching ----------
-
-autocmd VimEnter * colorscheme wombat
 
 " ---------- Searching ----------
 
@@ -70,9 +69,6 @@ set ruler
 " cursor centered
 set scrolloff=10
 
-" show cursorline when in insert mode
-:autocmd InsertEnter,InsertLeave * set cul!
-
 " Insert mode absolute line numbers
 " Command mode relative line numbers
 :augroup numbertoggle
@@ -88,6 +84,8 @@ set scrolloff=10
 set nocompatible
 
 syntax enable
+
+colorscheme wombat
 
 " keep 500 items in the history
 set history=500
@@ -145,15 +143,15 @@ set nocursorline
 " ---------- Windows and buffers ----------
 
 " switch windows with Ctrl + arrow keys
-nnoremap <C-l> <C-W>l
-nnoremap <C-h> <C-W>h
-nnoremap <C-k> <C-W>k
-nnoremap <C-j> <C-W>j
+" nnoremap <C-l> <C-W>l
+" nnoremap <C-h> <C-W>h
+" nnoremap <C-k> <C-W>k
+" nnoremap <C-j> <C-W>j
 " and whilst in insert mode
-inoremap <C-l> <ESC><C-W>l
-inoremap <C-h> <ESC><C-W>h
-inoremap <C-k> <ESC><C-W>k
-inoremap <C-j> <ESC><C-W>j
+" inoremap <C-l> <ESC><C-W>l
+" inoremap <C-h> <ESC><C-W>h
+" inoremap <C-k> <ESC><C-W>k
+" inoremap <C-j> <ESC><C-W>j
 
 
 

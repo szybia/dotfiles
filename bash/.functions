@@ -266,7 +266,7 @@ rsed() {
 
 
 hubprnew() {
-    hub pull-request -m "$(git log -1 --pretty=%B)" -od "$@"
+    hub pull-request -b main -m "$(git log -1 --pretty=%B)" -od "$@"
 }
 
 hubclfork() {
