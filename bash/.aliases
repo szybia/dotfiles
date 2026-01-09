@@ -63,7 +63,7 @@ alias fhere='find . -name '
 #       Search .gitignore and hidden files without git folder
 #       case-insensitively with extended pattern
 alias fsearch='rg -uu -g "!.git/" -i . -e '
-alias fs='fsearch'
+alias fs='rg -uu -g "!.git/" -i . -e '
 
 #   List IP
 alias myip='curl https://ipinfo.tw; echo'
@@ -115,7 +115,7 @@ alias rgf='rg --files | rg'
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 
 #   curl API | pretty
-alias pret='python3 -m json.tool'
+alias pret='jq'
 alias cpret='cpaste | pret'
 alias ccpret='cpaste | pret | ccopy'
 
@@ -309,3 +309,4 @@ alias clera='clear'
 
 alias cdf='cd "$(find . -type d -print | fzf)"'
 
+alias f='fzf -m'

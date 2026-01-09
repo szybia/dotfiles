@@ -61,3 +61,6 @@ for file in ~/.{aliases,functions,exports,custom,docker{func,alias},fzf.bash}; d
 done
 
 unset file
+
+export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --no-ignore --glob '!.git/*' --glob '!.idea/*' --glob '!.gradle/*'"
+
