@@ -2,8 +2,6 @@
 #   Credit:
 #       github.com/jessfraz/dotfiles
 
-export PATH="/opt/homebrew/bin:$PATH"
-
 profile_file='/usr/share/defaults/etc/profile'
 if [[ -r "$profile_file" ]]; then
     # shellcheck disable=SC1090
