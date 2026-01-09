@@ -58,7 +58,7 @@ set smartcase
 
 " "Scroll" through file
 map <Space> 10j
-" map <C-Space> 10k
+map <C-Space> 10k
 map <Nul> 10k
 
 " ---------- Cursor and rulers ----------
@@ -138,21 +138,6 @@ set noerrorbells
 " speed up syntax highlighting
 set nocursorcolumn
 set nocursorline
-
-
-" ---------- Windows and buffers ----------
-
-" switch windows with Ctrl + arrow keys
-" nnoremap <C-l> <C-W>l
-" nnoremap <C-h> <C-W>h
-" nnoremap <C-k> <C-W>k
-" nnoremap <C-j> <C-W>j
-" and whilst in insert mode
-" inoremap <C-l> <ESC><C-W>l
-" inoremap <C-h> <ESC><C-W>h
-" inoremap <C-k> <ESC><C-W>k
-" inoremap <C-j> <ESC><C-W>j
-
 
 
 " ---------- Useful remappings ----------
