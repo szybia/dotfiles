@@ -39,7 +39,7 @@ Plug 'diepm/vim-rest-console'
       \ '-u' : 'elastic:password',
       \ '-i': '',
     \}
-    let g:vrc_show_command = 1
+    " let g:vrc_show_command = 1
     let g:vrc_auto_format_response_patterns = {
     \   'json': "jq ."
     \}

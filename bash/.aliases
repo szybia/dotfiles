@@ -309,3 +309,4 @@ alias clera='clear'
 
 alias cdf='cd "$(find . -type d -print | fzf)"'
 
+alias f='fzf -m'
