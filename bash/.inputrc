@@ -56,3 +56,5 @@ set menu-complete-display-prefix on
 # cd ~/etc   ->   cd ~/etctc
 set skip-completed-text on
 
+TAB: menu-complete
+"\e[Z": menu-complete-backward

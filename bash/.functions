@@ -396,6 +396,26 @@ ms_human() {
      fi
 }
 
+ns_human() {
+    local ns=$1
+
+    if (( ns < 1000 )); then
+        echo "${ns}ns"
+    elif (( ns < 1000000 )); then
+        echo "$(echo "scale=1; $ns / 1000" | bc)µs"
+    elif (( ns < 1000000000 )); then
+        echo "$(echo "scale=1; $ns / 1000000" | bc)ms"
+    elif (( ns < 60000000000 )); then
+        echo "$(echo "scale=1; $ns / 1000000000" | bc)s"
+    elif (( ns < 3600000000000 )); then
+        echo "$(echo "scale=1; $ns / 60000000000" | bc)m"
+    elif (( ns < 86400000000000 )); then
+        echo "$(echo "scale=1; $ns / 3600000000000" | bc)h"
+    else
+        echo "$(echo "scale=1; $ns / 86400000000000" | bc)d"
+    fi
+}
+
 stopwatch() {
   local start now elapsed
   start=$(gdate +%s%3N)

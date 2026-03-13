@@ -17,7 +17,7 @@ export LC_ALL=en_US.UTF-8
 export FZF_DEFAULT_COMMAND="rg -uu -g '!.git/' -l ."
 
 # Only show n directorys in terminal working path
-export PROMPT_DIRTRIM=1
+export PROMPT_DIRTRIM=5
 
 #   Reduce spam in history
 #   cd, ls, safe git aliases

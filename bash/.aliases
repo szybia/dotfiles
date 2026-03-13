@@ -87,7 +87,6 @@ alias ....='cd ../../../'
 alias dl='cd ~/downloads'
 alias h='history'
 alias r='ranger'
-alias v='vim'
 
 #   Tmux
 #   This fixes a problem which messes up the LS_COLORS
@@ -116,30 +115,30 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 #   curl API | pretty
 alias pret='jq'
-alias cpret='cpaste | pret'
-alias ccpret='cpaste | pret | ccopy'
+alias vpret='v | pret'
+alias vcpret='v | pret | c'
 
 #   python import sorting
 alias pythonsort='isort -rc .'
 
 #   easier clipboard
-alias ccopy='xclip -selection clipboard'
-alias cpaste='xclip -selection clipboard -o'
+alias c='xclip -selection clipboard'
+alias v='xclip -selection clipboard -o'
 if [ "${machine}" = 'Mac' ]
 then
-    alias cpaste='pbpaste'
-    alias ccopy='pbcopy'
+    alias v='pbpaste'
+    alias c='pbcopy'
 fi
-alias cclear='echo -n '' | ccopy'
+alias cclear='echo -n '' | c'
 
 #   print readable PATH
 alias path='echo -e ${PATH//:/\\n}'
 
 #   Copy SSH private key
-alias prikey='ccopy < ~/.ssh/id_ed25519 | echo "=> Private key copied to pasteboard."'
+alias prikey='c < ~/.ssh/id_ed25519 | echo "=> Private key copied to pasteboard."'
 
 #   Copy SSH public key
-alias pubkey='ccopy < ~/.ssh/id_ed25519.pub | echo "=> Public key copied to pasteboard."'
+alias pubkey='c < ~/.ssh/id_ed25519.pub | echo "=> Public key copied to pasteboard."'
 
 #   Microphone mute/unmute
 alias micoff='amixer set Capture nocap'
@@ -247,8 +246,8 @@ alias prnew='git p && hubprnew'
 alias prnewf='git p -f && hubprnew'
 
 # unix timestamp utilities (no newlines)
-alias unixnow='echo -n "$(gdate +%s%3N)" | ccopy'
-alias unixyes='echo -n "$(gdate -d "yesterday" +%s%3N)" | ccopy'
+alias unixnow='echo -n "$(gdate +%s%3N)" | c'
+alias unixyes='echo -n "$(gdate -d "yesterday" +%s%3N)" | c'
 
 #   nightmode functions
 alias nightmode='xrandr --output eDP-1 --gamma 1.1:0.8:0.7 --brightness 0.80'
@@ -267,19 +266,19 @@ alias mvntestpush='mvntest && git p'
 alias mvntestpr='mvntest && prnew'
 
 # uuid's
-alias dum='echo -n "00000000-0000-0000-0000-000000000000" | ccopy'
-alias jdum='echo -n "UUID.fromString(\"00000000-0000-0000-0000-000000000000\");" | ccopy'
+alias dum='echo -n "00000000-0000-0000-0000-000000000000" | c'
+alias jdum='echo -n "UUID.fromString(\"00000000-0000-0000-0000-000000000000\");" | c'
 
 # I'm sick and tired of looking for shebangs
-alias bashshebang="echo '#!/usr/bin/env bash' | ccopy"
-alias shshebang="echo '#!/usr/bin/env sh' | ccopy"
+alias bashshebang="echo '#!/usr/bin/env bash' | c"
+alias shshebang="echo '#!/usr/bin/env sh' | c"
 
 # So awkward
 alias chx='chmod +x'
 
 # Sentence to python function name
-alias snake='cpaste | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | ccopy'
-alias camel="cpaste | sed -r 's/_([a-z])/\U\1/gi' | sed -r 's/^([A-Z])/\l\1/' | ccopy"
+alias snake='v | tr  "[:upper:]" "[:lower:]" | sed "s/ /_/g" | c'
+alias camel="v | sed -r 's/_([a-z])/\U\1/gi' | sed -r 's/^([A-Z])/\l\1/' | c"
 
 # Mr. Terraform
 alias tf='terraform'
@@ -288,7 +287,7 @@ alias tfp='terraform plan'
 alias tfa='terraform apply'
 
 # Open text editors/IDEs
-alias c='code .'
+alias code='code .'
 alias i='nohup idea . &>/dev/null &'
 
 #   When you want to check something in a project
@@ -310,3 +309,7 @@ alias clera='clear'
 alias cdf='cd "$(find . -type d -print | fzf)"'
 
 alias f='fzf -m'
+
+alias now='date -u +%FT%TZ'
+
+alias it='git'

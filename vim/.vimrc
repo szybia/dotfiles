@@ -57,9 +57,8 @@ set ignorecase
 set smartcase
 
 " "Scroll" through file
-map <Space> 10j
-map <C-Space> 10k
-map <Nul> 10k
+noremap <Space> 10j
+noremap <CR> 10k
 
 " ---------- Cursor and rulers ----------
 
@@ -231,3 +230,4 @@ endif
 " Just to random line
 :command! RandomLine execute 'normal! '.(matchstr(system('od -vAn -N3 -tu4 /dev/urandom'), '^\_s*\zs.\{-}\ze\_s*$') % line('$')).'G'
 
+nnoremap <C-w> <C-w>w
