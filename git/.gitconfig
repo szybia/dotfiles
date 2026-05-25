@@ -85,6 +85,7 @@
 
     # Show the diff between the latest commit and the current state
     d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
+    diffc = diff --cached
     dc = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --cached --patch-with-stat --color-words"
     di = !"git --no-pager diff --patch-with-stat"
 
@@ -96,7 +97,7 @@
     graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 
     #   View abbreviated SHA, description, and history graph of the latest 20 commits
-    l = log --pretty=oneline -n 20 --graph --abbrev-commit
+    l = log --graph --abbrev-commit --first-parent -n 20 --pretty=format:'%C(auto)%h%d %C(blue)%ar%C(reset) %C(green)%an%C(reset) %s' --decorate
 
     mec = merge --continue
     meum = merge upstream/main

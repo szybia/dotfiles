@@ -357,22 +357,45 @@ iso() {
 
 
 fpret() {
-    if ! command -v jq &> /dev/null; then
+    [ "$#" -eq 0 ] && echo "Usage: ${FUNCNAME[0]} [files...]" && return 1
+
+    if ! command -v jq &>/dev/null; then
         echo "Error: jq is not installed. Please install it first." >&2
         return 1
     fi
+
+    local -a pids=()
+    local failures=0
+
     for file in "$@"; do
         if [ ! -f "$file" ]; then
             echo "Error: '$file' is not a file." >&2
+            failures=$((failures + 1))
             continue
         fi
-        if ! jq '.' "$file" >"$file.tmp"; then
-            echo "Error: Failed to format '$file'. It may not be valid JSON." >&2
-            rm -f "$file.tmp"
-            continue
-        fi
-        \mv "$file.tmp" "$file"
+
+        (
+            tmp="${file}.fpret.$$.$RANDOM"
+            cleanup() { rm -f "$tmp"; }
+            trap cleanup EXIT HUP INT TERM
+            if ! jq '.' "$file" >"$tmp"; then
+                echo "Error: Failed to format '$file'. It may not be valid JSON." >&2
+                exit 1
+            fi
+            mv -f "$tmp" "$file"
+            trap - EXIT HUP INT TERM
+            cleanup
+        ) &
+
+        pids+=("$!")
     done
+
+    local pid
+    for pid in "${pids[@]}"; do
+        wait "$pid" || failures=$((failures + 1))
+    done
+
+    return $(( failures > 0 ))
 }
 
 ms_human() {
