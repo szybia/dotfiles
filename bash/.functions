@@ -266,7 +266,18 @@ rsed() {
 
 
 hubprnew() {
-    hub pull-request -b main -m "$(git log -1 --pretty=%B)" -od "$@"
+    msg="$(git log -1 --pretty=%B)"
+    title="$(printf '%s\n' "$msg" | head -n1)"
+    body="$(printf '%s\n' "$msg" | tail -n +2)"
+
+    url="$(gh pr create \
+      --base main \
+      --title "$title" \
+      --body "$body" \
+      --draft \
+      "$@")"
+
+    open "$url"
 }
 
 hubclfork() {
@@ -347,17 +358,30 @@ r () {
     cd "$(git rev-parse --show-toplevel 2>/dev/null)"
 }
 
-rep () {
-    cd "$(ls -d ${HOME}/repos/* | fzf)"
-}
-
 iso() {
   printf "%s%03dZ" "$(date -u +'%Y-%m-%dT%H:%M:%S.')" $(( $(date -u +%N) / 1000000 )) | ccopy
 }
 
 
-fpret() {
-    [ "$#" -eq 0 ] && echo "Usage: ${FUNCNAME[0]} [files...]" && return 1
+_fpret() (
+    local name=$1
+    shift
+
+    local -a jq_args=()
+
+    # Everything before -- is passed to jq.
+    while (($#)) && [[ $1 != -- ]]; do
+        jq_args+=("$1")
+        shift
+    done
+
+    # Remove --.
+    (($#)) && shift
+
+    if (($# == 0)); then
+        echo "Usage: $name [files...]"
+        return 1
+    fi
 
     if ! command -v jq &>/dev/null; then
         echo "Error: jq is not installed. Please install it first." >&2
@@ -366,9 +390,10 @@ fpret() {
 
     local -a pids=()
     local failures=0
+    local file pid
 
     for file in "$@"; do
-        if [ ! -f "$file" ]; then
+        if [[ ! -f $file ]]; then
             echo "Error: '$file' is not a file." >&2
             failures=$((failures + 1))
             continue
@@ -376,26 +401,43 @@ fpret() {
 
         (
             tmp="${file}.fpret.$$.$RANDOM"
-            cleanup() { rm -f "$tmp"; }
-            trap cleanup EXIT HUP INT TERM
-            if ! jq '.' "$file" >"$tmp"; then
+
+            cleanup() {
+                rm -f "$tmp"
+            }
+
+            trap cleanup EXIT
+            trap 'exit 1' HUP INT TERM
+
+            if ! jq "${jq_args[@]}" '.' "$file" >"$tmp"; then
                 echo "Error: Failed to format '$file'. It may not be valid JSON." >&2
                 exit 1
             fi
-            mv -f "$tmp" "$file"
+
+            if ! mv -f "$tmp" "$file"; then
+                echo "Error: Failed to replace '$file'." >&2
+                exit 1
+            fi
+
             trap - EXIT HUP INT TERM
-            cleanup
         ) &
 
         pids+=("$!")
     done
 
-    local pid
     for pid in "${pids[@]}"; do
         wait "$pid" || failures=$((failures + 1))
     done
 
-    return $(( failures > 0 ))
+    return $((failures > 0))
+)
+
+fpret() {
+    _fpret "${FUNCNAME[0]}" -- "$@"
+}
+
+fprets() {
+    _fpret "${FUNCNAME[0]}" -S -- "$@"
 }
 
 ms_human() {
@@ -471,4 +513,9 @@ epoch_human() {
     # BSD/macOS date
     date -u -r "$((ms/1000))" +"%Y-%m-%dT%H:%M:%S.$(printf '%03d' $(( (ms%1000+1000)%1000 )))Z"
   fi
+}
+
+cdr() {
+  local dir
+  dir=$(fd --type d --max-depth 1 . "$HOME/repos" | fzf) && cd -- "$dir"
 }

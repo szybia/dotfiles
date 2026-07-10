@@ -61,3 +61,5 @@ unset file
 
 export FZF_DEFAULT_COMMAND="rg --files --hidden --follow --no-ignore --glob '!.git/*' --glob '!.idea/*' --glob '!.gradle/*'"
 
+command -v zoxide >/dev/null 2>&1 && eval "$(zoxide init bash)" || echo "zoxide not installed"
+

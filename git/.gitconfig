@@ -13,20 +13,16 @@
     renames = copies
     algorithm = patience
 
-[help]
-    # Automatically correct and execute mistyped commands
-    autocorrect = 1
-
 [merge]
     # Include summaries of merged commits in newly created merge commit messages
     log = true
+    conflictStyle = zdiff3
 
 [push]
     default = current
 	followTags = true
 
 [alias]
-
     a = add
     ac = !sh -c 'git add "$@" && git c' -
     all = add -A
@@ -84,10 +80,10 @@
     fmr    = !"git fm && git reum"
 
     # Show the diff between the latest commit and the current state
-    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat --color-words"
+    d  = "!GIT_PAGER='delta --paging=never' git diff --patch-with-stat"
     diffc = diff --cached
-    dc = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --cached --patch-with-stat --color-words"
-    di = !"git --no-pager diff --patch-with-stat"
+    dc = "!GIT_PAGER='delta --paging=never' git diff --cached --patch-with-stat"
+    di = "!GIT_PAGER='delta --paging=never' git diff --patch-with-stat"
 
     fetchall = fetch --all
     fm = fetch upstream main:main
@@ -132,7 +128,8 @@
     s = status -s
     stat = status
 
-    sh = !"git --no-pager show --color-words"
+    sh = "!GIT_PAGER='delta --paging=never' git show"
+
     #   Show all changes on this branch since base
     #       Low index for git to detect file renames correctly
     shm = d main..HEAD -M10%
@@ -167,7 +164,7 @@
     undo = !git reset HEAD~1 --mixed
 
 [core]
-    pager = less -F -X
+	pager = delta
 	editor = vim
 	autocrlf = input
 	excludesFile = ~/.gitignore
@@ -196,3 +193,8 @@
 
 [rerere]
 	enable = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+	dark = true

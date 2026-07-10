@@ -28,8 +28,8 @@ if [ "${machine}" = 'Mac' ]
 then
     export ls_command='gls'
 fi
+command -v eza >/dev/null 2>&1 && export ls_command='eza' || echo "eza not installed"
 
-#   Long list of everything
 alias l="${ls_command} -AlhF --color=auto"
 #   List hidden
 alias la="${ls_command} -A --color=auto"
@@ -55,9 +55,6 @@ alias mkdir='mkdir -p'
 
 #   wget continue downloading in case of problem
 alias wget='wget -c'
-
-#   Search for files
-alias fhere='find . -name '
 
 #   Search files for string
 #       Search .gitignore and hidden files without git folder
@@ -115,8 +112,11 @@ alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date
 
 #   curl API | pretty
 alias pret='jq'
+alias prets='jq -S'
 alias vpret='v | pret'
+alias vprets='v | prets'
 alias vcpret='v | pret | c'
+alias vcprets='v | prets | c'
 
 #   python import sorting
 alias pythonsort='isort -rc .'
@@ -306,7 +306,7 @@ alias sshdel='ssh-keygen -f ~/.ssh/known_hosts -R'
 # typo
 alias clera='clear'
 
-alias cdf='cd "$(find . -type d -print | fzf)"'
+alias cdf='cd -- "$(fd --type d --hidden --exclude .git . | fzf)"'
 
 alias f='fzf -m'
 
@@ -323,3 +323,9 @@ alias awk6="awk '{print \$6}'"
 alias awk7="awk '{print \$7}'"
 alias awk8="awk '{print \$8}'"
 alias awk9="awk '{print \$9}'"
+
+alias dot='cd ~/repos/dotfiles'
+
+command -v zoxide >/dev/null 2>&1 && { alias cd='z'; alias cdi='zi'; } || echo "zoxide not installed"
+command -v bat >/dev/null 2>&1 && alias cat='bat' || echo "bat not installed"
+
