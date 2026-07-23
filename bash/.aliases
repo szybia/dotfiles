@@ -212,7 +212,6 @@ alias sourceinput='source $HOME/.inputrc'
 
 
 alias vf='vim $(fzf -m)'
-alias rmfzf='rm -rf $(fzf -m)'
 
 #   npm aliases
 #   npm clean and install

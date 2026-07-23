@@ -358,11 +358,6 @@ r () {
     cd "$(git rev-parse --show-toplevel 2>/dev/null)"
 }
 
-iso() {
-  printf "%s%03dZ" "$(date -u +'%Y-%m-%dT%H:%M:%S.')" $(( $(date -u +%N) / 1000000 )) | ccopy
-}
-
-
 _fpret() (
     local name=$1
     shift
